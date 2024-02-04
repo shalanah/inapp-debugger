@@ -35,13 +35,14 @@ docReady(() => {
   const ua = window.navigator.userAgent;
   const inappRes = new InApp(
     // @ts-ignore
-    navigator.userAgent || window.navigator.vendor || window.opera
+    window.navigator.userAgent || window.navigator.vendor || window.opera
   );
 
-  // Logging on purpose for Eruda
-  console.log({ browser, inappRes });
+  // @ts-ignore
+  const isInApp = inappRes.isInApp();
 
-  const isInApp = inappRes.isInApp;
+  // Logging on purpose for Eruda
+  console.log({ browser, inappRes, isInApp });
 
   const statsHtml = /*html*/ `
 <div id="stats">
