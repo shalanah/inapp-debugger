@@ -27,7 +27,7 @@
   ${re}
   
   <h2>Download</h2>
-  <ul><li><a id="download-text" download href="/downloadTest.txt">Small .txt Doc</a></li></ul>
+  <ul><li><a id="download-text" download href="downloadTest.txt">Small .txt Doc</a></li></ul>
   ${r==="Apple"?`${J}${H}`:`${H}${J}`}
 </section>
 `;document.querySelector("#app").innerHTML=ie});
