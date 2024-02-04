@@ -55,7 +55,7 @@ const statsHtml = /*html*/ `
 `;
 
 const iOSLinks = [
-  { title: "Safari Search", url: "x-web-search://?site:example.com" },
+  { title: "Safari search", url: "x-web-search://?site:example.com" },
   { title: "Chrome https", url: "googlechromes://example.com" },
   { title: "Chrome http", url: "googlechrome://example.com" },
   { title: "Firefox", url: "firefox://open-url?url=https://example.com" },
@@ -66,13 +66,15 @@ const iOSLinks = [
 
 const androidLinks = [
   {
-    title: "Default Browser Intent Link",
+    title: "Default browser intent link",
     url: "intent:https://example.com#Intent;end",
   },
 ];
 
 const androidHtml = /*html*/ `
   <h2>Android</h2>
+  <p class="desc" style="margin-bottom: 10px;">To escape an in-app browser on Android device, a default browser intent link seems to always work. 🎉</p>
+  <p class="desc">If successful, you should be redirected to example.com</p>
   <ul>
   ${androidLinks
     .map(
@@ -84,6 +86,8 @@ const androidHtml = /*html*/ `
 `;
 const iOSHtml = /*html*/ `
   <h2>iOS</h2>
+  <p class="desc" style="margin-bottom: 10px">No reliable default browser link exists to escape in-app iOS. Try some of these specific browser links anyways. No Safari link exists except for the kooky search link.</p>
+  <p class="desc">If successful, you should be redirected to example.com</p>
   <ul>
   ${iOSLinks
     .map(
@@ -96,7 +100,8 @@ const iOSHtml = /*html*/ `
 
 const downloadTestHtml = /*html*/ `
   <h2>Download</h2>
-  <ul><li><a id="download-text" download href="downloadTest.txt">Small .txt Doc</a></li></ul>`;
+  <p class="desc">Downloads are not supported in most in-app browsers. Test here with a small .txt file.</p>
+  <ul><li><a id="download-text" download href="downloadTest.txt">Small .txt download</a></li></ul>`;
 
 const content = /*html*/ `
   <section>
