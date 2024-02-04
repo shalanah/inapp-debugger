@@ -6,20 +6,6 @@ const toSentenceCase = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-// function docReady(fn: () => void) {
-//   // see if DOM is already available
-//   if (
-//     document.readyState === "complete" ||
-//     document.readyState === "interactive"
-//   ) {
-//     // call on next available tick
-//     setTimeout(fn, 1);
-//   } else {
-//     document.addEventListener("DOMContentLoaded", fn);
-//   }
-// }
-
-// docReady(() => {
 const browser = Bowser.getParser(window.navigator.userAgent);
 const platform = browser.getPlatform();
 const vendor = toSentenceCase(platform.vendor || "");
@@ -114,4 +100,3 @@ const content = /*html*/ `
 `;
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = content;
-// });
