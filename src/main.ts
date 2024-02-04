@@ -33,15 +33,15 @@ docReady(() => {
   const osVersionName = toSentenceCase(browser.getOS()?.versionName || "");
   const browserVersion = browser.getBrowserVersion();
   const ua = window.navigator.userAgent;
-  const inapp = new InApp(
+  const inappRes = new InApp(
     // @ts-ignore
     navigator.userAgent || window.navigator.vendor || window.opera
   );
 
   // Logging on purpose for Eruda
-  console.log({ browser, inapp });
+  console.log({ browser, inappRes });
 
-  const isInApp = inapp.isInApp;
+  const isInApp = inappRes.isInApp;
 
   const statsHtml = /*html*/ `
 <div id="stats">
