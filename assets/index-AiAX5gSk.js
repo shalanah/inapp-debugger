@@ -12,19 +12,24 @@
   <p class="small">*via detect-inapp - not 100%</p>
   <p class="small">Using this in package while false positive on Chrome in Android: <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code></p>
 </div>
-`,An=[{title:"Safari Search",url:"x-web-search://?site:example.com"},{title:"Chrome https",url:"googlechromes://example.com"},{title:"Chrome http",url:"googlechrome://example.com"},{title:"Firefox",url:"firefox://open-url?url=https://example.com"},{title:"Edge",url:"microsoft-edge-https://example.com"},{title:"Opera",url:"touch-https://example.com"},{title:"Yandex",url:"yandexbrowser-open-url://example.com"}],On=[{title:"Default Browser Intent Link",url:"intent:https://example.com#Intent;end"}],st=`
+`,An=[{title:"Safari search",url:"x-web-search://?site:example.com"},{title:"Chrome https",url:"googlechromes://example.com"},{title:"Chrome http",url:"googlechrome://example.com"},{title:"Firefox",url:"firefox://open-url?url=https://example.com"},{title:"Edge",url:"microsoft-edge-https://example.com"},{title:"Opera",url:"touch-https://example.com"},{title:"Yandex",url:"yandexbrowser-open-url://example.com"}],On=[{title:"Default browser intent link",url:"intent:https://example.com#Intent;end"}],st=`
   <h2>Android</h2>
+  <p class="desc" style="margin-bottom: 10px;">To escape an in-app browser on Android device, a default browser intent link seems to always work. 🎉</p>
+  <p class="desc">If successful, you should be redirected to example.com</p>
   <ul>
   ${On.map(i=>`<li><a href="${i.url}" target="_blank">${i.title}</a></li>`).join("")}
   </ul>
 `,ot=`
   <h2>iOS</h2>
+  <p class="desc" style="margin-bottom: 10px">No reliable default browser link exists to escape in-app iOS. Try some of these specific browser links anyways. No Safari link exists except for the kooky search link.</p>
+  <p class="desc">If successful, you should be redirected to example.com</p>
   <ul>
   ${An.map(i=>`<li><a href="${i.url}" target="_blank">${i.title}</a></li>`).join("")}
   </ul>
 `,Fn=`
   <h2>Download</h2>
-  <ul><li><a id="download-text" download href="downloadTest.txt">Small .txt Doc</a></li></ul>`,xn=`
+  <p class="desc">Downloads are not supported in most in-app browsers. Test here with a small .txt file.</p>
+  <ul><li><a id="download-text" download href="downloadTest.txt">Small .txt download</a></li></ul>`,xn=`
   <section>
   ${Sn}
   ${Fn}
