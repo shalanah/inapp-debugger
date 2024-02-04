@@ -49,7 +49,8 @@ docReady(() => {
   <p style="margin-bottom: 2px; margin-top: 15px">${
     isInApp ? "✅ In-app" : "❌ No in-app"
   } browser found*</p>
-  <p class="small" >*via detect-inapp - not 100%</p>
+  <p class="small">*via detect-inapp - not 100%</p>
+  <p class="small">Using this in package while false positive on Chrome in Android: <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code></p>
 </div>
 `;
 
