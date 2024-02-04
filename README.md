@@ -1,4 +1,4 @@
-# Inapp Test
+# Inapp Debugger
 
 A small site to test browser type, os, and if the user is using an in-app browser.
 
