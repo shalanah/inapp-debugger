@@ -96,7 +96,7 @@ docReady(() => {
 
   const downloadTestHtml = /*html*/ `
   <h2>Download</h2>
-  <ul><li><a id="download-text" download href="/downloadTest.txt">Small .txt Doc</a></li></ul>`;
+  <ul><li><a id="download-text" download href="downloadTest.txt">Small .txt Doc</a></li></ul>`;
 
   const content = /*html*/ `
   <section>
