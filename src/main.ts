@@ -32,17 +32,14 @@ docReady(() => {
   const osName = toSentenceCase(browser.getOSName() || "");
   const osVersionName = toSentenceCase(browser.getOS()?.versionName || "");
   const browserVersion = browser.getBrowserVersion();
-  const ua = window.navigator.userAgent;
-  const inappRes = new InApp(
-    // @ts-ignore
-    window.navigator.userAgent || window.navigator.vendor || window.opera
-  );
-
-  // @ts-ignore
-  const isInApp = inappRes.isInApp();
+  //@ts-ignore
+  const ua =
+    window.navigator.userAgent || window.navigator.vendor || window.opera;
+  const inAppRes = new InApp(ua);
+  const isInApp = inAppRes.isInApp;
 
   // Logging on purpose for Eruda
-  console.log({ browser, inappRes, isInApp });
+  console.log({ browser, inAppRes, isInApp });
 
   const statsHtml = /*html*/ `
 <div id="stats">
