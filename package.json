@@ -1,0 +1,20 @@
+{
+  "name": "inapp-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/detect-inapp": "^1.4.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "bowser": "^2.11.0",
+    "detect-inapp": "^1.4.0"
+  }
+}
