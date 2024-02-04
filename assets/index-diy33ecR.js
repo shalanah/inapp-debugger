@@ -29,7 +29,7 @@
   </ul>
 `,Fn=`
   <h2>Download</h2>
-  <p class="desc">Downloads are not supported in most in-app browsers. Test here with a small .txt file.</p>
+  <p class="desc">Downloads are not supported in most in-app browsers.</p>
   <ul><li><a id="download-text" download href="downloadTest.txt">Small .txt download</a></li></ul>`,xn=`
   <section>
   ${Sn}
