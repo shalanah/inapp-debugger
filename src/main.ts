@@ -32,8 +32,8 @@ docReady(() => {
   const osName = toSentenceCase(browser.getOSName() || "");
   const osVersionName = toSentenceCase(browser.getOS()?.versionName || "");
   const browserVersion = browser.getBrowserVersion();
-  //@ts-ignore
   const ua =
+    //@ts-ignore
     window.navigator.userAgent || window.navigator.vendor || window.opera;
   const inAppRes = new InApp(ua);
   const isInApp = inAppRes.isInApp;
