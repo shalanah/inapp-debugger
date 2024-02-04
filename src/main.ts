@@ -34,6 +34,7 @@ docReady(() => {
   const browserVersion = browser.getBrowserVersion();
   const ua = window.navigator.userAgent;
   const inapp = new InApp(
+    // @ts-ignore
     navigator.userAgent || window.navigator.vendor || window.opera
   );
 
