@@ -9,8 +9,8 @@
   <p style="margin-bottom: 5px">${bn} ${wn} ${Mn}</p>
   <p class="small">${ft}</p>
   <p style="margin-bottom: 2px; margin-top: 15px">${pt?"✅ In-app":"❌ No in-app"} browser found*</p>
-  <p class="small">*via detect-inapp - not 100%</p>
-  <p class="small">Using this in package while false positive on Chrome in Android: <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code></p>
+  <p class="small">*via a fork of detect-inapp - not 100%</p>
+  <p class="small">Using this while false positive on Chrome in Android in detect-inapp: <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code></p>
 </div>
 `,An=[{title:"Safari search",url:"x-web-search://?site:example.com"},{title:"Chrome https",url:"googlechromes://example.com"},{title:"Chrome http",url:"googlechrome://example.com"},{title:"Firefox",url:"firefox://open-url?url=https://example.com"},{title:"Edge",url:"microsoft-edge-https://example.com"},{title:"Opera",url:"touch-https://example.com"},{title:"Yandex",url:"yandexbrowser-open-url://example.com"}],On=[{title:"Default browser intent link",url:"intent:https://example.com#Intent;end"}],st=`
   <h2>Android</h2>
