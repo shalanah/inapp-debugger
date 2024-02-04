@@ -8,7 +8,7 @@ const toSentenceCase = (str: string) => {
 
 const browser = Bowser.getParser(window.navigator.userAgent);
 const platform = browser.getPlatform();
-const vendor = toSentenceCase(platform.vendor || "Unknown Vendor");
+const vendor = toSentenceCase(platform.vendor || "");
 const device = toSentenceCase(platform.type || "Unknown Device");
 const browserName = toSentenceCase(
   browser.getBrowserName() || "Unknown Browser Name"
@@ -22,7 +22,7 @@ const ua = navigator.userAgent;
 const inapp = new InApp(navigator.userAgent);
 
 // Logging on purpose for Eruda
-console.log(browser);
+console.log(browser, inapp);
 
 const isInApp = inapp.isInApp;
 
