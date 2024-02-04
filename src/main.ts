@@ -28,16 +28,17 @@ const isInApp = inAppRes.isInApp;
 console.log({ browser, inAppRes, isInApp });
 
 const statsHtml = /*html*/ `
-<div id="stats">
-  <p style="margin-bottom: 5px; font-size: .75rem; text-transform: uppercase; color: #444;">${device} ${vendor} ${osName} ${osVersionName} ${osVersion}</p>
-  <p style="margin-bottom: 5px">${browserName} ${engine} ${browserVersion}</p>
-  <p class="small">${ua}</p>
-  <p style="margin-bottom: 2px; margin-top: 15px">${
-    isInApp ? "✅ In-app" : "❌ No in-app"
-  } browser found*</p>
-  <p class="small">*via a fork of detect-inapp - not 100%</p>
-  <p class="small">Using this while false positive on Chrome in Android in detect-inapp: <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code></p>
-</div>
+  <h2>Device info</h2>
+  <div id="stats">
+    <p style="margin-bottom: 5px; font-size: .75rem; text-transform: uppercase; color: #444;">${device} ${vendor} ${osName} ${osVersionName} ${osVersion}</p>
+    <p style="margin-bottom: 5px">${browserName} ${engine} ${browserVersion}</p>
+    <p class="small">${ua}</p>
+    <p style="margin-bottom: 2px; margin-top: 15px">${
+      isInApp ? "✅ In-app" : "❌ No in-app"
+    } browser found*</p>
+    <p class="small">*via a fork of detect-inapp - not 100%</p>
+    <p class="small">Using this while false positive on Chrome in Android in detect-inapp: <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code></p>
+  </div>
 `;
 
 const iOSLinks = [
