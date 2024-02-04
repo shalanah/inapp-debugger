@@ -13,7 +13,7 @@
     <p class="small">*via a fork of detect-inapp - not 100%</p>
     <p class="small">Using this while false positive on Chrome in Android in detect-inapp: <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code></p>
   </div>
-`,An=[{title:"Safari search",url:"x-web-search://?site:example.com"},{title:"Chrome https",url:"googlechromes://example.com"},{title:"Chrome http",url:"googlechrome://example.com"},{title:"Firefox",url:"firefox://open-url?url=https://example.com"},{title:"Edge",url:"microsoft-edge-https://example.com"},{title:"Opera",url:"touch-https://example.com"},{title:"Yandex",url:"yandexbrowser-open-url://example.com"}],On=[{title:"Default browser intent link",url:"intent:https://example.com#Intent;end"}],st=`
+`,An=[{title:"Safari search",url:"x-web-search://?site:example.com"},{title:"Chrome https",url:"googlechromes://example.com"},{title:"Chrome http",url:"googlechrome://example.com"},{title:"Firefox",url:"firefox://open-url?url=https://example.com"},{title:"Edge",url:"microsoft-edge-https://example.com"},{title:"Opera",url:"touch-https://example.com"},{title:"Yandex",url:"yandexbrowser-open-url://example.com"}],On=[{title:"Open in default browser",url:"intent:https://example.com#Intent;end"}],st=`
   <h2>Android</h2>
   <p class="desc" style="margin-bottom: 10px;">To escape an in-app browser on Android device, a default browser intent link seems to always work. 🎉</p>
   <p class="desc">If successful, you should be redirected to example.com</p>
