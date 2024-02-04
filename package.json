@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "bowser": "^2.11.0",
-    "detect-inapp": "^1.4.0"
+    "detect-inapp": "github:shalanah/detect-inapp#shalanah-build"
   }
 }
