@@ -53,7 +53,7 @@ const iOSLinks = [
 
 const androidLinks = [
   {
-    title: "Default browser intent link",
+    title: "Open in default browser",
     url: "intent:https://example.com#Intent;end",
   },
 ];
