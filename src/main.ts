@@ -37,7 +37,7 @@ const statsHtml = /*html*/ `
       isInApp ? "✅ In-app" : "❌ No in-app"
     } browser found*</p>
     <p class="small">*via a fork of detect-inapp - not 100%</p>
-    <p class="small">Using this while false positive on Chrome in Android in detect-inapp: <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code></p>
+    <p class="small">Using <code>"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"</code> while detect-inapp has false positives on Android Chrome</p>
   </div>
 `;
 
