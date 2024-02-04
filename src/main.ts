@@ -18,11 +18,11 @@ const osVersion = browser.getOSVersion();
 const osName = toSentenceCase(browser.getOSName() || "");
 const osVersionName = toSentenceCase(browser.getOS()?.versionName || "");
 const browserVersion = browser.getBrowserVersion();
-const ua = navigator.userAgent;
-const inapp = new InApp(navigator.userAgent);
+const ua = window.navigator.userAgent;
+const inapp = new InApp(window.navigator.userAgent);
 
 // Logging on purpose for Eruda
-console.log(browser, inapp);
+console.log({ browser, inapp });
 
 const isInApp = inapp.isInApp;
 
