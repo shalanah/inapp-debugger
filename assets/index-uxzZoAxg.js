@@ -49,7 +49,7 @@ Error generating stack: `+o.message+`
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 20px;
-  padding: 0px 15px;
+  padding: 0px 0px;
 `,Gc=ki.div`
   flex: 1;
   display: flex;
