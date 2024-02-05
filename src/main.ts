@@ -24,17 +24,17 @@ const toSentenceCase = (str: string) => {
 };
 
 const browser = Bowser.getParser(window.navigator.userAgent);
-const platform = browser.getPlatform();
+const platform = browser.getPlatform() || "";
 const vendor = toSentenceCase(platform.vendor || "");
 const device = toSentenceCase(platform.type || "Unknown Device");
 const browserName = toSentenceCase(
   browser.getBrowserName() || "Unknown Browser Name"
 );
 const engine = toSentenceCase(browser.getEngineName() || "");
-const osVersion = browser.getOSVersion();
+const osVersion = browser.getOSVersion() || "";
 const osName = toSentenceCase(browser.getOSName() || "");
 const osVersionName = toSentenceCase(browser.getOS()?.versionName || "");
-const browserVersion = browser.getBrowserVersion();
+const browserVersion = browser.getBrowserVersion() || "";
 const ua =
   //@ts-ignore
   window.navigator.userAgent || window.navigator.vendor || window.opera;
@@ -49,7 +49,7 @@ const statsHtml = /*html*/ `
   <div id="stats">
     <p style="margin-bottom: 5px; font-size: .75rem; text-transform: uppercase; color: #444;">${device} ${vendor} ${osName} ${osVersionName} ${osVersion}</p>
     <p style="margin-bottom: 5px">${browserName} ${engine} ${browserVersion}</p>
-    <p class="small">${ua}</p>
+    <p class="small" style="word-break: break-word;">${ua}</p>
     <p style="margin-bottom: 2px; margin-top: 15px">${
       isInApp ? "✅ In-app" : "❌ No in-app"
     } browser found*</p>
