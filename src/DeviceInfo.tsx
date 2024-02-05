@@ -1,6 +1,44 @@
 import Bowser from "bowser";
 import InApp from "detect-inapp"; // using "detect-inapp": "github:shalanah/detect-inapp#shalanah-build", for now while Android Chrome but in regular detect-inapp package
 import { toSentenceCase } from "./utils";
+import styled from "styled-components";
+
+const StatBoxContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 0px 15px;
+`;
+const StatBox = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 25px 20px 20px;
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--navy);
+  h2 {
+    font-size: 1.35rem;
+    font-weight: normal;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+  p {
+    font-size: 0.8rem;
+    height: 3rem;
+  }
+`;
+const UABox = styled.div`
+  text-align: left;
+  font-size: 0.8rem;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`;
 
 export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
@@ -25,7 +63,79 @@ export const DeviceInfo = () => {
     <>
       <div>
         <h2>Device info</h2>
-        <div id="stats">
+        <StatBoxContainer>
+          <StatBox>
+            <p>
+              {osVersionName || osVersion ? (
+                <>
+                  {osVersionName} {osVersion}
+                </>
+              ) : (
+                "Unknown version"
+              )}
+            </p>
+            <h2>
+              {vendor}
+              {osName && (
+                <>
+                  <br />
+                  {osName}
+                </>
+              )}
+            </h2>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <div
+                style={{
+                  width: 30,
+                  height: 30,
+                  background: "#000",
+                  borderRadius: "50%",
+                }}
+              />
+            </div>
+          </StatBox>
+          <StatBox>
+            <p>{browserVersion || "Unknown version"}</p>
+            <h2>
+              {browserName}
+              {engine && (
+                <>
+                  <br />
+                  {engine}
+                </>
+              )}
+            </h2>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <div
+                style={{
+                  width: 30,
+                  height: 30,
+                  background: "#000",
+                  borderRadius: "50%",
+                }}
+              />
+            </div>
+          </StatBox>
+        </StatBoxContainer>
+        <StatBoxContainer>
+          <UABox>
+            <p>
+              <strong>User Agent</strong>
+            </p>
+            <p>{ua}</p>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <div
+                style={{
+                  width: 30,
+                  height: 30,
+                  background: "#000",
+                  borderRadius: "50%",
+                }}
+              />
+            </div>
+          </UABox>
+        </StatBoxContainer>
+        {/* <div id="stats">
           <p
             style={{
               marginBottom: 5,
@@ -53,7 +163,7 @@ export const DeviceInfo = () => {
             </code>{" "}
             while detect-inapp has false positives on Android Chrome
           </p>
-        </div>
+        </div> */}
       </div>
     </>
   );

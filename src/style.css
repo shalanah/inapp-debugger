@@ -1,9 +1,20 @@
+:root {
+  --light-blue-bg: #e7ebf3;
+  --med-blue: #586786;
+  --navy: #11104d;
+  --white: #fff;
+}
+
+html,
 body {
-  font-family: sans-serif;
+  height: 100%;
+  background-color: var(--light-blue-bg);
+}
+body {
+  font-family: Arial;
   padding: 30px 15px 15px;
   text-align: center;
-  background: #f7f7f7;
-  color: #444;
+  color: var(--med-blue);
 }
 section {
   max-width: 400px;
@@ -12,6 +23,7 @@ section {
 h1,
 h2,
 h3 {
+  color: var(--navy);
   font-size: 1.2rem;
   margin-bottom: 0.5em;
 }
@@ -68,5 +80,4 @@ button {
   margin-bottom: 0.5em;
   cursor: pointer;
   background: #fff;
-  border: 2px solid rgba(0, 0, 0, 0.1);
 }
