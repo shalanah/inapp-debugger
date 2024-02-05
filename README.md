@@ -7,7 +7,7 @@ Let inapp debugger help you out - [shalanah.github.io/inapp-debugger/](https://s
 ### Features
 
 - ✅ View console
-- ✅ Detect OS/Browser
+- ✅ View OS/Browser
 - ✅ View user agent
 - ✅ View in-app detection
 - ✅ Test on-the-fly and static asset downloads
