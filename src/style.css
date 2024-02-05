@@ -10,9 +10,16 @@ body {
   height: 100%;
   background-color: var(--light-blue-bg);
 }
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: Arial;
-  padding: 30px 15px 15px;
   text-align: center;
   color: var(--med-blue);
 }
@@ -31,13 +38,7 @@ li {
   all: unset;
   display: block;
 }
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 #stats {
   text-align: left;
   border-radius: 8px;

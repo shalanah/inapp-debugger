@@ -9,7 +9,7 @@ const StatBoxContainer = styled.div`
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 20px;
-  padding: 0px 0px;
+  padding: 0px 15px;
 `;
 const StatBox = styled.div`
   flex: 1;
@@ -78,7 +78,7 @@ export const DeviceInfo = () => {
 
   return (
     <>
-      <div>
+      <div style={{ marginTop: "1rem" }}>
         <h2>Device info</h2>
         <StatBoxContainer>
           <StatBox>
