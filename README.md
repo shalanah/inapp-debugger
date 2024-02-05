@@ -2,7 +2,7 @@
 
 In-app browser debugging is excruciating.
 
-Let inapp debugger help you out - [shalanah.github.io/inapp-debugger/](shalanah.github.io/inapp-debugger/).
+Let inapp debugger help you out - [shalanah.github.io/inapp-debugger/](https://shalanah.github.io/inapp-debugger/).
 
 ### Features
 
