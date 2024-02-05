@@ -113,6 +113,14 @@ export const DeviceInfo = () => {
           {vendor}
         </>
       );
+    else if (device && osName)
+      osText = (
+        <>
+          {device}
+          <br />
+          {osName}
+        </>
+      );
     else osText = vendor || device || osName; // backup
   }
 
