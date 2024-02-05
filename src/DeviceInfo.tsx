@@ -88,9 +88,16 @@ export const DeviceInfo = () => {
   console.log(browser);
 
   // TODO: Pull out into mini component
-  let osText: React.ReactNode = "Unknown OS";
-  if (vendor) {
-    if (osName)
+  let osText: React.ReactNode = (
+    <>
+      Unknown
+      <br />
+      OS
+    </>
+  );
+  // Nice if we can get 2 lines of text
+  if (vendor || osName || device) {
+    if (vendor && osName)
       osText = (
         <>
           {vendor}
@@ -98,7 +105,7 @@ export const DeviceInfo = () => {
           {osName}
         </>
       );
-    else if (device)
+    else if (vendor && device)
       osText = (
         <>
           {device}
@@ -106,7 +113,7 @@ export const DeviceInfo = () => {
           {vendor}
         </>
       );
-    else osText = vendor;
+    else osText = vendor || device || osName; // backup
   }
 
   // TODO: Pull out into mini component
