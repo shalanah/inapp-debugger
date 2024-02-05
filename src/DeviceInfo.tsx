@@ -85,6 +85,8 @@ export const DeviceInfo = () => {
       osVersionText = `Version ${osVersion}`;
   }
 
+  console.log(browser);
+
   // TODO: Pull out into mini component
   let osText: React.ReactNode = "Unknown OS";
   if (vendor) {
@@ -116,11 +118,17 @@ export const DeviceInfo = () => {
         : `Version ${browserVersion}`;
   }
   // TODO: Pull out into mini component
-  let browserNameEngineText = "Unknown Browser";
+  let browserNameEngineText: React.ReactNode = "Unknown Browser";
   if (browserName) {
     browserNameEngineText = browserName;
     if (engine) {
-      browserNameEngineText = `${browserName} (${engine})`;
+      browserNameEngineText = (
+        <>
+          {browserName}
+          <br />
+          {engine}
+        </>
+      );
     }
   }
 
