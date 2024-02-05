@@ -127,9 +127,8 @@ export const DeviceInfo = () => {
   // TODO: Pull out into mini component
   let browserVersionText: React.ReactNode = "Unknown version";
   if (browserVersion) {
-    console.log(browserVersion.split("").length);
     browserVersionText =
-      browserVersion.split("").length < 5
+      browserVersion.split("").length > 5
         ? browserVersion
         : `Version ${browserVersion}`;
   }
