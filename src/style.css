@@ -50,7 +50,7 @@ ul {
 }
 p.desc {
   font-size: 0.75rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.6rem;
   padding: 0 40px;
   line-height: 1.3;
 }
@@ -58,6 +58,7 @@ p.desc {
 a,
 button {
   all: unset;
+  box-sizing: border-box;
   padding: 15px 10px;
   width: 100%;
   border-radius: 8px;

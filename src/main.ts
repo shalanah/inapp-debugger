@@ -2,6 +2,23 @@ import "./style.css";
 import Bowser from "bowser";
 import InApp from "detect-inapp";
 
+const iOSLinks = [
+  { title: "Safari search", url: "x-web-search://?site:example.com" },
+  { title: "Chrome https", url: "googlechromes://example.com" },
+  { title: "Chrome http", url: "googlechrome://example.com" },
+  { title: "Firefox", url: "firefox://open-url?url=https://example.com" },
+  { title: "Edge", url: "microsoft-edge-https://example.com" },
+  { title: "Opera", url: "touch-https://example.com" },
+  { title: "Yandex", url: "yandexbrowser-open-url://example.com" },
+];
+
+const androidLinks = [
+  {
+    title: "Open in default browser",
+    url: "intent:https://example.com#Intent;end",
+  },
+];
+
 const toSentenceCase = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
@@ -41,26 +58,9 @@ const statsHtml = /*html*/ `
   </div>
 `;
 
-const iOSLinks = [
-  { title: "Safari search", url: "x-web-search://?site:example.com" },
-  { title: "Chrome https", url: "googlechromes://example.com" },
-  { title: "Chrome http", url: "googlechrome://example.com" },
-  { title: "Firefox", url: "firefox://open-url?url=https://example.com" },
-  { title: "Edge", url: "microsoft-edge-https://example.com" },
-  { title: "Opera", url: "touch-https://example.com" },
-  { title: "Yandex", url: "yandexbrowser-open-url://example.com" },
-];
-
-const androidLinks = [
-  {
-    title: "Open in default browser",
-    url: "intent:https://example.com#Intent;end",
-  },
-];
-
 const androidHtml = /*html*/ `
   <h2>Android</h2>
-  <p class="desc" style="margin-bottom: 10px;">To escape an in-app browser on Android device, a default browser intent link seems to always work. 🎉</p>
+  <p class="desc" style="margin-bottom: .4rem;">To escape an in-app browser on Android device, a default browser intent link seems to always work.</p>
   <p class="desc">If successful, you should be redirected to example.com</p>
   <ul>
   ${androidLinks
@@ -73,7 +73,7 @@ const androidHtml = /*html*/ `
 `;
 const iOSHtml = /*html*/ `
   <h2>iOS</h2>
-  <p class="desc" style="margin-bottom: 10px">No reliable default browser link exists to escape in-app iOS. Try some of these specific browser links anyways. No Safari link exists except for the kooky search link.</p>
+  <p class="desc" style="margin-bottom: .4rem">No reliable default browser link exists to escape in-app iOS. Try some of these specific browser links anyways. No Safari link exists except for the kooky search link.</p>
   <p class="desc">If successful, you should be redirected to example.com</p>
   <ul>
   ${iOSLinks
