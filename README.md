@@ -4,12 +4,12 @@ In-app browser debugging is excruciating. This is a simple website to help you o
 
 ### Features
 
-- [x] View console
-- [x] Detect OS/Browser
-- [x] View user agent
-- [x] View in-app detection
-- [x] Test on-the-fly and static asset downloads
-- [x] Test Android + iOS in-app escape links
+- ✅ View console
+- ✅ Detect OS/Browser
+- ✅ View user agent
+- ✅ View in-app detection
+- ✅ Test on-the-fly and static asset downloads
+- ✅ Test Android + iOS in-app escape links
 
 ## Running
 
