@@ -10,8 +10,8 @@ Let inapp debugger help you out - [shalanah.github.io/inapp-debugger/](https://s
 - ✅ View OS/Browser
 - ✅ View user agent
 - ✅ View in-app detection
-- ✅ Test on-the-fly and static asset downloads
-- ✅ Test Android + iOS in-app escape links
+- ✅ Test in-app downloads (on-the-fly and static assets)
+- ✅ Test in-app escape links (Android + iOS)
 
 ## Running
 
