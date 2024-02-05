@@ -25,6 +25,7 @@ const StatBox = styled.div`
     font-weight: normal;
     line-height: 1.3;
     text-wrap: balance;
+    flex: 1;
   }
   p {
     font-size: 0.8rem;
