@@ -9,7 +9,7 @@ const StatBoxContainer = styled.div`
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 20px;
-  padding: 0px 15px;
+  padding: 0px 0px;
 `;
 const StatBox = styled.div`
   flex: 1;
@@ -170,35 +170,6 @@ export const DeviceInfo = () => {
             </p>
           </InAppBox>
         </StatBoxContainer>
-        {/* <div id="stats">
-          <p
-            style={{
-              marginBottom: 5,
-              fontSize: ".75rem",
-              textTransform: "uppercase",
-              color: "#444",
-            }}
-          >
-            {`${device} ${vendor} ${osName} ${osVersionName} ${osVersion}`}
-          </p>
-          <p style={{ marginBottom: 5 }}>
-            {`${browserName} ${engine} ${browserVersion}`}
-          </p>
-          <p className="small" style={{ wordBreak: "break-word" }}>
-            {ua}
-          </p>
-          <p style={{ marginBottom: 2, marginTop: 15 }}>
-            {`${isInApp ? "✅ In-app" : "❌ No in-app"} browser found*`}
-          </p>
-          <p className="small">*via a fork of detect-inapp - not 100%</p>
-          <p className="small">
-            Using{" "}
-            <code>
-              "detect-inapp": "github:shalanah/detect-inapp#shalanah-build"
-            </code>{" "}
-            while detect-inapp has false positives on Android Chrome
-          </p>
-        </div> */}
       </div>
     </>
   );
