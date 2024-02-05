@@ -1,6 +1,17 @@
 export const escapeLinks = {
   iOS: {
-    intro: <>Text iOS</>,
+    intro: (
+      <>
+        <p className="desc" style={{ marginBottom: ".4rem" }}>
+          No reliable default browser link exists to escape in-app iOS. Try some
+          of these specific browser links anyways. No Safari link exists except
+          for the kooky search link.
+        </p>
+        <p className="desc">
+          If successful, you should be redirected to example.com
+        </p>
+      </>
+    ),
     links: [
       { title: "Safari search", url: "x-web-search://?site:example.com" },
       { title: "Chrome https", url: "googlechromes://example.com" },
@@ -12,7 +23,17 @@ export const escapeLinks = {
     ],
   },
   Android: {
-    intro: <>Text Android</>,
+    intro: (
+      <>
+        <p className="desc" style={{ marginBottom: ".4rem" }}>
+          To escape an in-app browser on Android device, a default browser
+          intent link seems to always work.
+        </p>
+        <p className="desc">
+          If successful, you should be redirected to example.com
+        </p>
+      </>
+    ),
     links: [
       {
         title: "Open in default browser",
