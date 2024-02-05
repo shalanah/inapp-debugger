@@ -118,7 +118,7 @@ document.getElementById("download-svg-blob")!.addEventListener("click", () => {
   const url = URL.createObjectURL(svg);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "blob.svg";
+  a.download = "builtBlob.svg";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
