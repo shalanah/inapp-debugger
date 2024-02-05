@@ -2,8 +2,9 @@ import Bowser from "bowser";
 import InApp from "detect-inapp"; // using "detect-inapp": "github:shalanah/detect-inapp#shalanah-build", for now while Android Chrome but in regular detect-inapp package
 import { toSentenceCase } from "./utils";
 import styled from "styled-components";
+import { ModalInapp } from "./ModalInapp";
 
-const StatBoxContainer = styled.div`
+const Section = styled.section`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -35,15 +36,14 @@ const StatBox = styled.div`
 const UABox = styled.div`
   text-align: left;
   font-size: 0.8rem;
-  padding: 5px 20px;
+  padding: 3px 20px 3px 0px;
   display: flex;
-  flex-direction: column;
   gap: 5px;
+  line-height: 1.2;
 `;
 const InAppBox = styled.div`
   flex: 1;
   display: flex;
-  flex-direction: column;
   text-align: left;
   padding: 20px;
   border-radius: 20px;
@@ -57,6 +57,35 @@ const InAppBox = styled.div`
     font-size: 0.8rem;
   }
 `;
+
+const PackageNote = styled.div`
+  padding: 10px;
+  line-height: 1.4;
+  code {
+    background: var(--light-blue);
+    padding: 20px 25px;
+    border-radius: 10px;
+    display: block;
+    margin: 15px -5px 0px;
+    color: var(--navy);
+  }
+`;
+
+const StandInCircle = ({
+  style = {},
+  ...props
+}: React.HtmlHTMLAttributes<HTMLDivElement>) => (
+  <div
+    style={{
+      width: 30,
+      height: 30,
+      background: "#000",
+      borderRadius: "50%",
+      ...style,
+    }}
+    {...props}
+  />
+);
 
 export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
@@ -81,7 +110,7 @@ export const DeviceInfo = () => {
   let osVersionText = "Unknown version";
   if (osVersionName || osVersion) {
     osVersionText = `${osVersionName} ${osVersion}`;
-    if (osVersionText.split("").length < 5)
+    if (osVersionText.split("").length < 6)
       osVersionText = `Version ${osVersion}`;
   }
 
@@ -150,72 +179,85 @@ export const DeviceInfo = () => {
   return (
     <>
       <div style={{ marginTop: "1rem" }}>
-        <StatBoxContainer>
+        <Section>
           <StatBox>
             <p>{osVersionText}</p>
             <h2>{osText}</h2>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <div
-                style={{
-                  width: 30,
-                  height: 30,
-                  background: "#000",
-                  borderRadius: "50%",
-                }}
-              />
+              <StandInCircle />
             </div>
           </StatBox>
           <StatBox>
             <p>{browserVersionText}</p>
             <h2>{browserNameEngineText}</h2>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <div
-                style={{
-                  width: 30,
-                  height: 30,
-                  background: "#000",
-                  borderRadius: "50%",
-                }}
-              />
+              <StandInCircle />
             </div>
           </StatBox>
-        </StatBoxContainer>
-        <StatBoxContainer>
+        </Section>
+        <Section>
           <UABox>
-            <p>
-              <strong>User Agent</strong>
-            </p>
-            <p style={{ wordBreak: "break-word" }}>{ua}</p>
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <div
-                style={{
-                  width: 30,
-                  height: 30,
-                  background: "#000",
-                  borderRadius: "50%",
-                }}
-              />
+            <div style={{ display: "flex", gap: 5, flexDirection: "column" }}>
+              <p>
+                <strong>User Agent</strong>
+              </p>
+              <p style={{ wordBreak: "break-word" }}>{ua}</p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <StandInCircle />
             </div>
           </UABox>
-        </StatBoxContainer>
-        <StatBoxContainer>
+        </Section>
+        <Section>
           <InAppBox
             style={{
               background: isInApp ? "#B92158" : "#E9FFF6",
               color: isInApp ? "#fff" : "#449C82",
             }}
           >
-            <h2 style={{ color: isInApp ? "#fff" : "#007D75" }}>
-              {isInApp ? "In-app detected" : "In-app not detected"}
-            </h2>
-            <p>Not 100% accurate.</p>
-            <p>
-              Using package "detect-inapp":
-              <code>"github:shalanah/detect-inapp#shalanah-build"</code> while
-              detect-inapp has false positives on Android Chrome
-            </p>
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
+              }}
+            >
+              <h2 style={{ color: isInApp ? "#fff" : "#007D75" }}>
+                {isInApp ? "In-app detected" : "In-app not detected"}
+              </h2>
+              <p>Not 100% accurate.</p>
+            </div>
+            <ModalInapp
+              button={
+                <button
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                  }}
+                >
+                  <StandInCircle />
+                </button>
+              }
+            >
+              <PackageNote>
+                In order to detect in-app browser, using a fork of the npm
+                package `detect-inapp` for the time being while they have a bug
+                with Android Chrome.
+                <code>
+                  "detect-inapp": "github:shalanah/detect-inapp#shalanah-build"
+                </code>
+              </PackageNote>
+            </ModalInapp>
           </InAppBox>
-        </StatBoxContainer>
+        </Section>
       </div>
     </>
   );
