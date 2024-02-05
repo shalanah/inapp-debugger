@@ -79,7 +79,6 @@ export const DeviceInfo = () => {
   return (
     <>
       <div style={{ marginTop: "1rem" }}>
-        <h2>Device info</h2>
         <StatBoxContainer>
           <StatBox>
             <p>

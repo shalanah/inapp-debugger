@@ -1,8 +1,15 @@
 # Inapp Debugger
 
-A small site to test browser type, os, and if the user is using an in-app browser.
+In-app browser debugging is excruciating. This is a simple website to help you out.
 
-Helps to identify if downloads work and other in-app escape methods.
+### Features
+
+- [x] View console
+- [x] Detect OS/Browser
+- [x] View user agent
+- [x] View in-app detection
+- [x] Test on-the-fly and static asset downloads
+- [x] Test Android + iOS in-app escape links
 
 ## Running
 
