@@ -1,6 +1,6 @@
 # Inapp Debugger
 
-In-app browser debugging is excruciating. This is a simple website to help you out.
+In-app browser debugging is excruciating. Let inapp debugger help you out - shalanah.github.io/inapp-debugger/.
 
 ### Features
 
