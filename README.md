@@ -2,7 +2,7 @@
 
 In-app browser debugging is excruciating.
 
-Test out common in-app issues - [shalanah.github.io/inapp-debugger/](https://shalanah.github.io/inapp-debugger/).
+Test out common in-app issues without having to deploy your site. - [shalanah.github.io/inapp-debugger/](https://shalanah.github.io/inapp-debugger/).
 
 ### Features
 
