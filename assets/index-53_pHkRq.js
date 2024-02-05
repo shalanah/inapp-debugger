@@ -42,4 +42,4 @@
           d="M64.5,-19.8C71.7,1.1,57.4,30.2,34.6,46.4C11.9,62.6,-19.2,65.9,-39.4,51.8C-59.7,37.7,-69.1,6.1,-60.7,-16.6C-52.3,-39.2,-26.2,-52.9,1.3,-53.3C28.7,-53.7,57.3,-40.8,64.5,-19.8Z"
           transform="translate(100 100)"
         />
-      </svg>`],{type:"image/svg+xml"}),t=URL.createObjectURL(i),r=document.createElement("a");r.href=t,r.download="blob.svg",document.body.appendChild(r),r.click(),document.body.removeChild(r),URL.revokeObjectURL(t)});
+      </svg>`],{type:"image/svg+xml"}),t=URL.createObjectURL(i),r=document.createElement("a");r.href=t,r.download="builtBlob.svg",document.body.appendChild(r),r.click(),document.body.removeChild(r),URL.revokeObjectURL(t)});
