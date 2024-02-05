@@ -87,7 +87,7 @@ const iOSHtml = /*html*/ `
 
 const downloadTestHtml = /*html*/ `
   <h2>Download</h2>
-  <p class="desc">Downloads are not supported in most in-app browsers.</p>
+  <p class="desc">Downloads are not supported in most in-app browsers. Sometimes assets open up as stand-alone files but no UI to download resulting graphic.</p>
   <ul><li><button id="download-svg-blob">SVG blob download</button></li><li><a download href="blob.svg">SVG static download</a></li></ul>`;
 
 const content = /*html*/ `  
