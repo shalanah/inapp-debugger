@@ -18,7 +18,14 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "@types/react": "^18.2.54",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
     "bowser": "^2.11.0",
-    "detect-inapp": "github:shalanah/detect-inapp#shalanah-build"
+    "detect-inapp": "github:shalanah/detect-inapp#shalanah-build",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "styled-components": "^6.1.8"
   }
 }
