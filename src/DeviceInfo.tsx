@@ -61,7 +61,7 @@ export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
   const platform = browser.getPlatform() || "";
   const vendor = toSentenceCase(platform.vendor || "");
-  const device = toSentenceCase(platform.type || "Unknown Device");
+  // const device = toSentenceCase(platform.type || "Unknown Device");
   const browserName = toSentenceCase(
     browser.getBrowserName() || "Unknown Browser Name"
   );
