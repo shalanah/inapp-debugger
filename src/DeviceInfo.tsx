@@ -39,6 +39,23 @@ const UABox = styled.div`
   flex-direction: column;
   gap: 5px;
 `;
+const InAppBox = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+  border-radius: 20px;
+  color: var(--white);
+  h2 {
+    font-size: 1.35rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+`;
 
 export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
@@ -122,7 +139,7 @@ export const DeviceInfo = () => {
             <p>
               <strong>User Agent</strong>
             </p>
-            <p>{ua}</p>
+            <p style={{ wordBreak: "break-word" }}>{ua}</p>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <div
                 style={{
@@ -134,6 +151,24 @@ export const DeviceInfo = () => {
               />
             </div>
           </UABox>
+        </StatBoxContainer>
+        <StatBoxContainer>
+          <InAppBox
+            style={{
+              background: isInApp ? "#B92158" : "#E9FFF6",
+              color: isInApp ? "#fff" : "#449C82",
+            }}
+          >
+            <h2 style={{ color: isInApp ? "#fff" : "#007D75" }}>
+              {isInApp ? "In-app detected" : "In-app not detected"}
+            </h2>
+            <p>Not 100% accurate.</p>
+            <p>
+              Using package "detect-inapp":
+              <code>"github:shalanah/detect-inapp#shalanah-build"</code> while
+              detect-inapp has false positives on Android Chrome
+            </p>
+          </InAppBox>
         </StatBoxContainer>
         {/* <div id="stats">
           <p
