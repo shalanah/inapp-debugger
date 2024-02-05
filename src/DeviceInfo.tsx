@@ -61,9 +61,9 @@ export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
   const platform = browser.getPlatform() || "";
   const vendor = toSentenceCase(platform.vendor || "");
-  // const device = toSentenceCase(platform.type || "Unknown Device");
+  const device = toSentenceCase(platform.type || "");
   const browserName = toSentenceCase(
-    browser.getBrowserName() || "Unknown Browser Name"
+    browser.getBrowserName() || "Unknown Browser"
   );
   const engine = toSentenceCase(browser.getEngineName() || "");
   const osVersion = browser.getOSVersion() || "";
@@ -76,29 +76,60 @@ export const DeviceInfo = () => {
   const inAppRes = new InApp(ua);
   const isInApp = inAppRes.isInApp;
 
+  // TODO: Pull out into mini component
+  let osVersionText = "Unknown version";
+  if (osVersionName || osVersion) {
+    osVersionText = `${osVersionName} ${osVersion}`;
+    if (osVersionText.split("").length < 5)
+      osVersionText = `Version ${osVersion}`;
+  }
+
+  // TODO: Pull out into mini component
+  let osText: React.ReactNode = "Unknown OS";
+  if (vendor) {
+    if (osName)
+      osText = (
+        <>
+          {vendor}
+          <br />
+          {osName}
+        </>
+      );
+    else if (device)
+      osText = (
+        <>
+          {device}
+          <br />
+          {vendor}
+        </>
+      );
+    else osText = vendor;
+  }
+
+  // TODO: Pull out into mini component
+  let browserVersionText: React.ReactNode = "Unknown version";
+  if (browserVersion) {
+    browserVersionText =
+      browserVersion.split("").length < 5
+        ? browserVersion
+        : `Version ${browserVersion}`;
+  }
+  // TODO: Pull out into mini component
+  let browserNameEngineText = "Unknown Browser";
+  if (browserName) {
+    browserNameEngineText = browserName;
+    if (engine) {
+      browserNameEngineText = `${browserName} (${engine})`;
+    }
+  }
+
   return (
     <>
       <div style={{ marginTop: "1rem" }}>
         <StatBoxContainer>
           <StatBox>
-            <p>
-              {osVersionName || osVersion ? (
-                <>
-                  {osVersionName} {osVersion}
-                </>
-              ) : (
-                "Unknown version"
-              )}
-            </p>
-            <h2>
-              {vendor}
-              {osName && (
-                <>
-                  <br />
-                  {osName}
-                </>
-              )}
-            </h2>
+            <p>{osVersionText}</p>
+            <h2>{osText}</h2>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <div
                 style={{
@@ -111,16 +142,8 @@ export const DeviceInfo = () => {
             </div>
           </StatBox>
           <StatBox>
-            <p>{browserVersion || "Unknown version"}</p>
-            <h2>
-              {browserName}
-              {engine && (
-                <>
-                  <br />
-                  {engine}
-                </>
-              )}
-            </h2>
+            <p>{browserVersionText}</p>
+            <h2>{browserNameEngineText}</h2>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <div
                 style={{
