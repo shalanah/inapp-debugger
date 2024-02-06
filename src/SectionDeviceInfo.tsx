@@ -200,16 +200,14 @@ export const SectionDeviceInfo = () => {
       </Section>
       <Section>
         <StatBox>
-          <p style={{ marginBottom: "1.3rem", wordBreak: "break-word" }}>
-            {ua}
-          </p>
+          <p style={{ marginBottom: ".25rem" }}>{osText}</p>
           <div
             className="d-flex flex-row"
             style={{ justifyContent: "space-between", gap: 5 }}
           >
             <div>
-              <h2>{browserText}</h2>
-              <p style={{ wordBreak: "break-word" }}>{osText}</p>
+              <h2 style={{ marginBottom: "1.25rem" }}>{browserText}</h2>
+              <p style={{ wordBreak: "break-word" }}>{ua}</p>
             </div>
             <CopyToClipboard
               text={deviceCopy.value}
