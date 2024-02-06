@@ -145,7 +145,8 @@ Error generating stack: `+i.message+`
   }
 `,wi=({style:e={},...t})=>N.jsx("div",{style:{width:30,height:30,background:"#000",borderRadius:"50%",...e},...t}),Yw=()=>{var p;const e=uh.getParser(window.navigator.userAgent),t=e.getPlatform()||"",n=Nn(t.vendor||""),r=Nn(t.type||""),o=Nn(e.getBrowserName()||"Unknown Browser"),i=Nn(e.getEngineName()||""),l=e.getOSVersion()||"",s=Nn(e.getOSName()||""),u=Nn(((p=e.getOS())==null?void 0:p.versionName)||""),c=e.getBrowserVersion()||"",h=window.navigator.userAgent||window.navigator.vendor||window.opera,g=new i1(h).isInApp;let S="Unknown version";(u||l)&&(S=`${u} ${l}`,S.split("").length<6&&(S=`Version ${l}`)),console.log(e);let x=N.jsxs(N.Fragment,{children:["Unknown",N.jsx("br",{}),"OS"]});(n||s||r)&&(n&&s?x=N.jsxs(N.Fragment,{children:[n,N.jsx("br",{}),s]}):n&&r?x=N.jsxs(N.Fragment,{children:[n,N.jsx("br",{}),r]}):r&&s?x=N.jsxs(N.Fragment,{children:[s,N.jsx("br",{}),r]}):x=n||r||s);let y="Unknown version";c&&(y=c.split("").length>5?c:`Version ${c}`);let R="Unknown Browser";return o&&(R=o,i&&(R=N.jsxs(N.Fragment,{children:[o,N.jsx("br",{}),i]}))),N.jsx(N.Fragment,{children:N.jsxs("div",{style:{marginTop:"1rem"},children:[N.jsxs(Ls,{children:[N.jsxs(Gf,{children:[N.jsx("p",{children:S}),N.jsx("h2",{children:x}),N.jsx("div",{className:"d-flex",style:{justifyContent:"flex-end"},children:N.jsx(wi,{className:"d-flex",style:{flexShrink:0,justifyContent:"flex-end",color:"var(--light-blue)",background:"var(--navy)"},children:N.jsx(As,{width:17,height:17,style:{margin:"auto"}})})})]}),N.jsxs(Gf,{children:[N.jsx("p",{children:y}),N.jsx("h2",{children:R}),N.jsx("div",{className:"d-flex",style:{justifyContent:"flex-end"},children:N.jsx(wi,{className:"d-flex",style:{flexShrink:0,justifyContent:"flex-end",color:"var(--light-blue)",background:"var(--navy)"},children:N.jsx(As,{width:17,height:17,style:{margin:"auto"}})})})]})]}),N.jsx(Ls,{children:N.jsxs(Qw,{children:[N.jsxs("div",{className:"d-flex flex-column",style:{gap:5},children:[N.jsx("p",{children:N.jsx("strong",{children:"User Agent"})}),N.jsx("p",{style:{wordBreak:"break-word"},children:h})]}),N.jsx(wi,{className:"d-flex",style:{flexShrink:0,justifyContent:"flex-end",background:"#fff"},children:N.jsx(As,{width:17,height:17,style:{margin:"auto"}})})]})}),N.jsx(Ls,{children:N.jsxs(Gw,{style:{background:g?"#B92158":"#E9FFF6",color:g?"#fff":"#449C82"},children:[N.jsxs("div",{className:"d-flex flex-column",style:{flex:1,gap:10},children:[N.jsx("h2",{style:{color:g?"#fff":"#007D75"},children:g?"In-app detected":"In-app not detected"}),N.jsx("p",{children:"Not 100% accurate."})]}),N.jsx(Hw,{button:N.jsx("button",{className:"d-flex",style:{justifyContent:"flex-end"},children:N.jsx(wi,{className:"d-flex",style:{color:g?"#B92158":"#E9FFF6",background:g?"#fff":"#449C82"},children:N.jsx(Vw,{style:{margin:"auto"},width:20,height:20})})}),children:N.jsxs(Kw,{children:["In order to detect in-app browser, using a fork of the npm package `detect-inapp` for the time being while they have a bug with Android Chrome.",N.jsx("code",{children:'"detect-inapp": "github:shalanah/detect-inapp#shalanah-build"'})]})})]})})]})})},Xw=Vn.div`
   padding: 15px 15px 70px;
-  margin: 0px;
+  margin: 15px;
+  border-radius: 20px;
   background: var(--white);
   text-align: center;
   h2 {
@@ -168,7 +169,7 @@ Error generating stack: `+i.message+`
     width: 100%;
     background: red;
     margin-top: 6px;
-    padding: 11px;
+    padding: 13px;
     background: #5c60f8;
     color: var(--white);
     font-weight: bold;
