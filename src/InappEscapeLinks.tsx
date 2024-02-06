@@ -12,9 +12,11 @@ export const InappEscapeLinks = () => {
   return (
     <>
       {order.map((os, i) => {
-        const { links, intro } = escapeLinks[os];
+        const { links, intro, icon } = escapeLinks[os];
         return (
           <CardLarge
+            key={os}
+            icon={icon}
             light={i % 2 === 1}
             title={
               <>
