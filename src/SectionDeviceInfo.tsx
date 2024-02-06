@@ -190,7 +190,7 @@ export const SectionDeviceInfo = () => {
             alignItems: "center",
           }}
         >
-          <h2>Inapp Debugger</h2>
+          <h2 style={{ margin: 0 }}>Inapp Debugger</h2>
           <Circle
             as={"a"}
             target="_blank"
