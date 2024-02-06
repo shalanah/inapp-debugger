@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Div = styled.div`
   padding: 15px 15px 70px;
-  margin: 0px;
+  margin: 15px;
+  border-radius: 20px;
   background: var(--white);
   text-align: center;
   h2 {
@@ -25,7 +26,7 @@ const Div = styled.div`
     width: 100%;
     background: red;
     margin-top: 6px;
-    padding: 11px;
+    padding: 13px;
     background: #5c60f8;
     color: var(--white);
     font-weight: bold;
