@@ -1,8 +1,8 @@
-# Inapp Debugger
+# In-app Debugger
 
 Test out common in-app issues without having to deploy your site.
 
-[InappDebugger.com](https:inappdebugger.com)
+[InAppDebugger.com](https://inappdebugger.com)
 
 ### Features
 
