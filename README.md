@@ -2,7 +2,7 @@
 
 Test out common in-app issues without having to deploy your site.
 
-[InappDebugger.com](https:inappdebugger.com).
+[InappDebugger.com](https:inappdebugger.com)
 
 ### Features
 

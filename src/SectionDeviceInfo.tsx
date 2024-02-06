@@ -183,7 +183,13 @@ export const SectionDeviceInfo = () => {
   return (
     <>
       <Section style={{ marginBottom: 0 }}>
-        <Box style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <Box
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <h2>Inapp Debugger</h2>
           <Circle
             as={"a"}
