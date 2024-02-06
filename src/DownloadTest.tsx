@@ -1,4 +1,5 @@
 import { CardLarge } from "./CardLarge";
+import { DownloadIcon } from "@radix-ui/react-icons";
 
 const onClick = () => {
   const svg = new Blob(
@@ -28,7 +29,8 @@ export const DownloadTest = () => {
     <>
       <CardLarge
         light
-        title="Download"
+        title="Download Tests"
+        icon={<DownloadIcon width={30} height={30} />}
         text={
           <p>
             Downloads are not supported in most in-app browsers. Static assets

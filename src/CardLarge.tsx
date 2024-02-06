@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Div = styled.div`
   padding: 15px 15px 70px;
-  margin: 15px;
+  margin: 15px 15px 20px;
   border-radius: 20px;
   background: var(--white);
   text-align: center;
@@ -10,7 +10,7 @@ const Div = styled.div`
     line-height: 1.2;
     font-weight: normal;
     font-size: 1.35rem;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
   p {
     max-width: 260px;
@@ -29,7 +29,7 @@ const Div = styled.div`
     padding: 13px;
     background: #5c60f8;
     color: var(--white);
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 1rem;
     border-radius: 16px;
     max-width: 280px;
@@ -46,6 +46,7 @@ export const CardLarge = ({
       <p>Para1</p>
     </>
   ),
+  icon = null,
   links = [
     { title: "Button", type: "button" },
     { title: "Link", type: "link" },
@@ -54,6 +55,7 @@ export const CardLarge = ({
   light: boolean;
   title: React.ReactNode;
   text: React.ReactNode;
+  icon?: React.ReactNode;
   links: {
     title: string;
     type: "button" | "link";
@@ -67,19 +69,25 @@ export const CardLarge = ({
       className="d-flex flex-column"
       style={{
         background: light ? "var(--white)" : "var(--navy)",
-        color: light ? "var(--navy)" : "var(--light-blue)",
+        color: light ? "var(--navy)" : "#DCEDF5",
       }}
     >
       <div
         style={{
           alignSelf: "center",
-          background: "pink",
+          background: "var(--light-blue)",
+          color: "var(--navy)",
           borderRadius: "50%",
           width: 60,
           height: 60,
           margin: "40px auto 10px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
-      />
+      >
+        {icon}
+      </div>
       <h2>{title}</h2>
       {text}
       {links.map((link) =>

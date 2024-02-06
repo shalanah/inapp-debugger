@@ -37,7 +37,7 @@ const StatBox = styled.div`
 const UABox = styled.div`
   text-align: left;
   font-size: 0.8rem;
-  padding: 3px 20px 3px 0px;
+  padding: 3px 20px 3px 20px;
   display: flex;
   gap: 5px;
   line-height: 1.2;
@@ -78,8 +78,8 @@ const StandInCircle = ({
 }: React.HtmlHTMLAttributes<HTMLDivElement>) => (
   <div
     style={{
-      width: 30,
-      height: 30,
+      width: 34,
+      height: 34,
       background: "#000",
       borderRadius: "50%",
       ...style,
@@ -247,10 +247,10 @@ export const DeviceInfo = () => {
               className="d-flex flex-column"
               style={{
                 flex: 1,
-                gap: 10,
+                gap: 5,
               }}
             >
-              <h2 style={{ color: isInApp ? "#fff" : "#007D75" }}>
+              <h2 style={{ color: isInApp ? "#fff" : "#007d75" }}>
                 {isInApp ? "In-app detected" : "In-app not detected"}
               </h2>
               <p>Not 100% accurate.</p>
