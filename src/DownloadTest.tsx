@@ -1,3 +1,5 @@
+import { CardLarge } from "./CardLarge";
+
 const onClick = () => {
   const svg = new Blob(
     [
@@ -14,7 +16,7 @@ const onClick = () => {
   const url = URL.createObjectURL(svg);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "builtBlob.svg";
+  a.download = "test.svg";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -24,23 +26,30 @@ const onClick = () => {
 export const DownloadTest = () => {
   return (
     <>
-      <div>
-        <h2>Download</h2>
-        <p className="desc">
-          Downloads are not supported in most in-app browsers. Sometimes assets
-          open up as stand-alone files but no UI to download resulting graphic.
-        </p>
-        <ul>
-          <li>
-            <button onClick={onClick}>SVG blob download</button>
-          </li>
-          <li>
-            <a download href="blob.svg">
-              SVG static download
-            </a>
-          </li>
-        </ul>
-      </div>
+      <CardLarge
+        light
+        title="Download"
+        text={
+          <p>
+            Downloads are not supported in most in-app browsers. Static assets
+            may open as standalone files in the browser. Most on-the-fly blob
+            downloads fail silently.
+          </p>
+        }
+        links={[
+          {
+            title: "SVG blob download",
+            type: "button",
+            onClick: onClick,
+          },
+          {
+            download: true,
+            title: "SVG static download",
+            type: "link",
+            href: "blob.svg",
+          },
+        ]}
+      />
     </>
   );
 };

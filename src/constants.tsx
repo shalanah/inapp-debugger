@@ -2,13 +2,12 @@ export const escapeLinks = {
   iOS: {
     intro: (
       <>
-        <p className="desc" style={{ marginBottom: ".4rem" }}>
-          No reliable default browser link exists to escape in-app iOS. Try some
-          of these specific browser links anyways. No Safari link exists except
-          for the kooky search link.
+        <p>
+          No link exists to escape in-app iOS reliably. Experiment with the
+          search and browser links below.
         </p>
-        <p className="desc">
-          If successful, you should be redirected to example.com
+        <p>
+          Link goes to <strong>example.com</strong>
         </p>
       </>
     ),
@@ -25,12 +24,12 @@ export const escapeLinks = {
   Android: {
     intro: (
       <>
-        <p className="desc" style={{ marginBottom: ".4rem" }}>
-          To escape an in-app browser on Android device, a default browser
-          intent link seems to always work.
+        <p>
+          To escape an in-app browser on Android device, use a default browser
+          intent link.
         </p>
-        <p className="desc">
-          If successful, you should be redirected to example.com
+        <p>
+          Link goes to <strong>example.com</strong>
         </p>
       </>
     ),

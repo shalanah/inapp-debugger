@@ -3,6 +3,7 @@ import InApp from "detect-inapp"; // using "detect-inapp": "github:shalanah/dete
 import { toSentenceCase } from "./utils";
 import styled from "styled-components";
 import { ModalInapp } from "./ModalInapp";
+import { InfoCircledIcon, CopyIcon } from "@radix-ui/react-icons";
 
 const Section = styled.section`
   display: flex;
@@ -183,35 +184,56 @@ export const DeviceInfo = () => {
           <StatBox>
             <p>{osVersionText}</p>
             <h2>{osText}</h2>
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <StandInCircle />
+            <div className="d-flex" style={{ justifyContent: "flex-end" }}>
+              <StandInCircle
+                className="d-flex"
+                style={{
+                  flexShrink: 0,
+                  justifyContent: "flex-end",
+                  color: "var(--light-blue)",
+                  background: "var(--navy)",
+                }}
+              >
+                <CopyIcon width={17} height={17} style={{ margin: "auto" }} />
+              </StandInCircle>
             </div>
           </StatBox>
           <StatBox>
             <p>{browserVersionText}</p>
             <h2>{browserNameEngineText}</h2>
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <StandInCircle />
+            <div className="d-flex" style={{ justifyContent: "flex-end" }}>
+              <StandInCircle
+                className="d-flex"
+                style={{
+                  flexShrink: 0,
+                  justifyContent: "flex-end",
+                  color: "var(--light-blue)",
+                  background: "var(--navy)",
+                }}
+              >
+                <CopyIcon width={17} height={17} style={{ margin: "auto" }} />
+              </StandInCircle>
             </div>
           </StatBox>
         </Section>
         <Section>
           <UABox>
-            <div style={{ display: "flex", gap: 5, flexDirection: "column" }}>
+            <div className="d-flex flex-column" style={{ gap: 5 }}>
               <p>
                 <strong>User Agent</strong>
               </p>
               <p style={{ wordBreak: "break-word" }}>{ua}</p>
             </div>
-            <div
+            <StandInCircle
+              className="d-flex"
               style={{
-                display: "flex",
+                flexShrink: 0,
                 justifyContent: "flex-end",
-                alignItems: "center",
+                background: "#fff",
               }}
             >
-              <StandInCircle />
-            </div>
+              <CopyIcon width={17} height={17} style={{ margin: "auto" }} />
+            </StandInCircle>
           </UABox>
         </Section>
         <Section>
@@ -222,10 +244,9 @@ export const DeviceInfo = () => {
             }}
           >
             <div
+              className="d-flex flex-column"
               style={{
                 flex: 1,
-                display: "flex",
-                flexDirection: "column",
                 gap: 10,
               }}
             >
@@ -237,13 +258,24 @@ export const DeviceInfo = () => {
             <ModalInapp
               button={
                 <button
+                  className="d-flex"
                   style={{
-                    display: "flex",
                     justifyContent: "flex-end",
-                    alignItems: "center",
                   }}
                 >
-                  <StandInCircle />
+                  <StandInCircle
+                    className="d-flex"
+                    style={{
+                      color: isInApp ? "#B92158" : "#E9FFF6",
+                      background: isInApp ? "#fff" : "#449C82",
+                    }}
+                  >
+                    <InfoCircledIcon
+                      style={{ margin: "auto" }}
+                      width={20}
+                      height={20}
+                    />
+                  </StandInCircle>
                 </button>
               }
             >
