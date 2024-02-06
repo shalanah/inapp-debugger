@@ -5,11 +5,11 @@ export const escapeLinks = {
     intro: (
       <>
         <p>
-          No link exists to escape in‑app iOS reliably. Experiment with the
-          search and browser links below.
+          No reliable link exists to escape in‑app iOS browsers. Experiment with
+          the search and browser links below.
         </p>
         <p>
-          Link goes to <strong>example.com</strong>
+          Links go to <strong>example.com</strong>
         </p>
       </>
     ),
@@ -39,7 +39,7 @@ export const escapeLinks = {
     intro: (
       <>
         <p>
-          To reliably exit in‑app browser on Android devices, use the default
+          To reliably exit in‑app browsers on Android devices, use the default
           browser intent link.
         </p>
         <p>

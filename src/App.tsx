@@ -1,16 +1,22 @@
-import { DeviceInfo } from "./DeviceInfo";
-import { DownloadTest } from "./DownloadTest";
-import { GlobalStyle } from "./GlobalStyles";
-import { InappEscapeLinks } from "./InappEscapeLinks";
-import "./style.css";
+import { SectionDeviceInfo } from "./SectionDeviceInfo";
+import { SectionDownload } from "./SectionDownload";
+import { GlobalStyle } from "./base/GlobalStyles";
+import { SectionInappEscape } from "./SectionInappEscape";
+import styled from "styled-components";
+
+const Div = styled.div`
+  overflow: auto;
+  max-width: 400px;
+  margin: 0 auto;
+`;
 
 export const App = () => {
   return (
-    <section>
+    <Div>
       <GlobalStyle />
-      <DeviceInfo />
-      <DownloadTest />
-      <InappEscapeLinks />
-    </section>
+      <SectionDeviceInfo />
+      <SectionDownload />
+      <SectionInappEscape />
+    </Div>
   );
 };

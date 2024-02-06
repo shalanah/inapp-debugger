@@ -1,4 +1,4 @@
-import { CardLarge } from "./CardLarge";
+import { Card } from "./base/Card";
 import { DownloadIcon } from "@radix-ui/react-icons";
 
 const onClick = () => {
@@ -24,10 +24,10 @@ const onClick = () => {
   URL.revokeObjectURL(url);
 };
 
-export const DownloadTest = () => {
+export const SectionDownload = () => {
   return (
     <>
-      <CardLarge
+      <Card
         light
         title="Download Tests"
         icon={<DownloadIcon width={30} height={30} />}
@@ -48,7 +48,7 @@ export const DownloadTest = () => {
             download: true,
             title: "SVG static download",
             type: "link",
-            href: "blob.svg",
+            href: "static.svg",
           },
         ]}
       />

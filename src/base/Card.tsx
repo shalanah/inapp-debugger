@@ -39,7 +39,7 @@ const Div = styled.div`
   }
 `;
 
-export const CardLarge = ({
+export const Card = ({
   light = false,
   title = "Title",
   text = (
@@ -76,7 +76,7 @@ export const CardLarge = ({
       <div
         style={{
           alignSelf: "center",
-          background: "var(--light-blue)",
+          background: "#EBF4FF",
           color: "var(--navy)",
           borderRadius: "50%",
           width: 60,

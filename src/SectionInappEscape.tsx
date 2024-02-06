@@ -1,9 +1,9 @@
 import Bowser from "bowser";
 import { escapeLinks, EscapeLinksVendor } from "./constants";
 import { toSentenceCase } from "./utils";
-import { CardLarge } from "./CardLarge";
+import { Card } from "./base/Card";
 
-export const InappEscapeLinks = () => {
+export const SectionInappEscape = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
   const platform = browser.getPlatform() || "";
   const vendor = toSentenceCase(platform.vendor || "");
@@ -14,7 +14,7 @@ export const InappEscapeLinks = () => {
       {order.map((os, i) => {
         const { links, intro, icon } = escapeLinks[os];
         return (
-          <CardLarge
+          <Card
             key={os}
             icon={icon}
             light={i % 2 === 1}

@@ -1,8 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
-import "./ModalInapp.css";
+import "./Modal.css";
 
-export const ModalInapp = ({
+export const Modal = ({
   button,
   children,
 }: {
