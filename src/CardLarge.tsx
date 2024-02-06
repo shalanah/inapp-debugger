@@ -17,6 +17,7 @@ const Div = styled.div`
     font-size: 0.85rem;
     line-height: 1.3;
     margin: 0px auto 5px;
+    text-wrap: balance;
   }
   p:last-of-type {
     margin-bottom: 20px;

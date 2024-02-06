@@ -280,7 +280,7 @@ export const DeviceInfo = () => {
               }
             >
               <PackageNote>
-                Using a fork of the npm package `detect-inapp` while they have a
+                Using a fork of the npm package `detect‑inapp` while they have a
                 bug with Android Chrome. Package work-around details below:
                 <code>
                   "detect-inapp": "github:shalanah/detect-inapp#shalanah-build"
