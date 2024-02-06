@@ -5,8 +5,8 @@ export const escapeLinks = {
     intro: (
       <>
         <p>
-          No reliable link exists to escape in‑app iOS browsers. Experiment with
-          the search and browser links below.
+          No reliable way to escape in‑app iOS browsers. Experiment with the
+          search and browser links below.
         </p>
         <p>
           Links go to <strong>example.com</strong>

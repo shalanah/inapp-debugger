@@ -32,11 +32,13 @@ export const SectionDownload = () => {
         title="Download Tests"
         icon={<DownloadIcon width={30} height={30} />}
         text={
-          <p>
-            Downloads are not supported in most in‑app browsers. Static assets
-            may open as standalone files in the browser. Most on‑the‑fly blob
-            downloads fail silently.
-          </p>
+          <>
+            <p>In‑app browsers disable downloads by default.</p>
+            <p>
+              On‑the‑fly (blob) downloads often fail silently. Assets (static)
+              may open in a standalone browser window.
+            </p>
+          </>
         }
         links={[
           {
