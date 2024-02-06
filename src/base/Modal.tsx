@@ -2,7 +2,6 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import "./Modal.css";
 
-// A little change
 export const Modal = ({
   button,
   children,
