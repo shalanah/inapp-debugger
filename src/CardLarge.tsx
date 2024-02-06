@@ -31,7 +31,7 @@ const Div = styled.div`
     font-weight: bold;
     font-size: 1rem;
     border-radius: 16px;
-    max-width: 300px;
+    max-width: 280px;
     margin-left: auto;
     margin-right: auto;
   }

@@ -16,7 +16,13 @@ export const InappEscapeLinks = () => {
         return (
           <CardLarge
             light={i % 2 === 1}
-            title={os}
+            title={
+              <>
+                {os} In-App
+                <br />
+                Escape Links
+              </>
+            }
             text={intro}
             links={links.map((link) => ({
               title: link.title,
@@ -24,25 +30,6 @@ export const InappEscapeLinks = () => {
               href: link.url,
             }))}
           />
-        );
-        return (
-          <div key={os}>
-            <h2>
-              {os}
-              <br />
-              In-app Escape Links
-            </h2>
-            {intro}
-            <ul>
-              {links.map((link) => (
-                <li key={link.url}>
-                  <a href={link.url} target="_blank">
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         );
       })}
     </>
