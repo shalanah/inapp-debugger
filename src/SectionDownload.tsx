@@ -28,7 +28,7 @@ export const SectionDownload = () => {
   return (
     <>
       <Card
-        light
+        light={false}
         title="Download Tests"
         icon={<DownloadIcon width={30} height={30} />}
         text={

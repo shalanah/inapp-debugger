@@ -17,7 +17,7 @@ export const SectionInappEscape = () => {
           <Card
             key={os}
             icon={icon}
-            light={i % 2 === 1}
+            light={i % 2 === 0}
             title={
               <>
                 {os} In-App
