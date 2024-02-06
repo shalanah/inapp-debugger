@@ -24,10 +24,10 @@ const Div = styled.div`
   }
   button,
   a {
-    width: 100%;
+    width: 270px;
     background: red;
     margin-top: 6px;
-    padding: 13px;
+    padding: 14px;
     background: #5c60f8;
     color: var(--white);
     /* font-weight: bold; */

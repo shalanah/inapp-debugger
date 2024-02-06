@@ -205,6 +205,64 @@ export const SectionDeviceInfo = () => {
         </Box>
       </Section>
       <Section>
+        <StatBox>
+          <p style={{ marginBottom: ".65rem" }}>{osText}</p>
+          <div
+            className="d-flex flex-row"
+            style={{ justifyContent: "space-between", gap: 5 }}
+          >
+            <div>
+              <h2 style={{ marginBottom: "2rem" }}>{browserText}</h2>
+              <p style={{ wordBreak: "break-word" }}>{ua}</p>
+            </div>
+            <CopyToClipboard
+              text={deviceCopy.value}
+              onCopy={
+                deviceCopy.showCheck
+                  ? () => {} // disabled state
+                  : () =>
+                      setDeviceCopied((v) => ({
+                        ...v,
+                        copied: v.copied + 1,
+                        showCheck: true,
+                      }))
+              }
+            >
+              <div
+                className="d-flex"
+                style={{ justifyContent: "flex-end", alignItems: "flex-end" }}
+              >
+                <Circle
+                  as={"button"}
+                  style={{
+                    pointerEvents: deviceCopy.showCheck ? "none" : "auto",
+                    color: "var(--light-blue)",
+                    background: "var(--navy)",
+                  }}
+                >
+                  {deviceCopy.showCheck ? (
+                    <FadeInIcon
+                      key={`${deviceCopy.showCheck}-${deviceCopy.copied}`}
+                    >
+                      <CheckIcon width={20} height={20} />
+                    </FadeInIcon>
+                  ) : (
+                    <FadeInIcon
+                      key={`${deviceCopy.showCheck}-${deviceCopy.copied}`}
+                      style={
+                        deviceCopy.copied === 0 ? { animation: "none" } : {}
+                      }
+                    >
+                      <CopyIcon width={17} height={17} />
+                    </FadeInIcon>
+                  )}
+                </Circle>
+              </div>
+            </CopyToClipboard>
+          </div>
+        </StatBox>
+      </Section>
+      <Section>
         <InAppBox
           style={{
             background: isInApp ? "#B92158" : "#E9FFF6",
@@ -256,64 +314,6 @@ export const SectionDeviceInfo = () => {
             </PackageNote>
           </Modal>
         </InAppBox>
-      </Section>
-      <Section>
-        <StatBox>
-          <p style={{ marginBottom: "1.5rem" }}>{osText}</p>
-          <div
-            className="d-flex flex-row"
-            style={{ justifyContent: "space-between", gap: 5 }}
-          >
-            <div>
-              <h2 style={{ marginBottom: "1.5rem" }}>{browserText}</h2>
-              <p style={{ wordBreak: "break-word" }}>{ua}</p>
-            </div>
-            <CopyToClipboard
-              text={deviceCopy.value}
-              onCopy={
-                deviceCopy.showCheck
-                  ? () => {} // disabled state
-                  : () =>
-                      setDeviceCopied((v) => ({
-                        ...v,
-                        copied: v.copied + 1,
-                        showCheck: true,
-                      }))
-              }
-            >
-              <div
-                className="d-flex"
-                style={{ justifyContent: "flex-end", alignItems: "flex-end" }}
-              >
-                <Circle
-                  as={"button"}
-                  style={{
-                    pointerEvents: deviceCopy.showCheck ? "none" : "auto",
-                    color: "var(--light-blue)",
-                    background: "var(--navy)",
-                  }}
-                >
-                  {deviceCopy.showCheck ? (
-                    <FadeInIcon
-                      key={`${deviceCopy.showCheck}-${deviceCopy.copied}`}
-                    >
-                      <CheckIcon width={20} height={20} />
-                    </FadeInIcon>
-                  ) : (
-                    <FadeInIcon
-                      key={`${deviceCopy.showCheck}-${deviceCopy.copied}`}
-                      style={
-                        deviceCopy.copied === 0 ? { animation: "none" } : {}
-                      }
-                    >
-                      <CopyIcon width={17} height={17} />
-                    </FadeInIcon>
-                  )}
-                </Circle>
-              </div>
-            </CopyToClipboard>
-          </div>
-        </StatBox>
       </Section>
     </>
   );
