@@ -4,8 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inapp Debugger</title>
-    <script type="module" crossorigin src="/inapp-debugger/assets/index-DEvsWCtX.js"></script>
-    <link rel="stylesheet" crossorigin href="/inapp-debugger/assets/index-zNoGqlO8.css">
+    <style>
+      :root {
+        --light-blue: #e7ebf3;
+        --med-blue: #586786;
+        --navy: #11104d;
+        --white: #fff;
+      }
+      html,
+      body {
+        background-color: var(--light-blue);
+      }
+      ul,
+      li {
+        all: unset;
+        display: block;
+      }
+      a,
+      button {
+        all: unset;
+        cursor: pointer !important;
+        transition: transform 0.2s ease;
+      }
+      a:active,
+      button:active {
+        transform: scale(0.9);
+        transform-origin: center;
+      }
+      @media (hover: hover) {
+        a:focus-visible,
+        button:focus-visible {
+          outline: 1.5px dashed var(--med-blue);
+          outline-offset: 3px;
+        }
+      }
+      body {
+        font-family: Arial;
+        color: var(--med-blue);
+        margin-bottom: 15px;
+      }
+      *,
+      *:before,
+      *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+    <script type="module" crossorigin src="/inapp-debugger/assets/index-fk-iRX3U.js"></script>
+    <link rel="stylesheet" crossorigin href="/inapp-debugger/assets/index-JYkctDve.css">
   </head>
   <body>
     <div id="app"></div>
