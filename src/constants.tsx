@@ -39,8 +39,8 @@ export const escapeLinks = {
     intro: (
       <>
         <p>
-          To escape an in-app browser on Android device, use a default browser
-          intent link.
+          To reliably exit in-app browser on Android devices, use the default
+          browser intent link.
         </p>
         <p>
           Link goes to <strong>example.com</strong>
