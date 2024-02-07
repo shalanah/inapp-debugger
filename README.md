@@ -1,4 +1,4 @@
-# In-app Debugger
+# Inapp Debugger
 
 Test common in-app issues
 
