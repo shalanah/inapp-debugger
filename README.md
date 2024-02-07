@@ -19,7 +19,7 @@ Based on testing as off Feb 7, 2024.
 
 ## Android
 
-Android intent link is crucial for escape in-app browser especially since they don't allow direct downloads. The escape link is a way to open the link in the default browser. Intent escape link for Android: `"intent:https://example.com#Intent;end"`
+Android intent link is crucial to escape in-app browser especially when they don't allow direct downloads. The escape link is a way to open the link in the default browser. Intent escape link for Android: `"intent:https://example.com#Intent;end"`
 
 #### Table notes
 
