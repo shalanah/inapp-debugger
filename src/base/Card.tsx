@@ -39,6 +39,33 @@ const Div = styled.div`
   }
 `;
 
+const IconContainer = styled.div`
+  align-self: center;
+  background: #ebf4ff;
+  color: var(--navy);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 40px auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+type Props = {
+  light?: boolean;
+  title?: React.ReactNode;
+  text?: React.ReactNode;
+  icon?: React.ReactNode;
+  links?: {
+    title: string;
+    type: "button" | "link";
+    href?: string;
+    onClick?: () => void;
+    download?: boolean;
+  }[];
+};
+
 export const Card = ({
   light = false,
   title = "Title",
@@ -52,19 +79,7 @@ export const Card = ({
     { title: "Button", type: "button" },
     { title: "Link", type: "link" },
   ],
-}: {
-  light: boolean;
-  title: React.ReactNode;
-  text: React.ReactNode;
-  icon?: React.ReactNode;
-  links: {
-    title: string;
-    type: "button" | "link";
-    href?: string;
-    onClick?: () => void;
-    download?: boolean;
-  }[];
-}) => {
+}: Props) => {
   return (
     <Div
       className="d-flex flex-column"
@@ -73,22 +88,7 @@ export const Card = ({
         color: light ? "var(--navy)" : "#DCEDF5",
       }}
     >
-      <div
-        style={{
-          alignSelf: "center",
-          background: "#EBF4FF",
-          color: "var(--navy)",
-          borderRadius: "50%",
-          width: 60,
-          height: 60,
-          margin: "40px auto 10px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {icon}
-      </div>
+      <IconContainer>{icon}</IconContainer>
       <h2>{title}</h2>
       {text}
       {links.map((link) =>

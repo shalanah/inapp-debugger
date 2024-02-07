@@ -1,5 +1,4 @@
 // Icons from https://icons8.com/
-
 export const escapeLinks = {
   iOS: {
     intro: (

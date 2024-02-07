@@ -1,7 +1,7 @@
-import { SectionDeviceInfo } from "./SectionDeviceInfo";
-import { SectionDownload } from "./SectionDownload";
+import { DeviceInfo } from "./sections/DeviceInfo";
+import { Download } from "./sections/Download";
 import { GlobalStyle } from "./base/GlobalStyles";
-import { SectionInappEscape } from "./SectionInappEscape";
+import { InappEscape } from "./sections/InappEscape";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -14,9 +14,9 @@ export const App = () => {
   return (
     <Div>
       <GlobalStyle />
-      <SectionDeviceInfo />
-      <SectionDownload />
-      <SectionInappEscape />
+      <DeviceInfo />
+      <Download />
+      <InappEscape />
     </Div>
   );
 };

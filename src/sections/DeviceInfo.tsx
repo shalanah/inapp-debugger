@@ -1,8 +1,8 @@
 import Bowser from "bowser";
 import InApp from "detect-inapp"; // using "detect-inapp": "github:shalanah/detect-inapp#shalanah-build", for now while Android Chrome but in regular detect-inapp package
-import { toSentenceCase } from "./utils";
+import { toSentenceCase } from "../utils";
 import styled, { keyframes } from "styled-components";
-import { Modal } from "./base/Modal";
+import { Modal } from "../base/Modal";
 import {
   InfoCircledIcon,
   CopyIcon,
@@ -21,6 +21,15 @@ const fadeUp = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
+`;
+
+const FadeInIcon = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  animation: ${fadeUp} 0.3s ease;
 `;
 
 const Section = styled.section`
@@ -52,37 +61,20 @@ const Box = styled.div`
   }
 `;
 
-const FadeInIcon = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  animation: ${fadeUp} 0.3s ease;
-`;
-
 const StatBox = styled(Box)`
   background: var(--white);
   color: var(--navy);
 `;
 
-const InAppBox = styled.div`
-  /* position: -webkit-sticky
-  position: sticky;
-  top: 0px; */
-  flex: 1;
-  display: flex;
-  text-align: left;
+const InAppBox = styled(Box)`
+  flex-direction: row;
   padding: 20px;
-  border-radius: var(--border-radius);
-  color: var(--white);
   h2 {
-    font-size: 1.35rem;
     font-weight: bold;
-    line-height: 1.2;
+    margin-bottom: 0;
   }
   p {
-    font-size: 0.8rem;
+    margin-bottom: 0;
   }
 `;
 
@@ -110,7 +102,7 @@ const Circle = styled.div`
   flex-shrink: 0;
 `;
 
-export const SectionDeviceInfo = () => {
+export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
   const platform = browser.getPlatform() || "";
   const vendor = toSentenceCase(platform.vendor || "");
@@ -165,10 +157,11 @@ export const SectionDeviceInfo = () => {
     { name: "Engine", value: engine || "N/A" },
   ];
 
+  const copyText =
+    `User Agent:\n${ua}\n\n` +
+    copyData.map((d) => `${d.name}: ${d.value}`).join("\n");
+
   const [deviceCopy, setDeviceCopied] = useState({
-    value:
-      `User Agent:\n${ua}\n\n` +
-      copyData.map((d) => `${d.name}: ${d.value}`).join("\n"),
     copied: 0,
     showCheck: false,
   });
@@ -183,13 +176,7 @@ export const SectionDeviceInfo = () => {
   return (
     <>
       <Section style={{ marginBottom: 0 }}>
-        <Box
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+        <Box className="flex-row justify-content-between align-items-center">
           <h2 style={{ margin: 0 }}>Inapp Debugger</h2>
           <Circle
             as={"a"}
@@ -207,16 +194,13 @@ export const SectionDeviceInfo = () => {
       <Section>
         <StatBox>
           <p style={{ marginBottom: ".65rem" }}>{osText}</p>
-          <div
-            className="d-flex flex-row"
-            style={{ justifyContent: "space-between", gap: 5 }}
-          >
+          <div className="d-flex flex-row justify-content-between g-5">
             <div>
               <h2 style={{ marginBottom: "2rem" }}>{browserText}</h2>
               <p style={{ wordBreak: "break-word" }}>{ua}</p>
             </div>
             <CopyToClipboard
-              text={deviceCopy.value}
+              text={copyText}
               onCopy={
                 deviceCopy.showCheck
                   ? () => {} // disabled state
@@ -228,10 +212,7 @@ export const SectionDeviceInfo = () => {
                       }))
               }
             >
-              <div
-                className="d-flex"
-                style={{ justifyContent: "flex-end", alignItems: "flex-end" }}
-              >
+              <div className="d-flex justify-content-end align-items-end">
                 <Circle
                   as={"button"}
                   style={{
@@ -269,13 +250,7 @@ export const SectionDeviceInfo = () => {
             color: isInApp ? "#fff" : "#449C82",
           }}
         >
-          <div
-            className="d-flex flex-column"
-            style={{
-              flex: 1,
-              gap: 5,
-            }}
-          >
+          <div className="d-flex flex-column g-5 flex-fill">
             <h2 style={{ color: isInApp ? "#fff" : "#007d75" }}>
               {isInApp ? "In-app detected" : "In-app not detected"}
             </h2>
@@ -283,12 +258,7 @@ export const SectionDeviceInfo = () => {
           </div>
           <Modal
             button={
-              <div
-                className="d-flex"
-                style={{
-                  justifyContent: "flex-end",
-                }}
-              >
+              <div className="d-flex justify-content-end">
                 <Circle
                   as={"button"}
                   style={{
@@ -296,11 +266,7 @@ export const SectionDeviceInfo = () => {
                     background: isInApp ? "#fff" : "#449C82",
                   }}
                 >
-                  <InfoCircledIcon
-                    style={{ margin: "auto" }}
-                    width={20}
-                    height={20}
-                  />
+                  <InfoCircledIcon className="m-auto" width={20} height={20} />
                 </Circle>
               </div>
             }

@@ -27,4 +27,43 @@ export const GlobalStyle = createGlobalStyle`
     .flex-column {
       flex-direction: column;
     }
+    .justify-content-start {
+      justify-content: flex-start;
+    }
+    .justify-content-end {
+      justify-content: flex-end;
+    }
+    .justify-content-center {
+      justify-content: center;
+    }
+    .justify-content-between {
+      justify-content: space-between;
+    }
+    .justify-content-around {
+      justify-content: space-around;
+    }
+    .align-items-start {
+      align-items: flex-start;
+    }
+    .align-items-end {
+      align-items: flex-end;
+    }
+    .align-items-center {
+      align-items: center;
+    }
+    .align-items-baseline {
+      align-items: baseline;
+    }
+    .align-items-stretch {
+      align-items: stretch;
+    }
+    .g-5 {
+      gap: 5px;
+    }
+    .flex-fill {
+      flex: 1 1 auto;
+    }
+    .m-auto {
+      margin: auto;
+    }
 `;
