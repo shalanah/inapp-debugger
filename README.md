@@ -21,24 +21,24 @@ Based on my own testing as off Feb 7, 2024.
 
 Intent Link Escape for Android: `"intent:https://example.com#Intent;end"`
 
-The issue with opening assets in default browser but not allowing direct download provides and unexpected behavior that a user doesn't know how to work around.
+❌ Opens file in default browser - The issue with opening assets in default browser but not allowing direct download provides and unexpected behavior that a user doesn't know how to work around.
 
 ❓Unknown - Says running chrome - but the UI is pared down or altered from full Chrome browser
 
-| App               | Uses default browser | Detect In-app | On-the-fly download | Static asset download                          | Intent link escape              |
-| ----------------- | -------------------- | ------------- | ------------------- | ---------------------------------------------- | ------------------------------- |
-| TikTok            | ❌                   | ✅            | ❌ Silent           | ❌ Silent                                      | ✅                              |
-| Threads           | ❌                   | ✅            | ❌ Silent           | ❌ Opens file in default browser (no download) | ✅                              |
-| Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser (no download) | ✅                              |
-| Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser (no download) | ✅                              |
-| Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser (no download) | ✅                              |
-| SnapChat          | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
-| LinkedIn          | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
-| Twitter           | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
-| Gmail             | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
-| YouTube           | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
-| Google Search App | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
-| GroupMe           | ✅                   | ➖            | ✅                  | ✅                                             | NA                              |
+| App               | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape              |
+| ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ------------------------------- |
+| TikTok            | ❌                   | ✅            | ❌ Silent           | ❌ Silent                        | ✅                              |
+| Threads           | ❌                   | ✅            | ❌ Silent           | ❌ Opens file in default browser | ✅                              |
+| Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                              |
+| Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                              |
+| Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                              |
+| SnapChat          | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
+| LinkedIn          | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
+| Twitter           | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
+| Gmail             | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
+| YouTube           | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
+| Google Search App | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
+| GroupMe           | ✅                   | ➖            | ✅                  | ✅                               | NA                              |
 
 #### iOS
 
