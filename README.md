@@ -41,8 +41,6 @@ Test common in-app issues
 
 ### iOS
 
-iOS is the wild west of non-standard web behavior and poor user experience for browsers and in-app WebViews alike.
-
 There is no reliable way to exit in-app browsers, and that also provides good UX in comparison to Android's intent links. **And even when a user is prompted to select a browser to open a given link from an app, Safari is a shadow of itself and provides a uniquely bad downloading experience (from a native app like Gmail, or Safari via Twitter).** The user is shown the file details via text but one must click on "More..." then scroll below the fold to "Save to image" to download the file. This bizarre behavior is captured on the first row of the table below.
 
 - ❌ Silent - Fails to download file without any indication to user.
