@@ -18,7 +18,7 @@ Test common in-app issues
 ## Android
 
 - ❌ Opens file in default browser - Unexpected behavior. Confuses user on how to save file.
-- ❓Unknown - UI is pared down or altered from full Chrome browser (ie no tabs).
+- ❓Unknown - UI is pared down or altered from full Chrome browser (ie: no tabs), but downloads seem to work.
 - Intent link escape (opens link in default browser instead of in-app) - `"intent:https://example.com#Intent;end"`
 - Last updated: Feb 7, 2024
 
