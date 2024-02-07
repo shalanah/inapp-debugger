@@ -17,7 +17,7 @@ const onClick = () => {
   const url = URL.createObjectURL(svg);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "test.svg";
+  a.download = "blob.svg";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
