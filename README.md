@@ -15,7 +15,7 @@ Test out common in-app issues without having to deploy your site.
 
 # Mobile App Tests
 
-Tests as off Feb 7, 2024 using InAppDebugger.com.
+Tests as of Feb 7, 2024 using InAppDebugger.com.
 
 ## Android
 
