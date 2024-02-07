@@ -38,7 +38,7 @@ Intent Link Escape for Android: `"intent:https://example.com#Intent;end"`
 | Gmail             | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
 | YouTube           | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
 | Google Search App | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
-| GroupMe           | ✅                   | ➖            | ✅                  | ✅                               | NA                              |
+| GroupMe           | ✅                   | NA            | ✅                  | ✅                               | NA                              |
 
 #### iOS
 
