@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Div = styled.div`
   padding: 15px 15px 70px;
   margin: 15px 15px 20px;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   background: var(--white);
   text-align: center;
   h2 {

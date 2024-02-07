@@ -32,7 +32,7 @@ const Section = styled.section`
 const Box = styled.div`
   width: 100%;
   padding: 25px 20px 20px;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
   h2 {
@@ -74,7 +74,7 @@ const InAppBox = styled.div`
   display: flex;
   text-align: left;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   color: var(--white);
   h2 {
     font-size: 1.35rem;
