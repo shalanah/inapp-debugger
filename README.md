@@ -24,7 +24,7 @@ Android intent link is crucial to escape in-app browsers especially when they do
 #### Table notes
 
 - ❌ Opens file in default browser - How should the user proceed to download now? Unexpected behavior.
-- ❓Unknown - Says running Chrome. the UI is pared down or altered from full Chrome browser (ie no tabs).
+- ❓Unknown - Says running Chrome. UI is pared down or altered from full Chrome browser (ie no tabs).
 - Intent escape link for Android - `"intent:https://example.com#Intent;end"`
 
 | App (Android)     | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape     |
