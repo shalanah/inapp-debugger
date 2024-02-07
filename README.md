@@ -34,7 +34,7 @@ The issue with opening assets in default browser but not allowing direct downloa
 | Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser (no download) | ✅                              |
 | SnapChat          | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
 | LinkedIn          | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
-| GroupMe           | ✅                   | ➖            | ✅                  | ✅                                             | ➖ Might be in default already? |
+| GroupMe           | ✅                   | ➖            | ✅                  | ✅                                             | NA                              |
 | Twitter           | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
 | Gmail             | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
 | YouTube           | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
