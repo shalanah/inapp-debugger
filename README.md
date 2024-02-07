@@ -43,7 +43,7 @@ Test common in-app issues
 
 iOS is the wild west of non-standard web behavior and poor user experience for browsers and in-app WebViews alike.
 
-**Even when a user is prompted to select a browser to open for a given link, Safari is a shadow of itself and provides a uniquely bad downloading experience (from a native app like Gmail, or is using Safari via Twitter).** The user is shown the file details via text but one must click on "More..." then scroll below the fold to "Save to image" to download the file. This behavior is captured on the first row of the table below.
+**Even when a user is prompted to select a browser to open for a given link from an app, Safari is a shadow of itself and provides a uniquely bad downloading experience (from a native app like Gmail, or is using Safari via Twitter).** The user is shown the file details via text but one must click on "More..." then scroll below the fold to "Save to image" to download the file. This behavior is captured on the first row of the table below.
 
 - ❌ Silent - Fails to download file without any indication to user.
 - ❌ Shows file, but have to... - Uniquely bad subset of Safari browser given to apps for opening links
