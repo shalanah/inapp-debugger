@@ -48,6 +48,7 @@ There is no reliable way to exit in-app browsers on iOS. **And even when a user 
 - ❌ Opens file in in-app browser - Provides no easy way to download
 - Safari search link - `x-web-search://?site:example.com`
 - Browser app link - In example Chrome: `googlechromes://example.com`
+- Last updated: Feb 7, 2024
 
 | App (iPhone)                                   | Uses default browser | Detect In-app                                   | On-the-fly download                                                    | Static asset download                                                  | Safari search link         | Browser app link           |
 | ---------------------------------------------- | -------------------- | ----------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------- | -------------------------- |
