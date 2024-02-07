@@ -21,7 +21,7 @@ Test common in-app issues
 - ❌ With note - Fails but provides some feedback to user.
 - ❌ Opens file in default browser - Unexpected behavior. Continues to confuses user on how to download file.
 - ❓Unknown - UI is pared down or altered from full Chrome browser (ie: no tabs), but downloads seem to work.
-- Intent link escape (opens link in default browser instead of in-app) - `"intent:https://example.com#Intent;end"`
+- Intent link escape (opens link in default browser instead of in-app) - `intent:https://example.com#Intent;end`
 - Last updated: Feb 7, 2024
 
 | App (Android)     | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape     |
@@ -41,11 +41,28 @@ Test common in-app issues
 
 ### iOS
 
-| App | Links in WebView | On-the-fly download | Static asset download | Escape links |
-| --- | ---------------- | ------------------- | --------------------- | ------------ |
-|     |                  |                     |                       |              |
-|     |                  |                     |                       |              |
-|     |                  |                     |                       |              |
+iOS is the a wild west of inconsistent web behavior and poor user experience for browsers and in-app WebViews.
+
+**Even when a user is prompted to select a browser to open a given link from a native app like Gmail, or is using Safari via Twitter, Safari is a shadow of itself and provides a uniquely bad downloading experience.** The user is shown the file details via text but one must click on "More..." then scroll below the fold to "Save to image" to download the file. This behavior is captured on the first row of the table below.
+
+- ❌ Silent - Fails to download file without any indication to user.
+- ❌ Shows file, but have to... - Uniquely bad subset of Safari browser given to apps for opening links
+- ❌ Opens file in in-app browser - Shows file with in-app browser, provides no easy way to download
+
+| App (iPhone)                                  | Uses default browser | Detect In-app                               | On-the-fly download                                                    | Static asset download                                                  | Safari search link | Browser app link |
+| --------------------------------------------- | -------------------- | ------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------ | ---------------- |
+| Selecting "Safari" to open a link from an app | NA                   | ✅                                          | ❌ Shows file, but have to click "More..." then scroll to "Save image" | ❌ Shows file, but have to click "More..." then scroll to "Save image" | ❌                 | ✅               |
+| TikTok                                        | ❌                   | ✅                                          | ❌ Opens file in in-app browser                                        | ❌ Opens file in in-app browser                                        | ✅                 | ❌               |
+| Threads                                       |                      |                                             |                                                                        |                                                                        |                    |                  |
+| Facebook                                      | ❌                   | ✅                                          | ❌ Opens file in in-app browser                                        | ❌ Opens file in in-app browser                                        | ✅                 | ✅               |
+| Instagram                                     |                      |                                             |                                                                        |                                                                        |                    |                  |
+| Messenger                                     | ❌                   | ✅                                          | ❌ Silent                                                              | ❌ Opens file in in-app browser                                        | ✅                 | ✅               |
+| SnapChat                                      | ❌                   | ❌ not yet, but UA is searchable (Snapchat) | ❌ Silent                                                              | ❌ Opens file in in-app browser                                        | ✅                 | ✅               |
+| LinkedIn                                      | ❌                   | ✅                                          | ❌ Silent                                                              | ❌ Opens file in in-app browser                                        | ✅                 | ✅               |
+| Twitter                                       | ❌                   | ❌ ua not searchable                        | ❌ Shows file, but have to click "More..." then scroll to "Save image" | ❌ Shows file, but have to click "More..." then scroll to "Save image" | ❌                 | ✅               |
+| Gmail                                         | ✅                   | NA                                          | As long as you don't select Safari to open you can download as usual.  | As long as you don't select Safari to open you can download as usual.  | NA                 | NA               |
+| YouTube                                       | ✅                   | NA                                          | As long as you don't select Safari to open you can download as usual.  | As long as you don't select Safari to open you can download as usual.  | NA                 | NA               |
+| Google Search App                             | ❌                   | ❌ not yet, but UA is searchable (GSA)      | ✅                                                                     | ✅                                                                     | ❌                 | ❌               |
 
 ## Running
 
