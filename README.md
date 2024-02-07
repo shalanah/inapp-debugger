@@ -47,7 +47,7 @@ iOS is the a wild west of inconsistent web behavior and poor user experience for
 
 - ❌ Silent - Fails to download file without any indication to user.
 - ❌ Shows file, but have to... - Uniquely bad subset of Safari browser given to apps for opening links
-- ❌ Opens file in in-app browser - Shows file with in-app browser, provides no easy way to download
+- ❌ Opens file in in-app browser - Provides no easy way to download
 
 | App (iPhone)                                  | Uses default browser | Detect In-app                               | On-the-fly download                                                    | Static asset download                                                  | Safari search link | Browser app link |
 | --------------------------------------------- | -------------------- | ------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------ | ---------------- |
