@@ -17,6 +17,8 @@ Test common in-app issues
 
 ## Android
 
+While many social media sites fail to download assets properly, on Android machines you can use the intent link reliably to escape.
+
 - ❌ Silent - Fails to download file without any indication to user.
 - ❌ With note - Fails but provides some feedback to user.
 - ❌ Opens file in default browser - Unexpected behavior. Continues to confuses user on how to download file.
