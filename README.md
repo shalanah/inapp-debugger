@@ -23,7 +23,7 @@ Android intent link is crucial to escape in-app browser especially when they don
 
 #### Table notes
 
-- ❌ Opens file in default browser - The issue with opening assets in default browser but not allowing direct download provides and unexpected behavior that a user doesn't know how to work around.
+- ❌ Opens file in default browser - The issue with opening assets in default browser and not allowing direct downloads, is it provides an unexpected behavior that a user doesn't know how to work around. What do they do now to download the asset?
 - ❓Unknown - Says running chrome - but the UI is pared down or altered from full Chrome browser
 - Intent escape link for Android - `"intent:https://example.com#Intent;end"`
 
