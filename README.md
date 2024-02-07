@@ -24,20 +24,20 @@ Test common in-app issues
 - Intent link escape (opens link in default browser instead of in-app) - `intent:https://example.com#Intent;end`
 - Last updated: Feb 7, 2024
 
-| App (Android)     | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape     |
-| ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ---------------------- |
-| TikTok            | ❌                   | ✅            | ❌ Silent           | ❌ Silent                        | ✅                     |
-| Threads           | ❌                   | ✅            | ❌ Silent           | ❌ Opens file in default browser | ✅                     |
-| Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                     |
-| Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                     |
-| Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                     |
-| SnapChat          | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
-| LinkedIn          | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
-| Twitter           | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
-| Gmail             | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
-| YouTube           | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
-| Google Search App | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
-| GroupMe           | ✅                   | NA            | ✅                  | ✅                               | NA                     |
+| App (Android)     | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape |
+| ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ------------------ |
+| TikTok            | ❌                   | ✅            | ❌ Silent           | ❌ Silent                        | ✅                 |
+| Threads           | ❌                   | ✅            | ❌ Silent           | ❌ Opens file in default browser | ✅                 |
+| Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
+| Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
+| Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
+| SnapChat          | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
+| LinkedIn          | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
+| Twitter           | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
+| Gmail             | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
+| YouTube           | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
+| Google Search App | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
+| GroupMe           | ✅                   | NA            | ✅                  | ✅                               | NA                 |
 
 ### iOS
 
