@@ -28,17 +28,17 @@ The issue with opening assets in default browser but not allowing direct downloa
 | App               | Uses default browser | Detect In-app | On-the-fly download | Static asset download                          | Intent link escape              |
 | ----------------- | -------------------- | ------------- | ------------------- | ---------------------------------------------- | ------------------------------- |
 | TikTok            | ❌                   | ✅            | ❌ Silent           | ❌ Silent                                      | ✅                              |
+| Threads           | ❌                   | ✅            | ❌ Silent           | ❌ Opens file in default browser (no download) | ✅                              |
 | Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser (no download) | ✅                              |
 | Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser (no download) | ✅                              |
-| Threads           | ❌                   | ✅            | ❌ Silent           | ❌ Opens file in default browser (no download) | ✅                              |
 | Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser (no download) | ✅                              |
 | SnapChat          | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
 | LinkedIn          | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
-| GroupMe           | ✅                   | ➖            | ✅                  | ✅                                             | NA                              |
 | Twitter           | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
 | Gmail             | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
 | YouTube           | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
 | Google Search App | ❓Unknown            | ❌            | ✅                  | ✅                                             | ➖ Might be in default already? |
+| GroupMe           | ✅                   | ➖            | ✅                  | ✅                                             | NA                              |
 
 #### iOS
 
