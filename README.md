@@ -1,6 +1,6 @@
 # In-app Debugger
 
-Test out common in-app issues without having to deploy your site.
+Test common in-app issues
 
 [InAppDebugger.com](https://inappdebugger.com)
 
@@ -15,17 +15,14 @@ Test out common in-app issues without having to deploy your site.
 
 # Mobile App Tests
 
-Tests as of Feb 7, 2024 using InAppDebugger.com.
-
 ## Android
-
-Android intent link is crucial to escape in-app browsers especially when they don't allow direct downloads. The escape link is a way to open the link in the default browser. Intent escape link for Android: `"intent:https://example.com#Intent;end"`
 
 #### Table notes
 
 - ❌ Opens file in default browser - How should the user proceed to download now? Unexpected behavior.
 - ❓Unknown - Says running Chrome. UI is pared down or altered from full Chrome browser (ie no tabs).
-- Intent escape link for Android - `"intent:https://example.com#Intent;end"`
+- Intent link escape (opens link in default browser instead of in-app) - `"intent:https://example.com#Intent;end"`
+- Last updated: Feb 7, 2024
 
 | App (Android)     | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape     |
 | ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ---------------------- |
