@@ -25,20 +25,20 @@ Intent Link Escape for Android: `"intent:https://example.com#Intent;end"`
 
 ❓Unknown - Says running chrome - but the UI is pared down or altered from full Chrome browser
 
-| App               | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape              |
-| ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ------------------------------- |
-| TikTok            | ❌                   | ✅            | ❌ Silent           | ❌ Silent                        | ✅                              |
-| Threads           | ❌                   | ✅            | ❌ Silent           | ❌ Opens file in default browser | ✅                              |
-| Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                              |
-| Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                              |
-| Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                              |
-| SnapChat          | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
-| LinkedIn          | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
-| Twitter           | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
-| Gmail             | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
-| YouTube           | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
-| Google Search App | ❓Unknown            | ❌            | ✅                  | ✅                               | ➖ Might be in default already? |
-| GroupMe           | ✅                   | NA            | ✅                  | ✅                               | NA                              |
+| App               | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape     |
+| ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ---------------------- |
+| TikTok            | ❌                   | ✅            | ❌ Silent           | ❌ Silent                        | ✅                     |
+| Threads           | ❌                   | ✅            | ❌ Silent           | ❌ Opens file in default browser | ✅                     |
+| Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                     |
+| Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                     |
+| Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                     |
+| SnapChat          | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
+| LinkedIn          | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
+| Twitter           | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
+| Gmail             | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
+| YouTube           | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
+| Google Search App | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
+| GroupMe           | ✅                   | NA            | ✅                  | ✅                               | NA                     |
 
 #### iOS
 
