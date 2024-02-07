@@ -31,12 +31,12 @@ Test common in-app issues
 | Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
 | Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
 | Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
-| SnapChat          | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
-| LinkedIn          | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
-| Twitter           | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
-| Gmail             | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
-| YouTube           | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
-| Google Search App | ✅                   | ❌            | ✅                  | ✅                               | NA                 |
+| SnapChat          | ✅                   | NA            | ✅                  | ✅                               | NA                 |
+| LinkedIn          | ✅                   | NA            | ✅                  | ✅                               | NA                 |
+| Twitter           | ✅                   | NA            | ✅                  | ✅                               | NA                 |
+| Gmail             | ✅                   | NA            | ✅                  | ✅                               | NA                 |
+| YouTube           | ✅                   | NA            | ✅                  | ✅                               | NA                 |
+| Google Search App | ✅                   | NA            | ✅                  | ✅                               | NA                 |
 | GroupMe           | ✅                   | NA            | ✅                  | ✅                               | NA                 |
 
 ### iOS
