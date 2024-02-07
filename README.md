@@ -13,17 +13,19 @@ Test out common in-app issues without having to deploy your site.
 - ✅ Test in-app downloads (on-the-fly and static assets)
 - ✅ Test in-app escape links (Android + iOS)
 
-### Mobile App Tests
+# Mobile App Tests
 
-Based on my own testing as off Feb 7, 2024.
+Based on testing as off Feb 7, 2024.
 
-#### Android
+## Android
 
-Intent Link Escape for Android: `"intent:https://example.com#Intent;end"`
+Android intent link is crucial for escape in-app browser especially since they don't allow direct downloads. The escape link is a way to open the link in the default browser. Intent escape link for Android: `"intent:https://example.com#Intent;end"`
 
-❌ Opens file in default browser - The issue with opening assets in default browser but not allowing direct download provides and unexpected behavior that a user doesn't know how to work around.
+#### Table notes
 
-❓Unknown - Says running chrome - but the UI is pared down or altered from full Chrome browser
+- ❌ Opens file in default browser - The issue with opening assets in default browser but not allowing direct download provides and unexpected behavior that a user doesn't know how to work around.
+- ❓Unknown - Says running chrome - but the UI is pared down or altered from full Chrome browser
+- Intent escape link for Android - `"intent:https://example.com#Intent;end"`
 
 | App               | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape     |
 | ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ---------------------- |
@@ -40,7 +42,7 @@ Intent Link Escape for Android: `"intent:https://example.com#Intent;end"`
 | Google Search App | ❓Unknown            | ❌            | ✅                  | ✅                               | ❓ In default already? |
 | GroupMe           | ✅                   | NA            | ✅                  | ✅                               | NA                     |
 
-#### iOS
+### iOS
 
 | App | Links in WebView | On-the-fly download | Static asset download | Escape links |
 | --- | ---------------- | ------------------- | --------------------- | ------------ |
