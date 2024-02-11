@@ -1,5 +1,5 @@
 import Bowser from "bowser";
-import InApp from "detect-inapp"; // using "detect-inapp": "github:shalanah/detect-inapp#shalanah-build", for now while Android Chrome but in regular detect-inapp package
+import InAppSpy from "inapp-spy";
 import { toSentenceCase } from "../utils";
 import styled, { keyframes } from "styled-components";
 import { Modal } from "../base/Modal";
@@ -116,10 +116,7 @@ export const DeviceInfo = () => {
   const ua =
     //@ts-ignore
     window.navigator.userAgent || window.navigator.vendor || window.opera;
-  const inAppRes = new InApp(ua);
-  const isInApp = inAppRes.isInApp;
-
-  console.log(browser);
+  const { isInApp, appName } = InAppSpy();
 
   let osText = "Unknown device";
   if (osVersionName || osVersion || vendor || osName || device) {
@@ -251,10 +248,20 @@ export const DeviceInfo = () => {
           }}
         >
           <div className="d-flex flex-column g-5 flex-fill">
-            <h2 style={{ color: isInApp ? "#fff" : "#007d75" }}>
-              {isInApp ? "In-app detected" : "In-app not detected"}
+            <h2
+              style={{
+                color: isInApp ? "#fff" : "#007d75",
+              }}
+            >
+              {isInApp ? `In-app detected` : "In-app not detected"}
             </h2>
-            <p>Not 100% accurate.</p>
+            {appName ? (
+              <p>{appName} App</p>
+            ) : isInApp ? (
+              <p>That's a bummer.</p>
+            ) : (
+              <p>No news is good news</p>
+            )}
           </div>
           <Modal
             button={
@@ -272,11 +279,34 @@ export const DeviceInfo = () => {
             }
           >
             <PackageNote>
-              Using a fork of the npm package `detect‑inapp` while they have a
-              bug with Android Chrome. Package work-around details below:
-              <code>
-                "detect-inapp": "github:shalanah/detect-inapp#shalanah-build"
-              </code>
+              Using the{" "}
+              <a
+                href="https://www.npmjs.com/package/inapp-spy"
+                target="_blank"
+                style={{
+                  color: "#000",
+                  fontWeight: "bold",
+                  textDecoration: "underline",
+                  textUnderlineOffset: ".2em",
+                }}
+              >
+                `inapp-spy`
+              </a>{" "}
+              library to detect in-app. If incorrectly detecting create an issue
+              at{" "}
+              <a
+                style={{
+                  color: "#000",
+                  fontWeight: "bold",
+                  textDecoration: "underline",
+                  textUnderlineOffset: ".2em",
+                }}
+                href="https://github.com/shalanah/inapp-spy/issues"
+                target="_blank"
+              >
+                GitHub
+              </a>{" "}
+              if you find any inaccuracies.
             </PackageNote>
           </Modal>
         </InAppBox>
