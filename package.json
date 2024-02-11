@@ -12,7 +12,6 @@
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
-    "@types/detect-inapp": "^1.4.3",
     "@types/react-copy-to-clipboard": "^5.0.7",
     "gh-pages": "^6.1.1",
     "typescript": "^5.2.2",
@@ -25,7 +24,7 @@
     "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "^4.2.1",
     "bowser": "^2.11.0",
-    "detect-inapp": "github:shalanah/detect-inapp#shalanah-build",
+    "inapp-spy": "^2.0.1",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
