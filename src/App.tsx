@@ -11,6 +11,7 @@ const Div = styled.div`
 `;
 
 export const App = () => {
+  if (typeof window === "undefined") return null; // make sure latest + greatest browser info
   return (
     <Div>
       <GlobalStyle />
