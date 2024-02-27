@@ -173,7 +173,14 @@ export const DeviceInfo = () => {
   //   return () => clearTimeout(timer);
   // }, [deviceCopy.copied]);
 
-  console.log({ isInApp, appName, isSFSafariViewController, window });
+  console.log({
+    isInApp,
+    appName,
+    isSFSafariViewController,
+    window,
+    // @ts-ignore
+    me: window?.MicrodataExtractor,
+  });
 
   // Inapp section
   let inAppTitle = isInApp ? `In-app detected` : "In-app not detected";
