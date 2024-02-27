@@ -170,6 +170,7 @@ export const DeviceInfo = () => {
     return () => clearTimeout(timer);
   }, [deviceCopy.copied]);
 
+  // testing
   console.log({ isInApp, appName, isSFSafariViewController, window: !!window });
 
   // Inapp section
