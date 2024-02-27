@@ -116,7 +116,7 @@ export const DeviceInfo = () => {
   const ua =
     //@ts-ignore
     window.navigator.userAgent || window.navigator.vendor || window.opera;
-  const { isInApp, appName } = InAppSpy();
+  const { isInApp, appName, isSFSafariViewController } = InAppSpy();
 
   let osText = "Unknown device";
   if (osVersionName || osVersion || vendor || osName || device) {
@@ -169,6 +169,27 @@ export const DeviceInfo = () => {
     }, 2000);
     return () => clearTimeout(timer);
   }, [deviceCopy.copied]);
+
+  // Inapp section
+  let inAppTitle = isInApp ? `In-app detected` : "In-app not detected";
+  let color = isInApp ? "#fff" : "#007d75";
+  let bg = isInApp ? "#B92158" : "#E9FFF6";
+  let buttonBg = isInApp ? "#fff" : "#449C82";
+  let buttonColor = isInApp ? "#b92158" : "#fff";
+  let inAppSubtitle = appName
+    ? `${appName} App`
+    : isInApp
+    ? "That's a bummer."
+    : "No news is good news";
+  if (isSFSafariViewController) {
+    inAppTitle = "SFSafariViewController detected";
+    color = "#d14923";
+    bg = "#ffecdd";
+    buttonBg = color;
+    buttonColor = bg;
+    inAppSubtitle =
+      "This browser is a mix between full-fledge Safari and in-app. Its download UX is extremely poor. Detection is highly experimental. The hope is that Apple will improve the poor download UX so detection is not necessary.";
+  }
 
   return (
     <>
@@ -243,25 +264,13 @@ export const DeviceInfo = () => {
       <Section>
         <InAppBox
           style={{
-            background: isInApp ? "#B92158" : "#E9FFF6",
-            color: isInApp ? "#fff" : "#449C82",
+            background: bg,
+            color,
           }}
         >
           <div className="d-flex flex-column g-5 flex-fill">
-            <h2
-              style={{
-                color: isInApp ? "#fff" : "#007d75",
-              }}
-            >
-              {isInApp ? `In-app detected` : "In-app not detected"}
-            </h2>
-            {appName ? (
-              <p>{appName} App</p>
-            ) : isInApp ? (
-              <p>That's a bummer.</p>
-            ) : (
-              <p>No news is good news</p>
-            )}
+            <h2 style={{ color }}>{inAppTitle}</h2>
+            <p>{inAppSubtitle}</p>
           </div>
           <Modal
             button={
@@ -269,8 +278,8 @@ export const DeviceInfo = () => {
                 <Circle
                   as={"button"}
                   style={{
-                    color: isInApp ? "#B92158" : "#E9FFF6",
-                    background: isInApp ? "#fff" : "#449C82",
+                    color: buttonColor,
+                    background: buttonBg,
                   }}
                 >
                   <InfoCircledIcon className="m-auto" width={20} height={20} />
@@ -292,8 +301,10 @@ export const DeviceInfo = () => {
               >
                 `inapp-spy`
               </a>{" "}
-              library to detect in-app. If incorrectly detecting create an issue
-              at{" "}
+              library to detect in-app and SFSafariViewController.
+              <br />
+              <br />
+              If you find this result is incorrect, create an issue on{" "}
               <a
                 style={{
                   color: "#000",
@@ -305,8 +316,8 @@ export const DeviceInfo = () => {
                 target="_blank"
               >
                 GitHub
-              </a>{" "}
-              if you find any inaccuracies.
+              </a>
+              .
             </PackageNote>
           </Modal>
         </InAppBox>

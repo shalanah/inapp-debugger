@@ -991,10 +991,10 @@ has-flag@^3.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
   integrity sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==
 
-inapp-spy@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/inapp-spy/-/inapp-spy-2.0.1.tgz#a98387f925d65bbb1aa749ed4c3ba26c3b70b29e"
-  integrity sha512-2ps4ywy0XC+98kXbTOEGjWS5hnUCdbvAbFHSM8XTGpxpfcGPRBsRldWzgFBOUJbrip5yyLoTUDPJ+jZFy3tS6g==
+inapp-spy@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/inapp-spy/-/inapp-spy-2.1.1.tgz#abf0bf45000a1436668fe44009544a1fb336b8dc"
+  integrity sha512-Y69OpRcXahToMYSOU6BQrRoPFiiRrnjk6k6QbQFuKKqY6SkG7lMMlM3ID/mAKMw+Gx+JFm33Yi1ps6aeW6OFng==
 
 inflight@^1.0.4:
   version "1.0.6"
