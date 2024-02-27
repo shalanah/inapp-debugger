@@ -163,14 +163,14 @@ export const DeviceInfo = () => {
     showCheck: false,
   });
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDeviceCopied((v) => ({ ...v, showCheck: false }));
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, [deviceCopy.copied]);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setDeviceCopied((v) => ({ ...v, showCheck: false }));
+  //   }, 2000);
+  //   return () => clearTimeout(timer);
+  // }, [deviceCopy.copied]);
 
-  console.log({ isInApp, appName, isSFSafariViewController, window: !!window });
+  console.log({ isInApp, appName, isSFSafariViewController, window });
 
   // Inapp section
   let inAppTitle = isInApp ? `In-app detected` : "In-app not detected";
