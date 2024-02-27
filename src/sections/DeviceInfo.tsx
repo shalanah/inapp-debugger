@@ -9,10 +9,7 @@ import {
   GitHubLogoIcon,
   CheckIcon,
 } from "@radix-ui/react-icons";
-import {
-  useState,
-  // useEffect
-} from "react";
+import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const fadeUp = keyframes`
@@ -105,6 +102,30 @@ const Circle = styled.div`
   flex-shrink: 0;
 `;
 
+export const getIsIOSOrIPadOSSafari = (ua: string) => {
+  const iOS = !!ua.match(/iP(ad|hone)/i);
+  const webkit = !!ua.match(/WebKit/i);
+  return iOS && webkit && !ua.match(/CriOS/i) && !ua.match(/OPiOS/i);
+};
+
+export const getIsSFSafariViewController =
+  ({ isInApp }: { isInApp: boolean }) =>
+  async () => {
+    const ua = window.navigator.userAgent;
+    if (isInApp) return false; // don't want any false positives like with Messenger or FB
+    if (typeof window === "undefined") return false;
+    if (!getIsIOSOrIPadOSSafari(ua)) return false; // not iOS/iPadOS Safari
+
+    // Experimental... `MicrodataExtractor` is undefined in SFSafariViewController but not in full iOS / iPadOS Safari
+    // @ts-ignore
+    return await new Promise<boolean>((resolve) => {
+      setTimeout(() => {
+        // @ts-ignore
+        resolve(!window?.MicrodataExtractor);
+      }, 0);
+    });
+  };
+
 export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
   const platform = browser.getPlatform() || "";
@@ -119,7 +140,7 @@ export const DeviceInfo = () => {
   const ua =
     //@ts-ignore
     window.navigator.userAgent || window.navigator.vendor || window.opera;
-  const { isInApp, appName, isSFSafariViewController } = InAppSpy();
+  const { isInApp, appName } = InAppSpy();
 
   let osText = "Unknown device";
   if (osVersionName || osVersion || vendor || osName || device) {
@@ -166,12 +187,22 @@ export const DeviceInfo = () => {
     showCheck: false,
   });
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setDeviceCopied((v) => ({ ...v, showCheck: false }));
-  //   }, 2000);
-  //   return () => clearTimeout(timer);
-  // }, [deviceCopy.copied]);
+  const [isSFSafariViewController, setIsSFSafariViewController] =
+    useState<boolean>(false);
+  useEffect(() => {
+    const fn = async () => {
+      const result = await getIsSFSafariViewController({ isInApp })();
+      setIsSFSafariViewController(result);
+    };
+    fn();
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDeviceCopied((v) => ({ ...v, showCheck: false }));
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [deviceCopy.copied]);
 
   console.log({
     isInApp,
