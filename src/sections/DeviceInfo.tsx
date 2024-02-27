@@ -198,9 +198,12 @@ export const DeviceInfo = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setDeviceCopied((v) => ({ ...v, showCheck: false }));
-    }, 2000);
+    let timer: number | undefined;
+    if (deviceCopy.copied > 0) {
+      timer = setTimeout(() => {
+        setDeviceCopied((v) => ({ ...v, showCheck: false }));
+      }, 2000);
+    }
     return () => clearTimeout(timer);
   }, [deviceCopy.copied]);
 
