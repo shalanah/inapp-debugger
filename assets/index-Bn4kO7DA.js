@@ -337,4 +337,4 @@ ${f}
   overflow: auto;
   max-width: 400px;
   margin: 0 auto;
-`,sy=()=>P.jsxs(ly,{children:[P.jsx(ry,{}),P.jsx(Xg,{}),P.jsx(ty,{}),P.jsx(iy,{})]});Il.createRoot(document.getElementById("app")).render(P.jsx(sy,{}));
+`,sy=()=>typeof window>"u"?null:P.jsxs(ly,{children:[P.jsx(ry,{}),P.jsx(Xg,{}),P.jsx(ty,{}),P.jsx(iy,{})]});Il.createRoot(document.getElementById("app")).render(P.jsx(sy,{}));
