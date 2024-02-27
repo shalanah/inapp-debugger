@@ -13,7 +13,7 @@ const Div = styled.div`
 export const App = () => {
   return (
     <Div>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
       <DeviceInfo />
       <Download />
       <InappEscape />
