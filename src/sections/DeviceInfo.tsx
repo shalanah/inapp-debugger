@@ -9,7 +9,10 @@ import {
   GitHubLogoIcon,
   CheckIcon,
 } from "@radix-ui/react-icons";
-import { useState, useEffect } from "react";
+import {
+  useState,
+  // useEffect
+} from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const fadeUp = keyframes`
