@@ -116,7 +116,8 @@ export const DeviceInfo = () => {
   const ua =
     //@ts-ignore
     window.navigator.userAgent || window.navigator.vendor || window.opera;
-  const { isInApp, appName, isSFSafariViewController } = InAppSpy();
+  const { isInApp, appName } = InAppSpy();
+  const isSFSafariViewController = false; // not stable yet
 
   let osText = "Unknown device";
   if (osVersionName || osVersion || vendor || osName || device) {
