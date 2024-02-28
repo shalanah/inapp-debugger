@@ -106,6 +106,9 @@ export const getIsIOSOrIPadOSSafari = (ua: string) => {
   const iOS = !!ua.match(/iP(ad|hone)/i);
   const webkit = !!ua.match(/WebKit/i);
   const notGSA = !ua.match(/GSA/i); // in GSA you can download files so we don't want to target
+  console.log(
+    notGSA && iOS && webkit && !ua.match(/CriOS/i) && !ua.match(/OPiOS/i)
+  );
   return notGSA && iOS && webkit && !ua.match(/CriOS/i) && !ua.match(/OPiOS/i);
 };
 
