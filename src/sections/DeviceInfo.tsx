@@ -302,7 +302,7 @@ export const DeviceInfo = () => {
               >
                 `inapp-spy`
               </a>{" "}
-              library to detect in-app and SFSafariViewController.
+              library to detect in-app.
               <br />
               <br />
               If you find this result is incorrect, create an issue on{" "}
