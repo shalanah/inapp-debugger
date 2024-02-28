@@ -105,7 +105,8 @@ const Circle = styled.div`
 export const getIsIOSOrIPadOSSafari = (ua: string) => {
   const iOS = !!ua.match(/iP(ad|hone)/i);
   const webkit = !!ua.match(/WebKit/i);
-  return iOS && webkit && !ua.match(/CriOS/i) && !ua.match(/OPiOS/i);
+  const notGSA = !ua.match(/GSA/i);
+  return notGSA && iOS && webkit && !ua.match(/CriOS/i) && !ua.match(/OPiOS/i);
 };
 
 export const getIsSFSafariViewController =
