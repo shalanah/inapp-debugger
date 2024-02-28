@@ -106,7 +106,7 @@ export const getIsIOSOrIPadOSSafari = (ua: string) => {
   const iOS = !!ua.match(/iP(ad|hone)/i);
   const webkit = !!ua.match(/WebKit/i);
   const notGSA = !ua.match(/GSA/i); // in GSA you can download files so we don't want to target
-  const iPad = ua.includes("Mac") && "ontouchend" in document;
+  const iPad = ua.includes("Mac") && "ontouchend" in document; // ugh apple being annoying
   return (
     notGSA &&
     (iOS || iPad) &&
