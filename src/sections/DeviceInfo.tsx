@@ -187,20 +187,20 @@ export const DeviceInfo = () => {
     showCheck: false,
   });
 
-  const [isSFSafariViewController, setIsSFSafariViewController] =
-    useState<boolean>(false);
-  useEffect(() => {
-    const fn = async () => {
-      const result = await getIsSFSafariViewController({
-        isInApp,
-        delay: 300,
-      })();
-      setIsSFSafariViewController(result);
-    };
-    fn();
-  }, []);
+  // const [isSFSafariViewController, setIsSFSafariViewController] =
+  //   useState<boolean>(false);
+  // useEffect(() => {
+  //   const fn = async () => {
+  //     const result = await getIsSFSafariViewController({
+  //       isInApp,
+  //       delay: 300,
+  //     })();
+  //     setIsSFSafariViewController(result);
+  //   };
+  //   fn();
+  // }, []);
 
-  const [foundME, setFindME] = useState<boolean>(false);
+  const [isSFSafariViewController, setFindME] = useState<boolean>(false);
   useEffect(() => {
     new Proxy(window, {
       get: (target, prop, receiver) => {
@@ -211,7 +211,7 @@ export const DeviceInfo = () => {
       },
     });
   }, []);
-  console.log({ foundME });
+  console.log({ isSFSafariViewController });
 
   useEffect(() => {
     let timer: number | undefined;
@@ -226,7 +226,7 @@ export const DeviceInfo = () => {
   console.log({
     isInApp,
     appName,
-    isSFSafariViewController,
+    // isSFSafariViewController,
     window,
     // @ts-ignore
     me: window?.MicrodataExtractor,
