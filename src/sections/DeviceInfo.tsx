@@ -109,7 +109,7 @@ export const getIsIOSOrIPadOSSafari = (ua: string) => {
 };
 
 export const getIsSFSafariViewController =
-  ({ isInApp }: { isInApp: boolean }) =>
+  ({ isInApp, delay = 100 }: { isInApp: boolean; delay: number }) =>
   async () => {
     const ua = window.navigator.userAgent;
     if (isInApp) return false; // don't want any false positives like with Messenger or FB
@@ -122,7 +122,7 @@ export const getIsSFSafariViewController =
       setTimeout(() => {
         // @ts-ignore
         resolve(!window?.MicrodataExtractor);
-      }, 100);
+      }, delay);
     });
   };
 
