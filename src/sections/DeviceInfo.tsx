@@ -122,7 +122,7 @@ export const getIsSFSafariViewController =
       setTimeout(() => {
         // @ts-ignore
         resolve(!window?.MicrodataExtractor);
-      }, 0);
+      }, 100);
     });
   };
 
