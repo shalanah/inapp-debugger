@@ -105,12 +105,12 @@ const Circle = styled.div`
 export const getIsIOSOrIPadOSSafari = (ua: string) => {
   const iOS = !!ua.match(/iP(ad|hone)/i);
   const webkit = !!ua.match(/WebKit/i);
-  const notGSA = !ua.match(/GSA/i);
+  const notGSA = !ua.match(/GSA/i); // in GSA you can download files so we don't want to target
   return notGSA && iOS && webkit && !ua.match(/CriOS/i) && !ua.match(/OPiOS/i);
 };
 
 export const getIsSFSafariViewController =
-  ({ isInApp, delay = 100 }: { isInApp: boolean; delay: number }) =>
+  ({ isInApp, delay = 500 }: { isInApp: boolean; delay?: number }) =>
   async () => {
     const ua = window.navigator.userAgent;
     if (isInApp) return false; // don't want any false positives like with Messenger or FB
@@ -121,6 +121,8 @@ export const getIsSFSafariViewController =
     // @ts-ignore
     return await new Promise<boolean>((resolve) => {
       setTimeout(() => {
+        //@ts-ignore
+        console.log({ me: window?.MicrodataExtractor });
         // @ts-ignore
         resolve(!window?.MicrodataExtractor);
       }, delay);
@@ -194,7 +196,6 @@ export const DeviceInfo = () => {
     const fn = async () => {
       const result = await getIsSFSafariViewController({
         isInApp,
-        delay: 300,
       })();
       setIsSFSafariViewController(result);
     };
