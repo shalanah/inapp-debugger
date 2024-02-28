@@ -200,12 +200,13 @@ export const DeviceInfo = () => {
   //   fn();
   // }, []);
 
-  const [isSFSafariViewController, setFindME] = useState<boolean>(false);
+  const [isSFSafariViewController, setIsSFSafariViewController] =
+    useState<boolean>(true);
   useEffect(() => {
     new Proxy(window, {
       get: (target, prop, receiver) => {
         if (prop === "MicrodataExtractor") {
-          setFindME(true);
+          setIsSFSafariViewController(false);
         }
         return Reflect.get(target, prop, receiver);
       },
@@ -226,7 +227,7 @@ export const DeviceInfo = () => {
   console.log({
     isInApp,
     appName,
-    // isSFSafariViewController,
+    isSFSafariViewController,
     window,
     // @ts-ignore
     me: window?.MicrodataExtractor,
