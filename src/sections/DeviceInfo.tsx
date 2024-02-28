@@ -191,11 +191,27 @@ export const DeviceInfo = () => {
     useState<boolean>(false);
   useEffect(() => {
     const fn = async () => {
-      const result = await getIsSFSafariViewController({ isInApp })();
+      const result = await getIsSFSafariViewController({
+        isInApp,
+        delay: 300,
+      })();
       setIsSFSafariViewController(result);
     };
     fn();
   }, []);
+
+  const [foundME, setFindME] = useState<boolean>(false);
+  useEffect(() => {
+    new Proxy(window, {
+      get: (target, prop, receiver) => {
+        if (prop === "MicrodataExtractor") {
+          setFindME(true);
+        }
+        return Reflect.get(target, prop, receiver);
+      },
+    });
+  }, []);
+  console.log({ foundME });
 
   useEffect(() => {
     let timer: number | undefined;
