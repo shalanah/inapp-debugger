@@ -206,6 +206,7 @@ export const DeviceInfo = () => {
     new Proxy(window, {
       get: (target, prop, receiver) => {
         if (prop === "MicrodataExtractor") {
+          console.log({ target, prop, receiver });
           setIsSFSafariViewController(false);
         }
         return Reflect.get(target, prop, receiver);
