@@ -24,6 +24,7 @@ While many social media sites fail to download assets properly, on Android you c
 - ❌ Opens file in default browser - Unexpected behavior. Continues to confuses user on how to download file.
 - Intent link escape (opens link in default browser instead of in-app) - `intent:https://example.com#Intent;end`
 - Last updated: Feb 7, 2024
+- * I have to come back to these some are using the default browser iin-app view of sorts and some are using Chrome in an in-app
 
 | App (Android)     | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape |
 | ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ------------------ |
@@ -32,13 +33,13 @@ While many social media sites fail to download assets properly, on Android you c
 | Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
 | Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
 | Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
-| SnapChat          | ✅                   | NA            | ✅                  | ✅                               | NA                 |
-| LinkedIn          | ✅                   | NA            | ✅                  | ✅                               | NA                 |
-| Twitter           | ✅                   | NA            | ✅                  | ✅                               | NA                 |
-| Gmail             | ✅                   | NA            | ✅                  | ✅                               | NA                 |
-| YouTube           | ✅                   | NA            | ✅                  | ✅                               | NA                 |
-| Google Search App | ✅                   | NA            | ✅                  | ✅                               | NA                 |
-| GroupMe           | ✅                   | NA            | ✅                  | ✅                               | NA                 |
+| SnapChat          | *                   | NA            | ✅                  | ✅                               | NA                 |
+| LinkedIn          | *                   | NA            | ✅                  | ✅                               | NA                 |
+| Twitter           | *                   | NA            | ✅                  | ✅                               | NA                 |
+| Gmail             | *                   | NA            | ✅                  | ✅                               | NA                 |
+| YouTube           | *                   | NA            | ✅                  | ✅                               | NA                 |
+| Google Search App | *                   | NA            | ✅                  | ✅                               | NA                 |
+| GroupMe           | *                   | NA            | ✅                  | ✅                               | NA                 |
 
 ### iOS
 
