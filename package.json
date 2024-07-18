@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://inappdebugger.com",
+  "homepage": "https://pinjasaur.github.io/inapp-debugger/gi",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
