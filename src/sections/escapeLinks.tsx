@@ -13,7 +13,7 @@ export const escapeLinks = {
       </>
     ),
     links: [
-      { title: "Shortcuts w/ callback URL", url: `shortcuts://x-callback-url/run-shortcut?name=${crypto.randomUUID()}&x-error=${encodeURIComponent('https://example.com')}` },
+      { title: "Shortcut w/ error callback", url: `shortcuts://x-callback-url/run-shortcut?name=${crypto.randomUUID()}&x-error=${encodeURIComponent('https://example.com')}` },
       { title: "Safari search", url: "x-web-search://?site:example.com" },
       { title: "Chrome https", url: "googlechromes://example.com" },
       { title: "Chrome http", url: "googlechrome://example.com" },
