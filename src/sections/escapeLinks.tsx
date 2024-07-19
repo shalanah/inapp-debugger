@@ -4,8 +4,14 @@ export const escapeLinks = {
     intro: (
       <>
         <p>
-          No reliable way to escape in‑app iOS browsers. Experiment with the
-          search and browser links below.
+          The most reliable way to exit in‑app browsers on iOS devices is to
+          try to run a shortcut that doesn&rsquo;t exist and reference your URL
+          as an error callback. This approach comes with the side effects of
+          opening the Shortcuts app on the device and having some query params
+          automatically added to the URL.
+        </p>
+        <p>
+          Experiment with the search and browser links below.
         </p>
         <p>
           Links go to <strong>example.com</strong>
