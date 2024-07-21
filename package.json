@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://inappdebugger.com",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5173 --open --host",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "predeploy": "yarn run build",
