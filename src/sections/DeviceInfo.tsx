@@ -78,7 +78,7 @@ const InAppBox = styled(Box)`
   }
 `;
 
-const PackageNote = styled.div`
+export const PackageNote = styled.div`
   padding: 10px;
   line-height: 1.4;
   code {
