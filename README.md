@@ -13,7 +13,17 @@ Test common in-app issues
 - ✅ Test in-app downloads (on-the-fly and static assets)
 - ✅ Test in-app escape links (Android + iOS)
 
-# Mobile App Tests
+## Running
+
+- `nvm install` / `nvm use`
+- `yarn install`
+- `yarn run dev`
+
+## Deploying to GitHub Pages
+
+- `yarn run deploy`
+
+# Results from Mobile App Tests Using inappdebugger.com
 
 ## Android
 
@@ -24,7 +34,7 @@ While many social media sites fail to download assets properly, on Android you c
 - ❌ Opens file in default browser - Unexpected behavior. Continues to confuses user on how to download file.
 - Intent link escape (opens link in default browser instead of in-app) - `intent:https://example.com#Intent;end`
 - Last updated: Feb 7, 2024
-- "*" I have to come back to these some are using the default browser iin-app view of sorts and some are using Chrome in an in-app
+- "\*" I have to come back to these some are using the default browser iin-app view of sorts and some are using Chrome in an in-app
 
 | App (Android)     | Uses default browser | Detect In-app | On-the-fly download | Static asset download            | Intent link escape |
 | ----------------- | -------------------- | ------------- | ------------------- | -------------------------------- | ------------------ |
@@ -33,13 +43,13 @@ While many social media sites fail to download assets properly, on Android you c
 | Facebook          | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
 | Instagram         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
 | Messenger         | ❌                   | ✅            | ❌ With note        | ❌ Opens file in default browser | ✅                 |
-| SnapChat          | *                   | NA            | ✅                  | ✅                               | NA                 |
-| LinkedIn          | *                   | NA            | ✅                  | ✅                               | NA                 |
-| Twitter           | *                   | NA            | ✅                  | ✅                               | NA                 |
-| Gmail             | *                   | NA            | ✅                  | ✅                               | NA                 |
-| YouTube           | *                   | NA            | ✅                  | ✅                               | NA                 |
-| Google Search App | *                   | NA            | ✅                  | ✅                               | NA                 |
-| GroupMe           | *                   | NA            | ✅                  | ✅                               | NA                 |
+| SnapChat          | \*                   | NA            | ✅                  | ✅                               | NA                 |
+| LinkedIn          | \*                   | NA            | ✅                  | ✅                               | NA                 |
+| Twitter           | \*                   | NA            | ✅                  | ✅                               | NA                 |
+| Gmail             | \*                   | NA            | ✅                  | ✅                               | NA                 |
+| YouTube           | \*                   | NA            | ✅                  | ✅                               | NA                 |
+| Google Search App | \*                   | NA            | ✅                  | ✅                               | NA                 |
+| GroupMe           | \*                   | NA            | ✅                  | ✅                               | NA                 |
 
 ### iOS
 
@@ -65,14 +75,4 @@ There is no reliable way to exit in-app browsers on iOS. **And even when a user 
 | Twitter                                                                                               | ❌ SFSafariViewController | ❌                                     | ❌ Shows file, but have to click "More..." then scroll to "Save image" | ❌ Shows file, but have to click "More..." then scroll to "Save image" | ❌                         | ✅                         |
 | Gmail                                                                                                 | ✅                        | NA                                     | As long as you don't select Safari icon (SFSafariViewController)       | As long as you don't select Safari icon (SFSafariViewController)       | Selected browser dependent | Selected browser dependent |
 | YouTube                                                                                               | ✅                        | NA                                     | As long as you don't select Safari icon (SFSafariViewController)       | As long as you don't select Safari icon (SFSafariViewController)       | Selected browser dependent | Selected browser dependent |
-| Google Search App                                                                                     | ❌                        | ❌ not yet, but UA is searchable (GSA) | ❌ Silent                                                                    | ✅                                                                     | ❌                         | ❌                         |
-
-## Running
-
-- `nvm use`
-- `yarn install`
-- `yarn run dev`
-
-## Deploying to GitHub Pages
-
-- `yarn run deploy`
+| Google Search App                                                                                     | ❌                        | ❌ not yet, but UA is searchable (GSA) | ❌ Silent                                                              | ✅                                                                     | ✅                         | ✅                         |

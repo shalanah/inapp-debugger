@@ -30,7 +30,7 @@ export const Download = () => {
       light
       title="Download Tests"
       icon={<DownloadIcon width={30} height={30} />}
-      text={
+      intro={
         <>
           <p>In‑app browsers disable downloads by default.</p>
           <p>
@@ -39,7 +39,7 @@ export const Download = () => {
           </p>
         </>
       }
-      links={[
+      items={[
         {
           title: "SVG blob download",
           type: "button",
