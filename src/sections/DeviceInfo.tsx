@@ -78,7 +78,7 @@ const InAppBox = styled(Box)`
   }
 `;
 
-export const PackageNote = styled.div`
+export const ModalContentStyling = styled.div`
   padding: 10px;
   line-height: 1.4;
   code {
@@ -288,7 +288,7 @@ export const DeviceInfo = () => {
               </div>
             }
           >
-            <PackageNote>
+            <ModalContentStyling>
               Using the{" "}
               <a
                 href="https://www.npmjs.com/package/inapp-spy"
@@ -319,7 +319,7 @@ export const DeviceInfo = () => {
                 GitHub
               </a>
               .
-            </PackageNote>
+            </ModalContentStyling>
           </Modal>
         </InAppBox>
       </Section>

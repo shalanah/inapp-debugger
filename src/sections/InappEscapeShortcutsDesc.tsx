@@ -1,6 +1,6 @@
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { Modal } from "../base/Modal";
-import { PackageNote } from "./DeviceInfo";
+import { ModalContentStyling } from "./DeviceInfo";
 
 export const InappEscapeShortcutsDesc = () => {
   return (
@@ -29,7 +29,7 @@ export const InappEscapeShortcutsDesc = () => {
           </button>
         }
       >
-        <PackageNote>
+        <ModalContentStyling>
           The{" "}
           <a
             href="https://github.com/shalanah/inapp-debugger/pull/2"
@@ -52,13 +52,13 @@ export const InappEscapeShortcutsDesc = () => {
           the device and adds some query params to the URL.
           <br />
           <br />
-          Works on iOS / iPadOS / MacOS 17 + 18 beta so far. May work on other
-          iOS versions.
+          Works on iOS 17 + 18 beta, latest iPadOS, and latest MacOS. Might work
+          on earlier Apple OS versions.
           <br />
           <br />
           Shortcuts app is installed by default on Mac products but could be
           uninstalled by the user, although unlikely.
-        </PackageNote>
+        </ModalContentStyling>
       </Modal>
     </p>
   );
