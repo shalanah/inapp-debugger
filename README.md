@@ -15,7 +15,7 @@ Test common in-app issues
 
 ## Running
 
-- `nvm use`
+- `nvm install` / `nvm use`
 - `yarn install`
 - `yarn run dev`
 
