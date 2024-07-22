@@ -25,6 +25,7 @@ export const InappEscapeShortcutsDesc = () => {
               padding: 4,
             }}
           >
+            <p className="sr-only">Shortcuts fallback info</p>
             <InfoCircledIcon width={"100%"} height={"100%"} />
           </button>
         }

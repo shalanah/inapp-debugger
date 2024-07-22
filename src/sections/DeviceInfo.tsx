@@ -43,7 +43,6 @@ const Box = styled.div`
   padding: 25px 20px 20px;
   border-radius: var(--border-radius);
   display: flex;
-  flex-direction: column;
   h2 {
     font-size: 1.35rem;
     font-weight: normal;
@@ -195,7 +194,7 @@ export const DeviceInfo = () => {
   return (
     <>
       <Section style={{ marginBottom: 0 }}>
-        <Box className="flex-row justify-content-between align-items-center">
+        <Box className="flex-row flex justify-between items-center">
           <h2 style={{ margin: 0 }}>Inapp Debugger</h2>
           <Circle
             as={"a"}
@@ -211,9 +210,9 @@ export const DeviceInfo = () => {
         </Box>
       </Section>
       <Section>
-        <StatBox>
+        <StatBox className="flex-col">
           <p style={{ marginBottom: ".65rem" }}>{osText}</p>
-          <div className="d-flex flex-row justify-content-between g-5">
+          <div className="flex flex-row justify-between gap-[5px]">
             <div>
               <h2 style={{ marginBottom: "2rem" }}>{browserText}</h2>
               <p style={{ wordBreak: "break-word" }}>{ua}</p>
@@ -231,7 +230,7 @@ export const DeviceInfo = () => {
                       }))
               }
             >
-              <div className="d-flex justify-content-end align-items-end">
+              <div className="flex items-end justify-end">
                 <Circle
                   as={"button"}
                   style={{
@@ -269,13 +268,13 @@ export const DeviceInfo = () => {
             color,
           }}
         >
-          <div className="d-flex flex-column g-5 flex-fill">
+          <div className="flex flex-col gap-[5px] flex-auto">
             <h2 style={{ color }}>{inAppTitle}</h2>
             <p>{inAppSubtitle}</p>
           </div>
           <Modal
             button={
-              <div className="d-flex justify-content-end">
+              <div className="flex justify-end">
                 <Circle
                   as={"button"}
                   style={{

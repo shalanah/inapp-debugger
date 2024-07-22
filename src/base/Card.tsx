@@ -91,7 +91,7 @@ export const Card = ({
 }: Props) => {
   return (
     <Div
-      className="d-flex flex-column"
+      className="flex flex-col"
       style={{
         background: light ? "var(--white)" : "var(--navy)",
         color: light ? "var(--navy)" : "#DCEDF5",

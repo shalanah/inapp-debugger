@@ -3,6 +3,7 @@ import { Download } from "./sections/Download";
 import { GlobalStyle } from "./base/GlobalStyles";
 import { InappEscape } from "./sections/InappEscape";
 import styled from "styled-components";
+import "./index.css";
 
 const Div = styled.div`
   overflow: auto;
