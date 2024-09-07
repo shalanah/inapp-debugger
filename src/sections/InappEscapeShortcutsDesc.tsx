@@ -11,7 +11,7 @@ export const InappEscapeShortcutsDesc = () => {
         justifyContent: "center",
       }}
     >
-      Works on iOS 17 + 18&nbsp;beta{" "}
+      About the Shortcuts method{" "}
       <Modal
         button={
           <button
