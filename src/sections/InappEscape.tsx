@@ -30,7 +30,8 @@ export const InappEscape = () => {
               <>
                 <p>
                   The most reliable way to exit in-app browsers is the Shortcuts
-                  fallback.
+                  fallback to a default browser or Safari exit link (both work
+                  on iOS 17+)
                 </p>
                 <p>
                   Links go to <strong>example.com</strong>
@@ -48,6 +49,11 @@ export const InappEscape = () => {
                 href: `shortcuts://x-callback-url/run-shortcut?name=${crypto.randomUUID()}&x-error=${encodeURIComponent(
                   "https://example.com"
                 )}`,
+              },
+              {
+                type: "link",
+                title: "Safari https",
+                href: `'x-safari-https://example.com'`,
               },
               {
                 type: "desc",
