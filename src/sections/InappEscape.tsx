@@ -53,7 +53,7 @@ export const InappEscape = () => {
               {
                 type: "link",
                 title: "Safari https",
-                href: `'x-safari-https://example.com'`,
+                href: `x-safari-https://example.com`,
               },
               {
                 type: "desc",
