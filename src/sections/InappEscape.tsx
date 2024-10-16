@@ -131,7 +131,7 @@ export const InappEscape = () => {
               {
                 type: "link",
                 title: "Open in default browser",
-                href: "intent:https://example.com#Intent;end",
+                href: "intent://example.com#Intent;scheme=https;end",
               },
             ]}
           />
