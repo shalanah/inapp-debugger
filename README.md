@@ -32,7 +32,9 @@ While many social media sites fail to download assets properly, on Android you c
 - ❌ 🔇 - Fails to download file without any indication to user (silent)
 - ❌ 📝 - Fails but provides a note
 - ❌ 🖼️ - Opens image in browser but doesn't download or provide feedback on how to download
-- Intent link escape (opens link in default browser instead of in-app) - `intent://example.com#Intent;scheme=https;end`
+
+Intent link escape (opens link in default browser instead of in-app) - `intent://example.com#Intent;scheme=https;end`
+
 - Last updated: Oct 16, 2024
 
 | App (Android)     | Default browser / Tab View | Detect In-app  | Blob Url download | Static asset download | Intent link escape |
@@ -55,34 +57,33 @@ While many social media sites fail to download assets properly, on Android you c
 
 ### iOS
 
-🚧 Area needs updating
-There are some escape methods available especially to Safari - use [inappdebugger.com](https://inappdebugger.com) to test out methods
+There are some escape methods available namely to Safari - use [inappdebugger.com](https://inappdebugger.com) to test out methods. However there is no Apple-approved way to escape in-app browsers to the default browser in contrast to Android intent links.
 
-=======
-
-There is no reliable way to exit in-app browsers on iOS. **And even when a user is prompted to select a browser to open a given link from an app, Safari in the pared down SFSafariViewController provides a uniquely bad downloading experience.** The user is shown the file details via text but one must click on "More..." then scroll below the fold to "Save to image" to download the file. This bizarre behavior is captured on the first row of the table below.
+SFSVC (Safari View Controller) - akin to Tab View on Android - is used by many apps to open links over older in-app browsers. This view is very confusing to users. So much so that users give up trying to download assets. Apple is encouraging and pushing its app developers to use SFSVC in their apps. It also unlike Tab View on Android does not respect the user's default browser.
 
 - SFSVC - SFSafariViewController
 - ❌ 🔇 - Fails to download file without any indication to user.
 - ❌ 📝 - Fails but provides a note
 - ❌ 🖼️ - Opens image in browser but doesn't download or provide feedback on how to download
-- ❌ 🤮 - SFSVC - You can download in this view after clicking "More...", scroll, click "Save image" or file. Unnecessarily convoluted UX compared to Safari.
+- ❌ 🤮 - SFSVC - You can download in this view after clicking "More...", scroll, click "Save image" or file. Unnecessarily convoluted UX compared to Safari. User complaints are high.
+
+🚧 Area needs updating (escape link table and download functionality)
 
 - Safari search link - `x-web-search://?site:example.com`
 - Browser app link - In example Chrome: `googlechromes://example.com`
 - Last updated: Feb 7, 2024
 
-| App (iPhone)      | Uses default browser | Detect In-app                          | Blob Url download           | Static asset download       | Safari search link  | Browser app link    |
-| ----------------- | -------------------- | -------------------------------------- | --------------------------- | --------------------------- | ------------------- | ------------------- |
-| SFSVC Overview    | ❌ SFSVC             | ❌                                     | ❌ 🤮                       | ❌ 🤮                       | ❌                  | ✅                  |
-| TikTok            | ❌                   | ✅                                     | ❌ 📝                       | ❌ 📝                       | ✅                  | ❌                  |
-| Threads           | ❌ SFSVC             | ❌                                     | ❌ 🤮                       | ❌ 🤮                       | ❌                  | ✅                  |
-| Facebook          | ❌                   | ✅                                     | ❌ 📝                       | ❌ 📝                       | ✅                  | ✅                  |
-| Instagram         | ❌                   | ✅                                     | ❌ 📝                       | ❌ 📝                       | ❌                  | ✅                  |
-| Messenger         | ❌                   | ✅                                     | ❌ 🔇                       | ❌ 📝                       | ✅                  | ✅                  |
-| SnapChat          | ❌                   | ✅                                     | ❌ 🔇                       | ❌ 📝                       | ✅                  | ✅                  |
-| LinkedIn          | ❌                   | ✅                                     | ❌ 🔇                       | ❌ 📝                       | ✅                  | ✅                  |
-| Twitter           | ❌ SFSVC             | ❌                                     | ❌ 🤮                       | ❌ 🤮                       | ❌                  | ✅                  |
-| Gmail             | ✅                   | NA                                     | Don't select Safari (SFSVC) | Don't select Safari (SFSVC) | Selection dependent | Selection dependent |
-| YouTube           | ✅                   | NA                                     | Don't select Safari (SFSVC) | Don't select Safari (SFSVC) | Selection dependent | Selection dependent |
-| Google Search App | ❌                   | ❌ not yet, but UA is searchable (GSA) | ❌ 🔇                       | ✅                          | ✅                  | ✅                  |
+| App (iPhone)                                                                                          | Uses default browser | Detect In-app                          | Blob Url download           | Static asset download       | Safari search link  | Browser app link    |
+| ----------------------------------------------------------------------------------------------------- | -------------------- | -------------------------------------- | --------------------------- | --------------------------- | ------------------- | ------------------- |
+| SFSafariViewController - Selecting "Safari" icon to open a link from an app like in Gmail or Twitter. | ❌ SFSVC             | ❌                                     | ❌ 🤮                       | ❌ 🤮                       | ❌                  | ✅                  |
+| TikTok                                                                                                | ❌                   | ✅                                     | ❌ 📝                       | ❌ 📝                       | ✅                  | ❌                  |
+| Threads                                                                                               | ❌ SFSVC             | ❌                                     | ❌ 🤮                       | ❌ 🤮                       | ❌                  | ✅                  |
+| Facebook                                                                                              | ❌                   | ✅                                     | ❌ 📝                       | ❌ 📝                       | ✅                  | ✅                  |
+| Instagram                                                                                             | ❌                   | ✅                                     | ❌ 📝                       | ❌ 📝                       | ❌                  | ✅                  |
+| Messenger                                                                                             | ❌                   | ✅                                     | ❌ 🔇                       | ❌ 📝                       | ✅                  | ✅                  |
+| SnapChat                                                                                              | ❌                   | ✅                                     | ❌ 🔇                       | ❌ 📝                       | ✅                  | ✅                  |
+| LinkedIn                                                                                              | ❌                   | ✅                                     | ❌ 🔇                       | ❌ 📝                       | ✅                  | ✅                  |
+| Twitter                                                                                               | ❌ SFSVC             | ❌                                     | ❌ 🤮                       | ❌ 🤮                       | ❌                  | ✅                  |
+| Gmail                                                                                                 | ✅                   | NA                                     | Don't select Safari (SFSVC) | Don't select Safari (SFSVC) | Selection dependent | Selection dependent |
+| YouTube                                                                                               | ✅                   | NA                                     | Don't select Safari (SFSVC) | Don't select Safari (SFSVC) | Selection dependent | Selection dependent |
+| Google Search App                                                                                     | ❌                   | ❌ not yet, but UA is searchable (GSA) | ❌ 🔇                       | ✅                          | ✅                  | ✅                  |
