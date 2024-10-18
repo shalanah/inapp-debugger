@@ -31,7 +31,7 @@ While many social media sites fail to download assets properly, on Android you c
 
 - ❌ 🔇 - Fails to download file without any indication to user (silent)
 - ❌ 📝 - Fails but provides a note
-- ❌ 🖼️ - Opens image in browser but doesn't download or provide feedback on how to download
+- ❌ 📂 - Opens file in browser but doesn't download or provide feedback on how to download
 
 Intent link escape (opens link in default browser instead of in-app) - `intent://example.com#Intent;scheme=https;end`
 
@@ -43,10 +43,10 @@ Intent link escape (opens link in default browser instead of in-app) - `intent:/
 | Telegram          | ❌                         | ❌ in progress | ❌ 📝             | ✅                    | ✅                 |
 | Line              | ❌                         | ✅             | ❌ 📝             | ❌ Fails to load      | ✅                 |
 | TikTok            | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ not dependable  |
-| Threads           | ❌                         | ✅             | ❌ 📝             | ❌ 🖼️                 | ✅                 |
-| Facebook          | ❌                         | ✅             | ❌ 📝             | ❌ 🖼️                 | ✅                 |
-| Instagram         | ❌                         | ✅             | ❌ 📝             | ❌ 🖼️                 | ✅                 |
-| Messenger         | ❌                         | ✅             | ❌ 📝             | ❌ 🖼️                 | ✅                 |
+| Threads           | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
+| Facebook          | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
+| Instagram         | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
+| Messenger         | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
 | SnapChat          | ✅                         | NA             | NA                | NA                    | NA                 |
 | LinkedIn          | ✅                         | NA             | NA                | NA                    | NA                 |
 | Twitter           | ✅                         | NA             | NA                | NA                    | NA                 |
@@ -64,7 +64,7 @@ SFSVC (Safari View Controller) - akin to Tab View on Android - is used by many a
 - SFSVC - SFSafariViewController
 - ❌ 🔇 - Fails to download file without any indication to user (silent)
 - ❌ 📝 - Fails but provides a note
-- ❌ 🖼️ - Opens image in browser but doesn't download or provide feedback on how to download
+- ❌ 📂 - Opens file in browser but doesn't download or provide feedback on how to download
 - ❌ 🗑️ - SFSVC - You can download in this view after clicking "More...", scroll, click "Save image" or file. Garbage UX compared to Safari. User complaints are high.
 
 #### Escape methods:
@@ -81,13 +81,13 @@ Last updated: October 16, 2024
 | SFSafariViewController - Selecting "Safari" icon to open a link from an app like in Gmail or Twitter. | ❌ SFSVC             | ❌                        | ❌ 🗑️                            | ❌ 🗑️                            | ✅            | ✅             |
 | Threads                                                                                               | ❌ SFSVC             | ❌                        | ❌ 🗑️                            | ❌ 🗑️                            | ✅            | ✅             |
 | Twitter                                                                                               | ❌ SFSVC             | ❌                        | ❌ 🗑️                            | ❌ 🗑️                            | ✅            | ✅             |
-| TikTok                                                                                                | ❌                   | ✅                        | ❌ 🖼️                            | ❌ 🖼️                            | ✅            | ❌             |
+| TikTok                                                                                                | ❌                   | ✅                        | ❌ 📂                            | ❌ 📂                            | ✅            | ❌             |
 | WeChat                                                                                                | ❌                   | ✅                        | ❌ 📝                            | ❌ 📝                            | ❌            | ❌             |
 | Telegram                                                                                              | ❌                   | ❌ working on it          | ✅                               | ✅                               | ✅            | ✅             |
-| Line                                                                                                  | ❌                   | ✅                        | ❌ 🔇                            | ❌ 🖼️                            | ✅            | ✅             |
-| Facebook                                                                                              | ❌                   | ✅                        | ❌ 🖼️                            | ❌ 🖼️                            | ✅            | ✅             |
-| Instagram                                                                                             | ❌                   | ✅                        | ❌ 🖼️                            | ❌ 🖼️                            | ✅            | ✅             |
-| Messenger                                                                                             | ❌                   | ✅                        | ❌ 🔇                            | ❌ 🖼️                            | ✅            | ❌             |
-| SnapChat                                                                                              | ❌                   | ✅                        | ❌ 🔇                            | ❌ 🖼️                            | ❌            | ❌             |
-| LinkedIn                                                                                              | ❌                   | ✅ add more UAs to appKey | ❌ 🔇                            | ❌ 🖼️                            | ✅            | ✅             |
+| Line                                                                                                  | ❌                   | ✅                        | ❌ 🔇                            | ❌ 📂                            | ✅            | ✅             |
+| Facebook                                                                                              | ❌                   | ✅                        | ❌ 📂                            | ❌ 📂                            | ✅            | ✅             |
+| Instagram                                                                                             | ❌                   | ✅                        | ❌ 📂                            | ❌ 📂                            | ✅            | ✅             |
+| Messenger                                                                                             | ❌                   | ✅                        | ❌ 🔇                            | ❌ 📂                            | ✅            | ❌             |
+| SnapChat                                                                                              | ❌                   | ✅                        | ❌ 🔇                            | ❌ 📂                            | ❌            | ❌             |
+| LinkedIn                                                                                              | ❌                   | ✅ add more UAs to appKey | ❌ 🔇                            | ❌ 📂                            | ✅            | ✅             |
 | Google Search App                                                                                     | ❌                   | ❌ working on it          | ❌ 🔇                            | ✅                               | ✅            | ✅             |
