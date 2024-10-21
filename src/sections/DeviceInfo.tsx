@@ -171,7 +171,7 @@ export const DeviceInfo = () => {
   const [isSFSVC, setSFSVC] = useState(false);
 
   useEffect(() => {
-    SFSVCExperimental().then(setSFSVC);
+    SFSVCExperimental({ debug: true }).then(setSFSVC);
   }, []);
 
   let osText = "Unknown device";
