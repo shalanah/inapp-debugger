@@ -25,7 +25,7 @@
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
     "bowser": "^2.11.0",
-    "inapp-spy": "github:shalanah/inapp-spy#telegram-sfsvc-gsa-ignore",
+    "inapp-spy": "^4.0.0",
     "postcss": "^8.4.47",
     "react": "^18.3.1",
     "react-copy-to-clipboard": "^5.1.0",

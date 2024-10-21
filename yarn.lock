@@ -1182,9 +1182,10 @@ ignore@^5.2.0:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.3.2.tgz#3cd40e729f3643fd87cb04e50bf0eb722bc596f5"
   integrity sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==
 
-"inapp-spy@github:shalanah/inapp-spy#telegram-sfsvc-gsa-ignore":
-  version "3.0.1"
-  resolved "https://codeload.github.com/shalanah/inapp-spy/tar.gz/0f8726ad4113f72669692cbcc5613d6d9efb95d2"
+inapp-spy@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/inapp-spy/-/inapp-spy-4.0.0.tgz#78cf7f72f8c821dfd00d4e297395080dd9377a4e"
+  integrity sha512-8HjTZA/uJocntZRdUvoeQWyVmJQLiVwiw+JNbE+P7fWt0ZvGQXmPCbMyyhIeLtDOezOozjRCzVPiuxFT+UQjUQ==
 
 invariant@^2.2.4:
   version "2.2.4"

@@ -108,7 +108,7 @@ const getDetectionFeedback = ({
 }: {
   isInApp: boolean;
   isSFSVC: boolean;
-  appName: string;
+  appName: string | undefined;
 }) => {
   if (isInApp) {
     return {
@@ -340,9 +340,9 @@ export const DeviceInfo = () => {
                   textUnderlineOffset: ".2em",
                 }}
               >
-                `inapp-spy`
+                `inapp-spy` at version 4.0.0
               </a>{" "}
-              library to detect in-app browsers and experimentally detect
+              to detect in-app browsers and experimentally detect
               SFSafariViewController.
               <br />
               <br />
