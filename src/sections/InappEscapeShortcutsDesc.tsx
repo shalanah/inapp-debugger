@@ -13,6 +13,8 @@ export const InappEscapeShortcutsDesc = () => {
     >
       About the Shortcuts method{" "}
       <Modal
+        title={"Shortcuts fallback info"}
+        desc={"Learn more about the Shortcuts fallback method."}
         button={
           <button
             style={{
