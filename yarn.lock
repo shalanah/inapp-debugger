@@ -1184,7 +1184,7 @@ ignore@^5.2.0:
 
 "inapp-spy@github:shalanah/inapp-spy#telegram-sfsvc-gsa-ignore":
   version "3.0.1"
-  resolved "https://codeload.github.com/shalanah/inapp-spy/tar.gz/e5f07c93588976a14d9dd6aa5b40005cc05d2c30"
+  resolved "https://codeload.github.com/shalanah/inapp-spy/tar.gz/f8ee294464e1ce0244ded09e0f74f985bbea7b40"
 
 invariant@^2.2.4:
   version "2.2.4"
