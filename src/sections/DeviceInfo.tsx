@@ -1,5 +1,5 @@
 import Bowser from "bowser";
-import InAppSpy from "inapp-spy";
+import InAppSpy, { SFSVCExperimental } from "inapp-spy";
 import { toSentenceCase } from "../utils";
 import styled, { keyframes } from "styled-components";
 import { Modal } from "../base/Modal";
@@ -101,6 +101,57 @@ const Circle = styled.div`
   flex-shrink: 0;
 `;
 
+const getDetectionFeedback = ({
+  isInApp,
+  isSFSVC,
+  appName,
+}: {
+  isInApp: boolean;
+  isSFSVC: boolean;
+  appName: string;
+}) => {
+  if (isInApp) {
+    return {
+      inAppTitle: "In-app detected",
+      color: "#fff",
+      bg: "#B92158",
+      buttonBg: "#fff",
+      buttonColor: "#b92158",
+      inAppSubtitle: appName ? `${appName} App` : "That's a bummer.",
+    };
+  } else if (isSFSVC) {
+    return {
+      inAppTitle: "SFSafariViewController detected",
+      color: "#d14923",
+      bg: "#ffecdd",
+      buttonBg: "#d14923",
+      buttonColor: "#ffecdd",
+      inAppSubtitle: (
+        <>
+          Detection is highly experimental for Safari 17+ using{" "}
+          <code>SFSVCExperimental()</code> from <code>inapp-spy</code>.<br />
+          <br />
+          SFSVC is an in-app browser that has a cumbersome downloading
+          experience compared to a native browser. Here's hoping it becomes more
+          streamlined so we don't have to detect it!
+          <br />
+          <br />
+          If there is an error in detection please see info button to report any
+          issues.
+        </>
+      ),
+    };
+  }
+  return {
+    inAppTitle: "In-app not detected",
+    color: "#007d75",
+    bg: "#E9FFF6",
+    buttonBg: "#449C82",
+    buttonColor: "#fff",
+    inAppSubtitle: "No news is good news",
+  };
+};
+
 export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
   const platform = browser.getPlatform() || "";
@@ -116,7 +167,12 @@ export const DeviceInfo = () => {
     //@ts-ignore
     window.navigator.userAgent || window.navigator.vendor || window.opera;
   const { isInApp, appName } = InAppSpy();
-  const isSFSafariViewController = false; // not stable yet
+
+  const [isSFSVC, setSFSVC] = useState(false);
+
+  useEffect(() => {
+    SFSVCExperimental().then(setSFSVC);
+  }, []);
 
   let osText = "Unknown device";
   if (osVersionName || osVersion || vendor || osName || device) {
@@ -171,25 +227,8 @@ export const DeviceInfo = () => {
   }, [deviceCopy.copied]);
 
   // Inapp section
-  let inAppTitle = isInApp ? `In-app detected` : "In-app not detected";
-  let color = isInApp ? "#fff" : "#007d75";
-  let bg = isInApp ? "#B92158" : "#E9FFF6";
-  let buttonBg = isInApp ? "#fff" : "#449C82";
-  let buttonColor = isInApp ? "#b92158" : "#fff";
-  let inAppSubtitle = appName
-    ? `${appName} App`
-    : isInApp
-    ? "That's a bummer."
-    : "No news is good news";
-  if (isSFSafariViewController) {
-    inAppTitle = "SFSafariViewController detected";
-    color = "#d14923";
-    bg = "#ffecdd";
-    buttonBg = color;
-    buttonColor = bg;
-    inAppSubtitle =
-      "This browser is a mix between full-fledge Safari and in-app. Its download UX is extremely poor. Detection is highly experimental. The hope is that Apple will improve the poor download UX so detection is not necessary.";
-  }
+  const { inAppTitle, color, bg, buttonBg, buttonColor, inAppSubtitle } =
+    getDetectionFeedback({ isInApp, isSFSVC, appName });
 
   return (
     <>
@@ -273,6 +312,8 @@ export const DeviceInfo = () => {
             <p>{inAppSubtitle}</p>
           </div>
           <Modal
+            title="In-app Detection"
+            desc="How we detect in-app browsers"
             button={
               <div className="flex justify-end">
                 <Circle
@@ -301,7 +342,8 @@ export const DeviceInfo = () => {
               >
                 `inapp-spy`
               </a>{" "}
-              library to detect in-app.
+              library to detect in-app browsers and experimentally detect
+              SFSafariViewController.
               <br />
               <br />
               If you find this result is incorrect, create an issue on{" "}
