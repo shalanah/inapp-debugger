@@ -46,8 +46,8 @@ Intent link escape (opens link in default browser instead of in-app) - `intent:/
 | Line              | ❌                         | ✅             | ❌ 📝             | ❌ Fails to load      | ✅                 |
 | TikTok            | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ not dependable  |
 | Threads           | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                |
-| Facebook          | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                 |
-| Instagram         | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                 |
+| Facebook          | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
+| Instagram         | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
 | Messenger         | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                 |
 | SnapChat          | ✅                         | NA             | NA                | NA                    | NA                 |
 | LinkedIn          | ✅                         | NA             | NA                | NA                    | NA                 |
