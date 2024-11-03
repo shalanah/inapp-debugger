@@ -25,9 +25,11 @@ Test common in-app issues
 
 # Results from Mobile App Tests Using inappdebugger.com
 
+Table displays latest versions of apps - previous version may differ.
+
 ## Android
 
-While many social media sites fail to download assets properly, on Android you can use the intent link reliably to escape except for WeChat + TikTok.
+On Android, till recently (https://github.com/shalanah/inapp-debugger/issues/11), you could use intent link to reliably escape. 
 
 - ❌ 🔇 - Fails to download file without any indication to user (silent)
 - ❌ 📝 - Fails but provides a note
@@ -35,7 +37,7 @@ While many social media sites fail to download assets properly, on Android you c
 
 Intent link escape (opens link in default browser instead of in-app) - `intent://example.com#Intent;scheme=https;end`
 
-- Last updated: Oct 16, 2024
+- Last updated: Nov 3, 2024
 
 | App (Android)     | Default browser / Tab View | Detect In-app  | Blob Url download | Static asset download | Intent link escape |
 | ----------------- | -------------------------- | -------------- | ----------------- | --------------------- | ------------------ |
@@ -43,10 +45,10 @@ Intent link escape (opens link in default browser instead of in-app) - `intent:/
 | Telegram          | ❌                         | ❌ in progress | ❌ 📝             | ✅                    | ✅                 |
 | Line              | ❌                         | ✅             | ❌ 📝             | ❌ Fails to load      | ✅                 |
 | TikTok            | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ not dependable  |
-| Threads           | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
-| Facebook          | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
-| Instagram         | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
-| Messenger         | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
+| Threads           | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                |
+| Facebook          | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                 |
+| Instagram         | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                 |
+| Messenger         | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                 |
 | SnapChat          | ✅                         | NA             | NA                | NA                    | NA                 |
 | LinkedIn          | ✅                         | NA             | NA                | NA                    | NA                 |
 | Twitter           | ✅                         | NA             | NA                | NA                    | NA                 |
@@ -83,11 +85,11 @@ Last updated: October 16, 2024
 | Twitter                                                                                               | ❌ SFSVC             | ❌                        | ❌ 🗑️                            | ❌ 🗑️                            | ✅            | ✅             |
 | TikTok                                                                                                | ❌                   | ✅                        | ❌ 📂                            | ❌ 📂                            | ✅            | ❌             |
 | WeChat                                                                                                | ❌                   | ✅                        | ❌ 📝                            | ❌ 📝                            | ❌            | ❌             |
-| Telegram                                                                                              | ❌                   | ❌ working on it          | ❌ 📂                            | ✅                               | ✅            | ✅             |
+| Telegram                                                                                              | ❌                   | ✅          | ❌ 📂                            | ✅                               | ✅            | ✅             |
 | Line                                                                                                  | ❌                   | ✅                        | ❌ 🔇                            | ❌ 📂                            | ✅            | ✅             |
 | Facebook                                                                                              | ❌                   | ✅                        | ❌ 📂                            | ❌ 📂                            | ✅            | ✅             |
 | Instagram                                                                                             | ❌                   | ✅                        | ❌ 📂                            | ❌ 📂                            | ✅            | ✅             |
 | Messenger                                                                                             | ❌                   | ✅                        | ❌ 🔇                            | ❌ 📂                            | ✅            | ❌             |
 | SnapChat                                                                                              | ❌                   | ✅                        | ❌ 🔇                            | ❌ 📂                            | ❌            | ❌             |
-| LinkedIn                                                                                              | ❌                   | ✅ add more UAs to appKey | ❌ 🔇                            | ❌ 📂                            | ✅            | ✅             |
-| Google Search App                                                                                     | ❌                   | ❌ working on it          | ❌ 🔇                            | ✅                               | ✅            | ✅             |
+| LinkedIn                                                                                              | ❌                   | ✅  | ❌ 🔇                            | ❌ 📂                            | ✅            | ✅             |
+| Google Search App                                                                                     | ❌                   | ✅          | ❌ 🔇                            | ✅                               | ✅            | ✅             |
