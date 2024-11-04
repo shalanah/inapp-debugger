@@ -6,12 +6,13 @@ export const InappEscapeShortcutsDesc = () => {
   return (
     <p
       style={{
+        marginTop: 25,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
-      About the Shortcuts method{" "}
+      iOS 17-18.0, but not 18.1+{" "}
       <Modal
         title={"Shortcuts fallback info"}
         desc={"Learn more about the Shortcuts fallback method."}
@@ -25,6 +26,7 @@ export const InappEscapeShortcutsDesc = () => {
               alignItems: "center",
               justifyContent: "center",
               padding: 4,
+              flexShrink: "0",
             }}
           >
             <p className="sr-only">Shortcuts fallback info</p>
@@ -55,8 +57,7 @@ export const InappEscapeShortcutsDesc = () => {
           the device and adds some query params to the URL.
           <br />
           <br />
-          Works on iOS 17 + 18 beta, latest iPadOS, and latest MacOS. Might work
-          on earlier Apple OS versions.
+          Works on iOS 17-18.0, but not on 18.1.
           <br />
           <br />
           Shortcuts app is installed by default on Mac products but could be
