@@ -42,7 +42,7 @@ Intent link escape (opens link in default browser instead of in-app) - `intent:/
 | App (Android)     | Default browser / Tab View | Detect In-app  | Blob Url download | Static asset download | Intent link escape |
 | ----------------- | -------------------------- | -------------- | ----------------- | --------------------- | ------------------ |
 | WeChat            | ❌                         | ✅             | ❌ 📝             | ❌ 📝                 | ❌ does not work   |
-| Telegram          | ❌                         | ❌ in progress | ❌ 📝             | ✅                    | ✅                 |
+| Telegram          | ❌                         | ✅             | ❌ 📝             | ✅                    | ✅                 |
 | Line              | ❌                         | ✅             | ❌ 📝             | ❌ Fails to load      | ✅                 |
 | TikTok            | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ not dependable  |
 | Threads           | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                |
