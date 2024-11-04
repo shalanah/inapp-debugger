@@ -120,8 +120,8 @@ export const InappEscape = () => {
             intro={
               <>
                 <p>
-                  To reliably exit in-app browsers on Android devices, use the
-                  default browser intent link.
+                  The default browser intent link works on most (not all)
+                  Android in-app browsers.
                 </p>
                 <p>
                   Link goes to <strong>example.com</strong>
