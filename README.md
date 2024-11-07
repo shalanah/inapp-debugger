@@ -37,7 +37,7 @@ On Android, till recently (https://github.com/shalanah/inapp-debugger/issues/11)
 
 Intent link escape (opens link in default browser instead of in-app) - `intent://example.com#Intent;scheme=https;end`
 
-- Last updated: Nov 3, 2024
+- Last updated: Nov 7, 2024
 
 | App (Android)     | Default browser / Tab View | Detect In-app  | Blob Url download | Static asset download | Intent link escape |
 | ----------------- | -------------------------- | -------------- | ----------------- | --------------------- | ------------------ |
@@ -48,7 +48,7 @@ Intent link escape (opens link in default browser instead of in-app) - `intent:/
 | Threads           | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                |
 | Facebook          | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
 | Instagram         | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
-| Messenger         | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                 |
+| Messenger         | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ✅                 |
 | SnapChat          | ✅                         | NA             | NA                | NA                    | NA                 |
 | LinkedIn          | ✅                         | NA             | NA                | NA                    | NA                 |
 | Twitter           | ✅                         | NA             | NA                | NA                    | NA                 |
