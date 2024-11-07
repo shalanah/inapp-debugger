@@ -59,9 +59,11 @@ Intent link escape (opens link in default browser instead of in-app) - `intent:/
 
 ### iOS
 
-There are some escape methods available namely to Safari - use [inappdebugger.com](https://inappdebugger.com) to test out methods. However there is no Apple-approved way to escape in-app browsers to the default browser in contrast to Android intent links.
+There is no Apple-approved way to escape in-app browsers to the default browser in contrast to Android intent links.
 
-SFSVC (Safari View Controller) - akin to Tab View on Android - is used by many apps to open links over older in-app browsers. This view is very confusing to users. So much so that users give up trying to download assets. Apple is encouraging and pushing its app developers to use SFSVC in their apps. It also unlike Tab View on Android does not respect the user's default browser.
+There are some escape schemes available on iOS (ie: to Safari). 
+
+SFSVC (Safari View Controller) - akin to Tab View on Android minus honouring default browser - is used by many apps to open web links over older in-app browsers. It however [Safari View Controller bad UX downloading experience](https://x.com/shalanahfaith/status/1755725456777576788) compared to normal iOS Safari.
 
 - SFSVC - SFSafariViewController
 - ❌ 🔇 - Fails to download file without any indication to user (silent)
