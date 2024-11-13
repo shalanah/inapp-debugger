@@ -29,7 +29,7 @@ Table displays latest versions of apps - previous version may differ.
 
 ## Android
 
-On Android, till recently (https://github.com/shalanah/inapp-debugger/issues/11), you could use intent link to reliably escape. 
+On Android, you can the intent link to escape most in-app browsers. 
 
 - ❌ 🔇 - Fails to download file without any indication to user (silent)
 - ❌ 📝 - Fails but provides a note
@@ -45,7 +45,7 @@ Intent link escape (opens link in default browser instead of in-app) - `intent:/
 | Telegram          | ❌                         | ✅             | ❌ 📝             | ✅                    | ✅                 |
 | Line              | ❌                         | ✅             | ❌ 📝             | ❌ Fails to load      | ✅                 |
 | TikTok            | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ not dependable  |
-| Threads           | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ❌ https://github.com/shalanah/inapp-debugger/issues/11                |
+| Threads           | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ✅                 |
 | Facebook          | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
 | Instagram         | ❌                         | ✅             | ❌ 📝             | ❌ 📂                 | ✅                 |
 | Messenger         | ❌                         | ✅             | ❌ 🔇             | ❌ 🔇                 | ✅                 |
