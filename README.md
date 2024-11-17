@@ -29,7 +29,7 @@ Table displays latest versions of apps - previous versions may differ.
 
 ## Android
 
-On Android, you can the intent link to escape most in-app browsers. 
+On Android, use the intent link to escape most in-app browsers. 
 
 - ❌ 🔇 - Fails to download file without any indication to user (silent)
 - ❌ 📝 - Fails but provides a note
