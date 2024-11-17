@@ -25,7 +25,7 @@ Test common in-app issues
 
 # Results from Mobile App Tests Using inappdebugger.com
 
-Table displays latest versions of apps - previous version may differ.
+Table displays latest versions of apps - previous versions may differ.
 
 ## Android
 
