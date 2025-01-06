@@ -340,7 +340,7 @@ export const DeviceInfo = () => {
                   textUnderlineOffset: ".2em",
                 }}
               >
-                `inapp-spy` at version 4.2.0
+                `inapp-spy` at version 4.2.1
               </a>{" "}
               to detect in-app browsers and experimentally detect
               SFSafariViewController.
