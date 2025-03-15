@@ -1141,10 +1141,10 @@ ignore@^5.2.0:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.3.2.tgz#3cd40e729f3643fd87cb04e50bf0eb722bc596f5"
   integrity sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==
 
-inapp-spy@4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/inapp-spy/-/inapp-spy-4.3.1.tgz#a76861f0a72b6f7203ac961d921f56012cedffb7"
-  integrity sha512-lkyvzFVS53kNoSZiOhcQ5dDM1hns6tcotWMDY+9MP7y/Psg+TXnIRxh+bmwqGDT5xDPAfxBLwganjp1S90pJjg==
+inapp-spy@4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/inapp-spy/-/inapp-spy-4.4.0.tgz#fca1c774994653c28c56595889378fcb0e3436cd"
+  integrity sha512-+cMLG/E95c+4UmB/8Mqr+rIWa/DX2hkeEDwBeaSSezEHaaXE0OXLWvLRGwlhXHqyOqODUmu8Z2S98OShaSXRMw==
 
 invariant@^2.2.4:
   version "2.2.4"
