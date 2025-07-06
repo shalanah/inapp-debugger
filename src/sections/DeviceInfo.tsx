@@ -1,6 +1,7 @@
 import Bowser from "bowser";
+import { detectIncognito } from "detectincognitojs";
 import InAppSpy, { SFSVCExperimental } from "inapp-spy";
-import { toSentenceCase } from "../utils";
+import { getDetectionFeedback, toSentenceCase } from "../utils";
 import styled, { keyframes } from "styled-components";
 import { Modal } from "../base/Modal";
 import {
@@ -101,57 +102,6 @@ const Circle = styled.div`
   flex-shrink: 0;
 `;
 
-const getDetectionFeedback = ({
-  isInApp,
-  isSFSVC,
-  appName,
-}: {
-  isInApp: boolean;
-  isSFSVC: boolean;
-  appName: string | undefined;
-}) => {
-  if (isInApp) {
-    return {
-      inAppTitle: "In-app detected",
-      color: "#fff",
-      bg: "#B92158",
-      buttonBg: "#fff",
-      buttonColor: "#b92158",
-      inAppSubtitle: appName ? `${appName} App` : "That's a bummer.",
-    };
-  } else if (isSFSVC) {
-    return {
-      inAppTitle: "SFSafariViewController detected",
-      color: "#d14923",
-      bg: "#ffecdd",
-      buttonBg: "#d14923",
-      buttonColor: "#ffecdd",
-      inAppSubtitle: (
-        <>
-          Detection is highly experimental for Safari 17+ using{" "}
-          <code>SFSVCExperimental()</code> from <code>inapp-spy</code>.<br />
-          <br />
-          SFSVC is an in-app browser that has a cumbersome downloading
-          experience compared to a native browser. Here's hoping it becomes more
-          streamlined so we don't have to detect it!
-          <br />
-          <br />
-          If there is an error in detection please see info button to report any
-          issues.
-        </>
-      ),
-    };
-  }
-  return {
-    inAppTitle: "In-app not detected",
-    color: "#007d75",
-    bg: "#E9FFF6",
-    buttonBg: "#449C82",
-    buttonColor: "#fff",
-    inAppSubtitle: "No news is good news",
-  };
-};
-
 export const DeviceInfo = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
   const platform = browser.getPlatform() || "";
@@ -167,11 +117,14 @@ export const DeviceInfo = () => {
     //@ts-ignore
     window.navigator.userAgent || window.navigator.vendor || window.opera;
   const { isInApp, appName } = InAppSpy();
-
+  const [isIncognito, setIsIncognito] = useState(false);
   const [isSFSVC, setSFSVC] = useState(false);
 
   useEffect(() => {
     SFSVCExperimental({ debug: true }).then(setSFSVC);
+    detectIncognito().then((result) => {
+      setIsIncognito(result.isPrivate);
+    });
   }, []);
 
   let osText = "Unknown device";
@@ -186,6 +139,13 @@ export const DeviceInfo = () => {
     browserText = (
       <>
         {browserName} {browserVersion}{" "}
+        {isIncognito && (
+          // Private mode only works in https
+          <>
+            <br />
+            Private Mode
+          </>
+        )}
         {engine && (
           <>
             <br />
@@ -207,6 +167,7 @@ export const DeviceInfo = () => {
     { name: "Version", value: osVersion || "N/A" },
     { name: "Browser", value: browserName || "N/A" },
     { name: "Browser Version", value: browserVersion || "N/A" },
+    { name: "Private Mode", value: isIncognito ? "Yes" : "No" },
     { name: "Engine", value: engine || "N/A" },
   ];
 
