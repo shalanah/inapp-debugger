@@ -17,12 +17,12 @@ Test common in-app issues
 ## Running
 
 - `nvm install` / `nvm use`
-- `yarn install`
-- `yarn run dev`
+- `pnpm install`
+- `pnpm run dev`
 
 ## Deploying to GitHub Pages
 
-- `yarn run deploy`
+- `pnpm run deploy`
 
 # Results from Mobile App Tests Using inappdebugger.com
 
