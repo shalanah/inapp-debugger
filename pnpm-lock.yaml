@@ -33,8 +33,8 @@ importers:
         specifier: ^1.6.0
         version: 1.6.1
       inapp-spy:
-        specifier: 5.0.6
-        version: 5.0.6
+        specifier: 5.0.7
+        version: 5.0.7
       postcss:
         specifier: ^8.4.47
         version: 8.5.6
@@ -927,8 +927,8 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  inapp-spy@5.0.6:
-    resolution: {integrity: sha512-Ic+YHicF2qtn0PTezUCLtcB/qDyPDUXSp+2EwYjLOLUupagnfPQSqtYsO3paVsxSWNVj/EkCpLIDvx67NqPZvg==}
+  inapp-spy@5.0.7:
+    resolution: {integrity: sha512-f/9uZpfXPx5i2SHWHphLTlpzgssfujsyTc+qPkqjA0qQZgvxf8jd6htWAdkBEk2DKkecFQY1oI9qsKH7J33kDQ==}
 
   is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
@@ -2193,7 +2193,7 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  inapp-spy@5.0.6: {}
+  inapp-spy@5.0.7: {}
 
   is-binary-path@2.1.0:
     dependencies:
