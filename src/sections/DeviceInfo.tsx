@@ -117,6 +117,7 @@ export const DeviceInfo = () => {
     //@ts-ignore
     window.navigator.userAgent || window.navigator.vendor || window.opera;
   const { isInApp, appName } = InAppSpy();
+
   const [isIncognito, setIsIncognito] = useState(false);
   const [isSFSVC, setSFSVC] = useState(false);
 

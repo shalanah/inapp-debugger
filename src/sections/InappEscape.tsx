@@ -42,8 +42,14 @@ export const InappEscape = () => {
             items={[
               {
                 type: "link",
-                title: "Safari https",
+                title: "Safari https via anchor tag",
                 href: `x-safari-https://example.com`,
+              },
+              {
+                type: "button",
+                title: "Safari https via window.open",
+                onClick: () =>
+                  window.open("x-safari-https://example.com", "_blank"),
               },
               {
                 type: "desc",
@@ -53,7 +59,7 @@ export const InappEscape = () => {
                 type: "link",
                 title: "Shortcuts fallback",
                 href: `shortcuts://x-callback-url/run-shortcut?name=${crypto.randomUUID()}&x-error=${encodeURIComponent(
-                  "https://example.com"
+                  "https://example.com",
                 )}`,
               },
               {
