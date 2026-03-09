@@ -29,8 +29,8 @@ export const InappEscape = () => {
             intro={
               <>
                 <p style={{ marginBottom: 15 }}>
-                  There is no known method to exit in-app browsers on iOS to the
-                  user's default browser.
+                  There is no current method to exit in-app browsers on iOS to
+                  the user's default browser.
                 </p>
                 <p>
                   A semi-reliable method is the Safari schema (iOS 17+). Use{" "}
