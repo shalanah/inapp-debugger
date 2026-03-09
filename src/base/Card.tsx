@@ -24,7 +24,7 @@ const Div = styled.div`
     margin-bottom: 12px;
   }
   p {
-    max-width: 260px;
+    max-width: 290px;
     font-size: 0.85rem;
     line-height: 1.3;
     margin: 0px auto 5px;

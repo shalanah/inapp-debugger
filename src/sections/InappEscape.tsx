@@ -28,11 +28,23 @@ export const InappEscape = () => {
             }
             intro={
               <>
+                <p style={{ marginBottom: 15 }}>
+                  There is no known method to exit in-app browsers on iOS to the
+                  user's default browser.
+                </p>
                 <p>
-                  The most reliable way to exit in-app browsers is the Safari
-                  exit link (works on iOS 17+). Shortcuts fallback was also
-                  reliable and brought the user to a default browser but in 18.1
-                  it stopped working.
+                  A semi-reliable method is the Safari schema (iOS 17+). Use{" "}
+                  <code style={{ whiteSpace: "nowrap", color: "yellow" }}>
+                    "x-safari-https://..."
+                  </code>
+                  .
+                </p>
+                <p>
+                  If that doesn't work, try via click event{" "}
+                  <code style={{ color: "yellow" }}>
+                    window.open("x-safari-https://...", "_blank")
+                  </code>
+                  .
                 </p>
                 <p>
                   Links go to <strong>example.com</strong>
@@ -42,12 +54,12 @@ export const InappEscape = () => {
             items={[
               {
                 type: "link",
-                title: "Safari https via anchor tag",
+                title: "Safari (href)",
                 href: `x-safari-https://example.com`,
               },
               {
                 type: "button",
-                title: "Safari https via window.open",
+                title: "Safari (window.open)",
                 onClick: () =>
                   window.open("x-safari-https://example.com", "_blank"),
               },
@@ -66,8 +78,7 @@ export const InappEscape = () => {
                 type: "desc",
                 desc: (
                   <p style={{ marginTop: 25, marginBottom: 8 }}>
-                    Experiment with the less reliable search and browser links
-                    below.
+                    Experiment with search and browser links below.
                   </p>
                 ),
               },
