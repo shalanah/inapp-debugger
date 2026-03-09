@@ -4,6 +4,7 @@ import { Card } from "../base/Card";
 import { InappEscapeShortcutsDesc } from "./InappEscapeShortcutsDesc";
 import { IconIos } from "./IconIos";
 import { IconAndroid } from "./IconAndroid";
+import { InappEscapeSafariDesc } from "./InappEscapeSafariDesc";
 
 export const InappEscape = () => {
   const browser = Bowser.getParser(window.navigator.userAgent);
@@ -28,23 +29,10 @@ export const InappEscape = () => {
             }
             intro={
               <>
-                <p style={{ marginBottom: 15 }}>
-                  There is no current method to exit in-app browsers on iOS to
-                  the user's default browser.
-                </p>
-                <p>
-                  A semi-reliable method is the Safari schema (iOS 17+). Use{" "}
-                  <code style={{ whiteSpace: "nowrap", color: "yellow" }}>
-                    "x-safari-https://..."
-                  </code>
-                  .
-                </p>
-                <p>
-                  If that doesn't work, try via click event{" "}
-                  <code style={{ color: "yellow" }}>
-                    window.open("x-safari-https://...", "_blank")
-                  </code>
-                  .
+                <p style={{ marginBottom: 14 }}>
+                  There is no link method to exit in-app browsers to a user's
+                  default browser on iOS. Safari links currently seem like the
+                  best bet, but are not universal.
                 </p>
                 <p>
                   Links go to <strong>example.com</strong>
@@ -52,6 +40,10 @@ export const InappEscape = () => {
               </>
             }
             items={[
+              {
+                type: "desc",
+                desc: <InappEscapeSafariDesc />,
+              },
               {
                 type: "link",
                 title: "Safari (href)",
@@ -78,7 +70,7 @@ export const InappEscape = () => {
                 type: "desc",
                 desc: (
                   <p style={{ marginTop: 25, marginBottom: 8 }}>
-                    Experiment with search and browser links below.
+                    Search and browser links below.
                   </p>
                 ),
               },
