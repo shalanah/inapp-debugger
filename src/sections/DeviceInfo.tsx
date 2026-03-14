@@ -4,12 +4,7 @@ import InAppSpy, { SFSVCExperimental } from "inapp-spy";
 import { getDetectionFeedback, toSentenceCase } from "../utils";
 import styled, { keyframes } from "styled-components";
 import { Modal } from "../base/Modal";
-import {
-  InfoCircledIcon,
-  CopyIcon,
-  GitHubLogoIcon,
-  CheckIcon,
-} from "@radix-ui/react-icons";
+import { InfoCircledIcon, CopyIcon, CheckIcon } from "@radix-ui/react-icons";
 import { useState, useEffect } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -194,23 +189,8 @@ export const DeviceInfo = () => {
 
   return (
     <>
-      <Section style={{ marginBottom: 0 }}>
-        <Box className="flex-row flex justify-between items-center">
-          <h2 style={{ margin: 0 }}>Inapp Debugger</h2>
-          <Circle
-            as={"a"}
-            target="_blank"
-            href="https://github.com/shalanah/inapp-debugger"
-            style={{
-              color: "var(--light-blue)",
-              background: "var(--navy)",
-            }}
-          >
-            <GitHubLogoIcon width={20} height={20} />
-          </Circle>
-        </Box>
-      </Section>
-      <Section>
+      <h1 className="sr-only">Inapp Debugger</h1>
+      <Section className="mt-8">
         <StatBox className="flex-col">
           <p style={{ marginBottom: ".65rem" }}>{osText}</p>
           <div className="flex flex-row justify-between gap-[5px]">

@@ -1,17 +1,15 @@
-import { DeviceInfo } from "./sections/DeviceInfo";
-import { Download } from "./sections/Download";
-import { GlobalStyle } from "./base/GlobalStyles";
-import { InappEscape } from "./sections/InappEscape";
 import styled from "styled-components";
-import "./index.css";
+import { DeviceInfo } from "../sections/DeviceInfo";
+import { Download } from "../sections/Download";
+import { InappEscape } from "../sections/InappEscape";
 
-const Div = styled.div`
+const Wrap = styled.div`
   overflow: auto;
   max-width: 400px;
   margin: 0 auto;
 `;
 
-export const App = () => {
+export const Home = () => {
   if (typeof window === "undefined") return null; // make sure latest + greatest browser info
 
   // polyfill crypto.randomUUID
@@ -23,17 +21,16 @@ export const App = () => {
           var r = (Math.random() * 16) | 0,
             v = c === "x" ? r : (r & 0x3) | 0x8;
           return v.toString(16);
-        }
+        },
       ) as `${string}-${string}-${string}-${string}-${string}`;
     };
   }
 
   return (
-    <Div>
-      <GlobalStyle />
+    <Wrap>
       <DeviceInfo />
       <Download />
       <InappEscape />
-    </Div>
+    </Wrap>
   );
 };

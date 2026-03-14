@@ -1,0 +1,981 @@
+{
+  "title": "In-App Browser Compatibility Database",
+  "description": "Compatibility data for in-app browsers across mobile applications, inspired by caniuse format",
+  "lastUpdated": "2026-03-14",
+  "version": "1.0.0",
+  "platforms": {
+    "android": {
+      "description": "On Android, use the intent link to escape most in-app browsers.",
+      "escapeMethod": {
+        "name": "Intent link",
+        "pattern": "intent://example.com#Intent;scheme=https;end",
+        "description": "Opens link in default browser instead of in-app"
+      }
+    },
+    "ios": {
+      "description": "There is no Apple-approved way to escape in-app browsers to the default browser in contrast to Android intent links.",
+      "notes": [
+        "SFSVC (Safari View Controller) - similar to Tab View on Android except it doesn't honour default browser selection",
+        "Safari View Controller has a broken UX downloading experience compared to normal iOS Safari"
+      ],
+      "escapeMethods": {
+        "safari_scheme": {
+          "name": "Safari scheme",
+          "pattern": "x-safari-https://example.com"
+        },
+        "browser_scheme": {
+          "name": "Browser scheme",
+          "pattern": "googlechromes://example.com",
+          "description": "Browser-specific schemes like Chrome"
+        }
+      }
+    }
+  },
+  "features": {
+    "default_browser": {
+      "title": "Browser type",
+      "description": "Opens links in system default browser or tab view",
+      "category": "browser"
+    },
+    "detect_inapp": {
+      "title": "Detectable",
+      "description": "Ability to detect if running in an in-app browser",
+      "category": "browser"
+    },
+    "blob_download": {
+      "title": "Blob URLs",
+      "description": "Support for downloading files from blob URLs",
+      "category": "download"
+    },
+    "static_download": {
+      "title": "Static assets",
+      "description": "Support for downloading static file assets",
+      "category": "download"
+    },
+    "intent_escape": {
+      "title": "Intent link",
+      "description": "Android: Support for intent links to escape to default browser",
+      "platforms": ["android"],
+      "category": "escape"
+    },
+    "safari_escape": {
+      "title": "Safari scheme",
+      "description": "iOS: Support for x-safari-https scheme to escape to Safari",
+      "platforms": ["ios"],
+      "category": "escape"
+    },
+    "browser_escape": {
+      "title": "Browser scheme",
+      "description": "iOS: Support for browser-specific schemes to escape to that browser",
+      "platforms": ["ios"],
+      "category": "escape"
+    }
+  },
+  "statuses": {
+    "y": {
+      "title": "Supported",
+      "description": "Feature works as expected"
+    },
+    "n": {
+      "title": "Not supported",
+      "description": "Feature does not work"
+    },
+    "p": {
+      "title": "Partial support",
+      "description": "Limited or conditional support",
+      "symbol": "\ud83d\udfe1"
+    },
+    "u": {
+      "title": "Unknown/Untested",
+      "description": "Support status unknown or not applicable",
+      "symbol": "-"
+    },
+    "experimental": {
+      "title": "Experimental",
+      "description": "Experimental or beta support",
+      "symbol": "\ud83e\uddea"
+    }
+  },
+  "noteDefinitions": {
+    "silent_failure": "Fails silently",
+    "fails_with_note": "Shows error message",
+    "new_window_timeout": "Opens in new window and timesout",
+    "opens_in_browser": "Opens file in browser doesn't download",
+    "sfsvc_poor_ux": "Broken UX - SFSVC opens in asset view mode, several unclear steps to download",
+    "intent_blocked": "Intent links are blocked and do not escape to default browser",
+    "intent_unreliable": "Intent link escape works inconsistently or is not dependable",
+    "fails_to_load": "Content fails to load completely",
+    "dont_select_safari": "Don't select Safari icon, opens in SFSVC instead of native Safari otherwise opens in default browser",
+    "chrome_http_only": "Only works with Chrome for http URLs (not https)",
+    "does_not_work": "Not supported",
+    "tab_view_intent": "Stays within tab view",
+    "default_browser_intent": "Opens link in new tab"
+  },
+  "apps": {
+    "wechat": {
+      "name": "WeChat",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "appVersion": "8.0.69",
+              "testedDate": "2026-03-14",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "intent_escape": "n"
+              },
+              "engine": {
+                "type": "android_webview"
+              },
+              "notes": {
+                "blob_download": "fails_with_note",
+                "static_download": "fails_with_note",
+                "intent_escape": "does_not_work"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "n",
+                "browser_escape": "n"
+              },
+              "notes": {
+                "blob_download": "fails_with_note",
+                "static_download": "fails_with_note"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "telegram": {
+      "name": "Telegram",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "appVersion": "12.5.1",
+              "testedDate": "2026-03-14",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "y",
+                "intent_escape": "y"
+              },
+              "engine": {
+                "type": "android_webview"
+              },
+              "notes": {
+                "blob_download": "silent_failure"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "y",
+                "safari_escape": "y",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "line": {
+      "name": "Line",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "26.3.1",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "intent_escape": "y"
+              },
+              "engine": {
+                "type": "android_webview"
+              },
+              "notes": {
+                "blob_download": "fails_with_note",
+                "static_download": "new_window_timeout"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "y",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "silent_failure",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "tiktok": {
+      "name": "TikTok",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "appVersion": "44.2.3",
+              "testedDate": "2026-03-14",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "intent_escape": "y"
+              },
+              "engine": {
+                "type": "android_webview"
+              },
+              "notes": {
+                "blob_download": "silent_failure",
+                "static_download": "silent_failure"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "n",
+                "browser_escape": "n"
+              },
+              "notes": {
+                "blob_download": "opens_in_browser",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "threads": {
+      "name": "Threads",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "420.0.0.58.72",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "intent_escape": "y"
+              },
+              "engine": {
+                "type": "android_webview"
+              },
+              "notes": {
+                "blob_download": "fails_with_note",
+                "static_download": "opens_in_browser"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "n",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "opens_in_browser",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "facebook": {
+      "name": "Facebook",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "552.0.0.31.68",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "intent_escape": "y"
+              },
+              "notes": {
+                "blob_download": "fails_with_note",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "android_webview"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "n",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "opens_in_browser",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "instagram": {
+      "name": "Instagram",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "420.0.0.55.74",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "intent_escape": "y"
+              },
+              "notes": {
+                "blob_download": "fails_with_note",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "android_webview"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "n",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "opens_in_browser",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "messenger": {
+      "name": "Messenger",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "551.0.0.48.62",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "intent_escape": "y"
+              },
+              "engine": {
+                "type": "android_webview"
+              },
+              "notes": {
+                "blob_download": "fails_with_note",
+                "static_download": "opens_in_browser"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "y",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "opens_in_browser",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "snapchat": {
+      "name": "SnapChat",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "13.83.0.51",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "n"
+              },
+              "notes": {
+                "intent_escape": "tab_view_intent"
+              },
+              "engine": {
+                "type": "android_tab_view"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "n",
+                "browser_escape": "p"
+              },
+              "notes": {
+                "blob_download": "silent_failure",
+                "static_download": "opens_in_browser",
+                "browser_escape": "chrome_http_only"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2024-11-07",
+              "appVersion": "4.1.1179",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "n"
+              },
+              "notes": {
+                "intent_escape": "tab_view_intent"
+              },
+              "engine": {
+                "type": "android_tab_view"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "y",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "silent_failure",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "twitter": {
+      "name": "Twitter",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "11.71.0-release.01",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "n"
+              },
+              "notes": {
+                "intent_escape": "tab_view_intent"
+              },
+              "engine": {
+                "type": "android_tab_view"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "n",
+                "browser_escape": "n"
+              },
+              "notes": {
+                "blob_download": "opens_in_browser",
+                "static_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "google_search": {
+      "name": "Google Search App",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "appVersion": "17.9.53.sa.arm64",
+              "testedDate": "2026-03-14",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "n"
+              },
+              "engine": {
+                "type": "android_tab_view"
+              },
+              "notes": {
+                "intent_escape": "tab_view_intent"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "y",
+                "blob_download": "n",
+                "static_download": "y",
+                "safari_escape": "y",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "opens_in_browser"
+              },
+              "engine": {
+                "type": "wkwebview"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+
+    "slack": {
+      "name": "Slack",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "26.03.20.0",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "n"
+              },
+              "notes": {
+                "intent_escape": "tab_view_intent"
+              },
+              "engine": {
+                "type": "android_tab_view"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "experimental",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "y",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "blob_download": "sfsvc_poor_ux",
+                "static_download": "sfsvc_poor_ux"
+              },
+              "engine": {
+                "type": "sfsafariviewcontroller"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "sfsafariviewcontroller": {
+      "name": "SFSafariViewController",
+      "description": "Selecting 'Safari' icon to open a link from an app like in Gmail or Twitter",
+      "platforms": {
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "n",
+                "detect_inapp": "experimental",
+                "blob_download": "n",
+                "static_download": "n",
+                "safari_escape": "y",
+                "browser_escape": "y"
+              },
+              "notes": {
+                "default_browser": "sfsvc_poor_ux",
+                "blob_download": "sfsvc_poor_ux",
+                "static_download": "sfsvc_poor_ux"
+              },
+              "engine": {
+                "type": "sfsafariviewcontroller"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "android_tab_view": {
+      "name": "Android Tab View",
+      "description": "Generic Android in-app browser using Tab View (not WebView) which respects default browser selection.",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "n"
+              },
+              "notes": {
+                "intent_escape": "tab_view_intent"
+              },
+              "engine": {
+                "type": "android_tab_view"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "gmail": {
+      "name": "Gmail",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "2026.02.23.876771157.Release",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "n"
+              },
+              "notes": {
+                "intent_escape": "tab_view_intent"
+              },
+              "engine": {
+                "type": "android_tab_view"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "u",
+                "blob_download": "y",
+                "static_download": "y",
+                "safari_escape": "u",
+                "browser_escape": "u"
+              },
+              "notes": {
+                "blob_download": ["dont_select_safari"],
+                "static_download": ["dont_select_safari"]
+              },
+              "engine": {
+                "type": "default_browser"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "youtube": {
+      "name": "YouTube",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "21.10.496",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "n"
+              },
+              "notes": {
+                "intent_escape": "tab_view_intent"
+              },
+              "engine": {
+                "type": "android_tab_view"
+              }
+            }
+          },
+          "latest": "1"
+        },
+        "ios": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-07",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "u",
+                "blob_download": "y",
+                "static_download": "y",
+                "safari_escape": "u",
+                "browser_escape": "u"
+              },
+              "notes": {
+                "blob_download": ["dont_select_safari"],
+                "static_download": ["dont_select_safari"]
+              },
+              "engine": {
+                "type": "default_browser"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    },
+    "groupme": {
+      "name": "GroupMe",
+      "platforms": {
+        "android": {
+          "versions": {
+            "1": {
+              "testedDate": "2026-03-14",
+              "appVersion": "15.40.19",
+              "support": {
+                "default_browser": "y",
+                "detect_inapp": "na",
+                "blob_download": "y",
+                "static_download": "y",
+                "intent_escape": "y"
+              },
+              "engine": {
+                "type": "default_browser"
+              },
+              "notes": {
+                "intent_escape": "default_browser_intent"
+              }
+            }
+          },
+          "latest": "1"
+        }
+      }
+    }
+  },
+  "engineTypes": {
+    "wkwebview": {
+      "title": "WKWebView",
+      "versionSource": "osVersion"
+    },
+    "sfsafariviewcontroller": {
+      "title": "SFSafariViewController",
+      "versionSource": "osVersion"
+    },
+    "android_tab_view": {
+      "title": "Android Tab View"
+    },
+    "android_webview": {
+      "title": "Android WebView"
+    },
+    "default_browser": {
+      "title": "Default Browser"
+    },
+    "custom": {
+      "title": "Custom",
+      "requiresName": true
+    }
+  }
+}

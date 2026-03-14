@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  body, html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
     /* Modal... TODO: Move into styled comps? */
     .DialogOverlay {
         background-color: rgba(0, 0, 0, 0.5);
