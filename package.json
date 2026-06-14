@@ -24,15 +24,15 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
-    "bowser": "^2.11.0",
-    "detectincognitojs": "^1.6.0",
-    "inapp-spy": "5.0.9",
-    "postcss": "^8.4.47",
+    "bowser": "^2.14.1",
+    "detectincognitojs": "^1.7.0",
+    "inapp-spy": "5.0.10",
+    "postcss": "^8.5.15",
     "react": "^18.3.1",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
     "styled-components": "^6.1.13",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.19"
   }
 }
