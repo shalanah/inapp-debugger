@@ -77,7 +77,7 @@ SFSVC (Safari View Controller) - similar to Tab View on Android except it doesn'
 
 - Safari scheme - `x-safari-https://example.com`
 - Browser scheme - In example Chrome: `googlechromes://example.com`
-- Instagram workaround - `instagram://extbrowser/?url=${encodeURIComponent("https://example.com",)}`
+- Instagram workaround - `instagram://extbrowser/?url=<encoded-url>`
 
 Last updated: March 7, 2026
 
