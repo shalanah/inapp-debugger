@@ -76,6 +76,13 @@ export const InappEscape = () => {
               },
               {
                 type: "link",
+                title: "Instagram",
+                href:`instagram://extbrowser/?url=${encodeURIComponent(
+                  "https://example.com",
+                )}`,
+              },
+              {
+                type: "link",
                 title: "Safari search",
                 href: "x-web-search://?site:example.com",
               },
